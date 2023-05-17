@@ -31,10 +31,14 @@
     "react/no-unescaped-entities": "off",
     "@next/next/no-page-custom-font": "off",
     "react/self-closing-comp": "off",
-    // "react/function-component-definition": ["error", {
-    //   "namedComponents": "function-declaration",
-    //   "unnamedComponents": "function-declaration"
-    // }],
-    "@typescript-eslint/no-unused-vars": "warn"
+    "@typescript-eslint/no-unused-vars": "warn",
+    " react/jsx-no-useless-fragment": "warn",
+    "react/function-component-definition": [
+      "warn",
+      {
+        "namedComponents": "function-declaration",
+        "unnamedComponents": "function-declaration"
+      }
+    ]
   }
 }
