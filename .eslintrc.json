@@ -34,7 +34,7 @@
     "@typescript-eslint/no-unused-vars": "warn",
     "react/jsx-no-useless-fragment": "warn",
     "react/function-component-definition": [
-      "error",
+      "warn",
       {
         "namedComponents": ["arrow-function", "function-expression"],
         "unnamedComponents": ["arrow-function", "function-expression"]
