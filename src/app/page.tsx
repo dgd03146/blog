@@ -1,5 +1,11 @@
-export default function Home() {
+'use client'
+
+import tw from 'twin.macro'
+
+export default function Page() {
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24"></main>
+    <div tw="bg-purple-50">
+      <h1>hihi</h1>
+    </div>
   )
 }
