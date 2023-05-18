@@ -1,5 +1,5 @@
-import GlobalStyles from '@/styles/GlobalStyles'
 import StyledComponentsRegistry from '@/lib/registry'
+import GlobalStyles from '@/styles/GlobalStyles'
 
 export const metadata = {
   title: 'Create Next App',
