@@ -5,12 +5,35 @@ module.exports = {
     './src/components/**/*.{js,ts,jsx,tsx,mdx}',
     './src/app/**/*.{js,ts,jsx,tsx,mdx}',
   ],
+  darkMode: 'class',
   theme: {
     extend: {
-      backgroundImage: {
-        'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
-        'gradient-conic':
-          'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
+      fontFamily: {
+        sans: ['var(--font-montserrat)'],
+      },
+      colors: {},
+      screens: {
+        mobile: '360px', // @media (min-width: 360px)
+        foldable: '523px', // @media (min-width: 523px)
+        tablet: '768px', // @media (min-width: 768px)
+        'under-foldable': { max: '522px' }, // @media (max-width: 522px)
+        'under-tablet': { max: '767px' }, // @media (max-width: 767px)
+        'under-mobile': { max: '359px' }, // @media (max-width: 359px)
+      },
+      fontSize: {
+        big: '3.5rem',
+        h1: '2.25rem',
+        h2: '1.5rem',
+        h3: '1.25rem',
+        normal: '1rem',
+        small: '0.825rem',
+        smaller: '0.813rem',
+        tiny: '0.625rem',
+      },
+      fontWeight: {
+        normal: '400',
+        medium: '500',
+        bold: '600',
       },
     },
   },
