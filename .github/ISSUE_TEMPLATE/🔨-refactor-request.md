@@ -1,7 +1,7 @@
 ---
 name: "\U0001F528 Refactor request"
 about: Refactor features for this project
-title: ''
+title: "\U0001F528 Refactor request"
 labels: "\U0001F528 Refactor"
 assignees: dgd03146
 

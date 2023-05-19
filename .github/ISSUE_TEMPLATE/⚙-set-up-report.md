@@ -1,7 +1,7 @@
 ---
 name: "⚙ Set Up Report"
 about: Set Up
-title: ''
+title: "⚙ Set Up Report"
 labels: "⚙ Setting"
 assignees: dgd03146
 

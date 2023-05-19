@@ -1,8 +1,8 @@
 ---
 name: "\U0001F3A8 Design request"
 about: Style of project
-title: ''
-labels: "\U0001F3A8 HTML & CSS"
+title: "\U0001F3A8 Design request"
+labels: "\U0001F3A8 Design"
 assignees: dgd03146
 
 ---
