@@ -21,12 +21,15 @@ const Header = () => {
           GeoJung
         </MotionLink>
         <div tw="flex gap-x-8">
-            {ROUTES.map(({ title, path }) => (
-              <div key={path} className="group" tw="relative">
-                <CustomLink  href={path} title={title} />
-                <Underline key={path} isactive={pathname === path ? "true" : "false"} />
-              </div>
-            ))}
+          {ROUTES.map(({ title, path }) => (
+            <div key={path} className="group" tw="relative">
+              <CustomLink href={path} title={title} />
+              <Underline
+                key={path}
+                isactive={pathname === path ? 'true' : 'false'}
+              />
+            </div>
+          ))}
         </div>
       </nav>
     </header>

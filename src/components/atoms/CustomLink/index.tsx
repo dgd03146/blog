@@ -7,7 +7,11 @@ type TProps = {
 }
 
 const CustomLink = ({ href, title }: TProps) => {
-  return <Link key={title} href={href}>{title}</Link>
+  return (
+    <Link key={title} href={href}>
+      {title}
+    </Link>
+  )
 }
 
 export default CustomLink
