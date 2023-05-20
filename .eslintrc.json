@@ -25,6 +25,8 @@
     "plugin:import/recommended"
   ],
   "rules": {
+    "prettier/prettier":"off",
+    "import/no-extraneous-dependencies":"off",
     "react/react-in-jsx-scope": "off", // react 17부턴 import 안해도돼서 기능 끔
     // 경고표시, 파일 확장자를 .ts나 .tsx 모두 허용함
     "react/jsx-filename-extension": ["warn", { "extensions": [".ts", ".tsx"] }],
@@ -33,9 +35,9 @@
     "@next/next/no-page-custom-font": "off",
     "react/self-closing-comp": "off",
     "@typescript-eslint/no-unused-vars": "warn",
-    "react/jsx-no-useless-fragment": "warn",
+    "react/jsx-no-useless-fragment": "off",
     "react/function-component-definition": [
-      "warn",
+      "off",
       {
         "namedComponents": ["arrow-function", "function-expression"],
         "unnamedComponents": ["arrow-function", "function-expression"]
