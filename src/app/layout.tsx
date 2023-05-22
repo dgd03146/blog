@@ -1,4 +1,4 @@
-import { Montserrat } from 'next/font/google'
+import { Montserrat } from '@next/font/google'
 import Header from '@/components/organisms/header'
 import StyledComponentsRegistry from '@/lib/registry'
 import '@/styles/global.css'
