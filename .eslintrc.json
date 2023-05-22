@@ -25,6 +25,13 @@
     "plugin:import/recommended"
   ],
   "rules": {
+    "import/no-unresolved": [
+      "error",
+      { "ignore": [".jpg$"] }
+    ],
+   
+    "import/no-absolute-path":"off",
+    "import/prefer-default-export":"off",
     "prettier/prettier":"off",
     "import/no-extraneous-dependencies":"off",
     "react/react-in-jsx-scope": "off", // react 17부턴 import 안해도돼서 기능 끔
@@ -34,8 +41,12 @@
     "react/no-unescaped-entities": "off",
     "@next/next/no-page-custom-font": "off",
     "react/self-closing-comp": "off",
+    "react/jsx-curly-brace-presence":"off",
     "@typescript-eslint/no-unused-vars": "warn",
+    "@typescript-eslint/no-use-before-define": "off",
     "react/jsx-no-useless-fragment": "off",
+    "react/button-has-type":"off",
+   
     "react/function-component-definition": [
       "off",
       {
