@@ -13,16 +13,19 @@ module.exports = {
         sans: ['var(--font-montserrat)'],
       },
       colors: {
-        dark: "#1b1b1b",
-        gray:"#7D7D7D",
-        light: "#f5f5f5",
-        primary: "#B63E96", // 240,86,199
-        primaryDark: "#58E6D9", // 80,230,217
+        dark: '#1b1b1b',
+        gray: '#7D7D7D',
+        light: '#f5f5f5',
+        primary: '#B63E96', // 240,86,199
+        primaryDark: '#58E6D9', // 80,230,217
       },
       screens: {
         mobile: '360px', // @media (min-width: 360px)
         foldable: '523px', // @media (min-width: 523px)
         tablet: '768px', // @media (min-width: 768px)
+        laptop: '1024px',
+        desktop: '1280px',
+        tv: '1536px',
         'under-foldable': { max: '522px' }, // @media (max-width: 522px)
         'under-tablet': { max: '767px' }, // @media (max-width: 767px)
         'under-mobile': { max: '359px' }, // @media (max-width: 359px)
