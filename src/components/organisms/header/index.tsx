@@ -1,39 +1,28 @@
 'use client'
 
-import React from 'react'
-import { motion } from 'framer-motion'
-import Link from 'next/link'
-import { usePathname } from 'next/navigation'
+import React, { useState } from 'react'
 import tw from 'twin.macro'
-import LogoColor from '@/constants/motion'
-import { ROUTES } from '@/constants/route'
-import Underline from './style'
-
-const MotionLink = motion(Link)
+import Logo from '@/components/atoms/logo'
+import ToggleButton from '@/components/atoms/toggleButton'
+import LanguageMenu from '@/components/molecules/languageMenu'
+import Navigation from '@/components/molecules/navigation'
+import MobileMenu from '@/components/organisms/mobileMenu'
 
 const Header = () => {
-  const pathname = usePathname()
+  const [isOpen, setIsOpen] = useState(false)
+
+  const handleMenu = () => {
+    setIsOpen(!isOpen)
+  }
+
   return (
-    <header tw="w-full py-8 px-32 max-h-[90px]">
+    <header tw="w-full px-32 py-8 max-h-[90px] relative">
       <nav tw="flex justify-between items-center gap-x-4">
-        <MotionLink href="/" tw="font-bold text-h3" whileHover={LogoColor}>
-          GeoJung
-        </MotionLink>
-        <div tw="flex gap-x-8">
-          {ROUTES.map(({ title, path }) => (
-            <div key={path} className="group" tw="relative">
-              <Link href={path}>{title}</Link>
-              <Underline
-                key={path}
-                isactive={pathname === path ? 'true' : 'false'}
-              />
-            </div>
-          ))}
-        </div>
-        <div>
-          <button tw="mx-2">🇰🇷</button>
-          <button tw="mx-2">🇬🇧</button>
-        </div>
+        <ToggleButton handleMenu={handleMenu} isOpen={isOpen} />
+        {isOpen && <MobileMenu handleMenu={handleMenu} />}
+        <Logo />
+        <Navigation isMobile={false} handleMenu={handleMenu} />
+        <LanguageMenu isMobile={false} />
       </nav>
     </header>
   )

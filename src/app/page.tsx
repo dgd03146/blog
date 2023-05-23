@@ -9,7 +9,7 @@ import tw, { styled } from 'twin.macro'
 
 export default function Page() {
   return (
-    <main tw="flex items-center text-dark w-full h-[calc(100vh - 90px)] px-32 gap-x-20">
+    <div tw="flex items-center text-dark w-full px-32 h-[calc(100vh - 90px)]  gap-x-20">
       <div tw="basis-[20] ">
         <Link href={'/'}>
           <FaGithub tw="mb-6 text-h3 text-dark hover:text-gray" />
@@ -51,7 +51,7 @@ export default function Page() {
           </Content>
         </ImageWrapper>
       </div>
-    </main>
+    </div>
   )
 }
 
