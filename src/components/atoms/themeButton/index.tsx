@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion'
 import { BsToggleOff, BsToggleOn } from 'react-icons/bs'
+import tw from 'twin.macro'
 
 type TProps = {
   isDarkMode: boolean
@@ -11,7 +12,6 @@ const ThemeButton = ({ isDarkMode, handleTheme }: TProps) => {
     <motion.button
       whileHover={{ scale: 1.1 }}
       whileTap={{ scale: 0.8 }}
-      tw="mx-2"
       onClick={handleTheme}
     >
       {isDarkMode ? <BsToggleOn tw="text-h2" /> : <BsToggleOff tw="text-h2" />}

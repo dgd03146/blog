@@ -25,6 +25,7 @@
     "plugin:import/recommended"
   ],
   "rules": {
+    "@typescript-eslint/no-var-requires": "off",
     "import/no-unresolved": ["error", { "ignore": [".jpg$"] }],
     "react/jsx-boolean-value": "off",
     "import/no-absolute-path": "off",

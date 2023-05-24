@@ -8,9 +8,13 @@ import { keyframes } from 'styled-components'
 import tw, { styled } from 'twin.macro'
 
 export default function Page() {
+  // TODO: 아토믹 디자인으로 나누기
+  // h-[calc(100vh - 180px)]
+  // tw="flex items-center justify-center text-dark w-full h-full py-8 gap-x-20 flex-col-reverse  desktop:flex-row desktop:justify-between"
   return (
-    <div tw="flex items-center text-dark w-full px-32 h-[calc(100vh - 90px)]  gap-x-20">
-      <div tw="basis-[20] ">
+    <div tw="flex items-center justify-center text-dark w-full    laptop:min-h-[calc(100vh - 180px)] py-8 gap-x-20 flex-col-reverse  desktop:flex-row desktop:justify-between">
+      {/* TODO: Molecule로 바꾸기 */}
+      <div tw="basis-[20] hidden desktop:block">
         <Link href={'/'}>
           <FaGithub tw="mb-6 text-h3 text-dark hover:text-gray" />
         </Link>
@@ -24,23 +28,34 @@ export default function Page() {
       <div tw="basis-[40]">
         <h1 tw="text-h1">GeoJung Im</h1>
         <h3 tw="text-h2 flex">Frontend Developer</h3>
-        <p tw="text-h3">
-          I'm creative developer based in London, and I'm very passionate and
-          dedicated to my work.
-        </p>
-        <button tw="flex items-center gap-x-2 p-4 bg-dark text-light rounded-lg my-4 w-[150px] justify-center hover:text-gray">
-          <Link href="/contact">Contact Me</Link>
-          <RiSendPlaneFill />
-        </button>
+        <p tw="text-h3">I'm creative developer based in London. 📍</p>
+        <p tw="text-h3">A passionate about continuous learning.</p>
+        <div tw="flex gap-x-6 desktop:flex-col">
+          <button tw="flex items-center gap-x-2 p-4 bg-dark text-light rounded-lg my-4 w-[150px] justify-center hover:text-gray">
+            <Link href="/contact">Contact Me</Link>
+            <RiSendPlaneFill />
+          </button>
+          <div tw="flex items-center gap-x-4 desktop:hidden">
+            <Link href={'/'}>
+              <FaGithub tw="text-h3 text-dark hover:text-gray" />
+            </Link>
+            <Link href={'/'}>
+              <FaLinkedinIn tw="text-h3 text-dark hover:text-gray" />
+            </Link>
+            <Link href={'/'}>
+              <FaMediumM tw="text-h3 text-dark hover:text-gray" />
+            </Link>
+          </div>
+        </div>
       </div>
-      <div tw="basis-[40]">
+      <div tw="basis-[40] hidden tablet:block tablet:mb-8">
         <ImageWrapper>
           <Content>
             <Image
               src={'/assets/images/myProfile.jpg'}
               alt="Profile"
-              width={500}
-              height={500}
+              width={400}
+              height={400}
               priority
             />
             <h2>
@@ -72,12 +87,13 @@ const ImageWrapper = styled.div`
   height: 400px;
   background: #000000;
   overflow: hidden;
+  cursor: pointer;
 
   &::before {
     content: '';
     position: absolute;
     inset: -10px 140px;
-    background: linear-gradient(315deg, #ffc1c1, #c4ddff);
+    background: linear-gradient(315deg, #7d7d7d, #f5f5f5);
     transition: 0.5s;
     animation: ${animate} 4s linear infinite;
   }

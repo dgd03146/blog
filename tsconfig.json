@@ -19,8 +19,12 @@
         "name": "next"
       }
     ],
+    "baseUrl": "./",
     "paths": {
       "@/*": ["./src/*"]
+      // "@atoms/*": ["components/atoms/*"],
+      // "@molecules/*": ["components/molecules/*"],
+      // "@organisms/*": ["components/organisms/*"]
     }
   },
   "include": [

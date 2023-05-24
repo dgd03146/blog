@@ -16,7 +16,7 @@ const Header = () => {
   }
 
   return (
-    <header tw="w-full px-32 py-8 max-h-[90px] relative">
+    <header tw="w-full px-8 foldable:px-16 laptop:px-32 py-8 max-h-[90px] relative">
       <nav tw="flex justify-between items-center gap-x-4">
         <ToggleButton handleMenu={handleMenu} isOpen={isOpen} />
         {isOpen && <MobileMenu handleMenu={handleMenu} />}

@@ -23,9 +23,9 @@ export default function RootLayout({
     <html lang="en" className={montserrat.className}>
       <body>
         <StyledComponentsRegistry>
-          <main tw="bg-light w-full min-h-screen">
+          <main className="h-screen w-full">
             <Header />
-            {children}
+            <div className="px-8 foldable:px-16 laptop:px-32">{children}</div>
           </main>
         </StyledComponentsRegistry>
       </body>

@@ -17,5 +17,3 @@ const Button = ({ cssStyle, text, onClick, children }: TProps) => {
 }
 
 export default Button
-
-// css={[cssStyle && tw`${cssStyle}`]}
