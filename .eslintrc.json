@@ -25,6 +25,7 @@
     "plugin:import/recommended"
   ],
   "rules": {
+    "react/no-children-prop": "off",
     "@typescript-eslint/no-var-requires": "off",
     "import/no-unresolved": ["error", { "ignore": [".jpg$"] }],
     "react/jsx-boolean-value": "off",

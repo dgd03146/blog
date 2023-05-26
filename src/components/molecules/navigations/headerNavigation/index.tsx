@@ -2,7 +2,7 @@ import React from 'react'
 import Link from 'next/link'
 import { usePathname, useRouter } from 'next/navigation'
 import tw from 'twin.macro'
-import Button from '@/components/atoms/button'
+import Button from '@/components/atoms/buttons'
 import { ROUTES } from '@/constants/route'
 import Underline from './style'
 

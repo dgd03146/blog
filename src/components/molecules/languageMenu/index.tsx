@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import tw from 'twin.macro'
-import Button from '@/components/atoms/button'
-import ThemeButton from '@/components/atoms/themeButton'
+import Button from '@/components/atoms/buttons'
+import ThemeButton from '@/components/atoms/buttons/themeButton'
 
 type TProps = {
   isMobile: boolean

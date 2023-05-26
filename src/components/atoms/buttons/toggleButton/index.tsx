@@ -1,6 +1,6 @@
 import React from 'react'
 import tw from 'twin.macro'
-import Button from '../button'
+import Button from '..'
 
 type TProps = {
   handleMenu: () => void
