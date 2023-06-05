@@ -4,10 +4,10 @@ import Button from '@/components/atoms/buttons'
 import ThemeButton from '@/components/atoms/buttons/themeButton'
 
 type TProps = {
-  isMobile: boolean
+  ismobile: boolean
 }
 
-const LanguageMenu = ({ isMobile }: TProps) => {
+const LanguageMenu = ({ ismobile }: TProps) => {
   const [isDarkMode, setIsDarkMode] = useState(false)
 
   const handleTheme = () => {
@@ -18,7 +18,7 @@ const LanguageMenu = ({ isMobile }: TProps) => {
     <div
       css={[
         tw`flex items-center hover:text-gray gap-x-2`,
-        !isMobile && tw`hidden laptop:flex `,
+        !ismobile && tw`hidden laptop:flex `,
       ]}
     >
       <Button text="KOR" cssStyle="text-normal" />

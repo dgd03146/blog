@@ -20,15 +20,15 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en" className={montserrat.className}>
-      <body>
-        <StyledComponentsRegistry>
+    <StyledComponentsRegistry>
+      <html lang="en" className={montserrat.className}>
+        <body>
           <main className="h-screen w-full">
             <Header />
             <div className="px-8 foldable:px-16 laptop:px-32">{children}</div>
           </main>
-        </StyledComponentsRegistry>
-      </body>
-    </html>
+        </body>
+      </html>
+    </StyledComponentsRegistry>
   )
 }

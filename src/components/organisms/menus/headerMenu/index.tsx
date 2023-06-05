@@ -13,8 +13,8 @@ const HeaderMenu = ({ handleMenu, isOpen }: TProps) => {
     <>
       <ToggleButton handleMenu={handleMenu} isOpen={isOpen} />
       <Logo />
-      <Navigation isMobile={false} handleMenu={handleMenu} />
-      <LanguageMenu isMobile={false} />
+      <Navigation ismobile={false} handleMenu={handleMenu} />
+      <LanguageMenu ismobile={false} />
     </>
   )
 }
