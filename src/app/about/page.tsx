@@ -6,6 +6,7 @@ import ContactButton from '@/components/atoms/buttons/contactButton'
 import { Heading3 } from '@/components/atoms/texts'
 import SocialNavigation from '@/components/molecules/navigations/socialNavigation'
 import ImageSection from '@/components/organisms/imageSection'
+import TechStackSection from '@/components/organisms/techStackSection'
 import { ABOUT_ME } from '@/constants/about'
 
 const About = () => {
@@ -24,6 +25,7 @@ const About = () => {
           </div>
         </div>
       </div>
+      <TechStackSection />
     </>
   )
 }

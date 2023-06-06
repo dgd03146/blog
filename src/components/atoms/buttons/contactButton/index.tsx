@@ -10,7 +10,7 @@ type TProps = {
 
 const ContactButton = ({ text, href }: TProps) => {
   return (
-    <Button cssStyle="flex items-center gap-x-2 p-4 bg-dark text-light rounded-lg my-4 justify-center hover:text-gray">
+    <Button cssStyle="flex items-center gap-x-2 p-4 bg-dark text-light rounded-lg my-4 justify-center hover:text-gray w-fit">
       <Link href={href}>{text}</Link>
       <RiSendPlaneFill />
     </Button>
