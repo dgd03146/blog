@@ -1,7 +1,7 @@
 export const ROUTE: { [key: string]: string } = {
   Home: '/',
   About: '/about',
-  Articles: '/articles',
+  Blog: '/blog',
   Projects: '/projects',
   Contact: '/contact',
 }
