@@ -16,8 +16,9 @@ module.exports = {
         dark: '#1b1b1b',
         gray: '#7D7D7D',
         light: '#f5f5f5',
-        primary: '#B63E96', // 240,86,199
-        primaryDark: '#58E6D9', // 80,230,217
+        primary: '#9d0208',
+        primaryYellow: '#ffba08',
+        primaryOrange: '#e85d04',
       },
       screens: {
         mobile: '360px', // @media (min-width: 360px)

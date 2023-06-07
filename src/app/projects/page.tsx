@@ -1,7 +1,13 @@
 import React from 'react'
+import TransitionEffect from '@/components/molecules/transitionEffect'
 
 const Porfolio = () => {
-  return <div>Porfolio</div>
+  return (
+    <>
+      <TransitionEffect />
+      Porfolio
+    </>
+  )
 }
 
 export default Porfolio
