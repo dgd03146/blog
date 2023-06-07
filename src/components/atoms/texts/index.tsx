@@ -6,6 +6,15 @@ type TProps = {
   children?: ReactNode
 }
 
+export const BigText = ({ text, children }: TProps) => {
+  return (
+    <h1 tw="text-big">
+      {text}
+      {children}
+    </h1>
+  )
+}
+
 export const Heading1 = ({ text, children }: TProps) => {
   return (
     <h1 tw="text-h1">

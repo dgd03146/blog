@@ -5,8 +5,8 @@ import SocialNavigation from '@/components/molecules/navigations/socialNavigatio
 const ContactSection = () => {
   return (
     <div tw="flex gap-x-6 desktop:flex-col">
-      <ContactButton />
-      <SocialNavigation isMobile={true} />
+      <ContactButton text="Contact Me" href="/contact" />
+      <SocialNavigation ismobile={true} />
     </div>
   )
 }

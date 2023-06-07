@@ -6,7 +6,7 @@ import { Heading2 } from '@/components/atoms/texts'
 
 const ImageSection = () => {
   return (
-    <div tw="basis-[40] hidden tablet:block tablet:mb-8">
+    <div tw="basis-[40] hidden mobile:block mobile:mb-8">
       <ImageWrapper>
         <Content>
           <Image

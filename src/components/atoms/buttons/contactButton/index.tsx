@@ -3,10 +3,15 @@ import Link from 'next/link'
 import { RiSendPlaneFill } from 'react-icons/ri'
 import Button from '..'
 
-const ContactButton = () => {
+type TProps = {
+  text: 'Contact Me' | 'View Resume'
+  href: '/contact' | '/resume'
+}
+
+const ContactButton = ({ text, href }: TProps) => {
   return (
-    <Button cssStyle="flex items-center gap-x-2 p-4 bg-dark text-light rounded-lg my-4 w-[150px] justify-center hover:text-gray">
-      <Link href="/contact">Contact Me</Link>
+    <Button cssStyle="flex items-center gap-x-2 p-4 bg-dark text-light rounded-lg my-4 justify-center hover:text-gray w-fit">
+      <Link href={href}>{text}</Link>
       <RiSendPlaneFill />
     </Button>
   )
