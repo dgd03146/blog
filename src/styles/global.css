@@ -1,0 +1,56 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    max-width: 1440px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  body,
+  button,
+  input,
+  textarea {
+    @apply text-normal;
+  }
+
+  h1,
+  h2,
+  h3 {
+    @apply font-bold;
+  }
+
+  ul {
+    list-style: none;
+    padding: none;
+  }
+
+  a {
+    color: none;
+    text-decoration: none;
+  }
+
+  button {
+    cursor: pointer;
+    border: none;
+    outline: none;
+    @apply font-medium;
+  }
+
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+}

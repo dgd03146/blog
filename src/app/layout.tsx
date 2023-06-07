@@ -1,6 +1,8 @@
+import { Montserrat } from '@next/font/google'
+
+import Header from '@/components/organisms/header'
 import StyledComponentsRegistry from '@/lib/registry'
-import GlobalStyles from '@/styles/GlobalStyles'
-import { Montserrat } from 'next/font/google'
+import '@/styles/global.css'
 
 export const metadata = {
   title: 'Create Next App',
@@ -19,11 +21,17 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en" className={montserrat.className}>
-      <body>
-        <GlobalStyles />
-        <StyledComponentsRegistry>{children}</StyledComponentsRegistry>
-      </body>
-    </html>
+    <StyledComponentsRegistry>
+      <html lang="en" className={montserrat.className}>
+        <body>
+          <main className="h-screen w-full">
+            <Header />
+          
+              <div className="px-8 foldable:px-16 laptop:px-32">{children}</div>
+       
+          </main>
+        </body>
+      </html>
+    </StyledComponentsRegistry>
   )
 }

@@ -14,13 +14,18 @@
     "isolatedModules": true,
     "jsx": "preserve",
     "incremental": true,
+
     "plugins": [
       {
         "name": "next"
       }
     ],
+    "baseUrl": "./",
     "paths": {
       "@/*": ["./src/*"]
+      // "@atoms/*": ["components/atoms/*"],
+      // "@molecules/*": ["components/molecules/*"],
+      // "@organisms/*": ["components/organisms/*"]
     }
   },
   "include": [
