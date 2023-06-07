@@ -1,20 +1,20 @@
 import React from 'react'
 import tw from 'twin.macro'
 import Divider from '@/components/atoms/divider'
-import { BigText } from '@/components/atoms/texts'
+import { Heading1 } from '@/components/atoms/texts'
 
 const PageLayout = ({
   text,
   children,
 }: {
-  text: 'Home' | 'About' | 'Articles' | 'Projects' | 'Contact'
+  text: 'Home' | 'About' | 'Blog' | 'Projects' | 'Contact'
   children: React.ReactNode
 }) => {
   return (
     <div tw="py-6">
-      <BigText text={text} />
+      <Heading1 text={text} />
       <Divider />
-      {children}
+      <div tw="py-10">{children}</div>
     </div>
   )
 }
