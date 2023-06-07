@@ -7,20 +7,20 @@ const TransitionEffect = () => {
   return (
     <>
       <motion.div
-        tw="fixed top-0 bottom-0 right-full w-screen h-screen z-30 bg-[#9d0208]"
+        tw="fixed top-0 bottom-0 right-full w-screen h-screen z-30 bg-primary"
         initial={{ x: '100%', width: '100%' }}
         animate={{ x: '0%', width: '0%' }}
         exit={{ x: ['0%', '100%'], width: ['0%', '100%'] }}
         transition={{ duration: 0.8, ease: 'easeInOut' }}
       />
       <motion.div
-        tw="fixed top-0 bottom-0 right-full w-screen h-screen z-20 bg-[#e85d04]"
+        tw="fixed top-0 bottom-0 right-full w-screen h-screen z-20 bg-primaryOrange"
         initial={{ x: '100%', width: '100%' }}
         animate={{ x: '0%', width: '0%' }}
         transition={{ delay: 0.2, duration: 0.8, ease: 'easeInOut' }}
       />
       <motion.div
-        tw="fixed top-0 bottom-0 right-full w-screen h-screen z-10 bg-[#ffba08]"
+        tw="fixed top-0 bottom-0 right-full w-screen h-screen z-10 bg-primaryYellow"
         initial={{ x: '100%', width: '100%' }}
         animate={{ x: '0%', width: '0%' }}
         transition={{ delay: 0.4, duration: 0.8, ease: 'easeInOut' }}

@@ -26,9 +26,8 @@ export default function RootLayout({
         <body>
           <main className="h-screen w-full">
             <Header />
-          
-              <div className="px-8 foldable:px-16 laptop:px-32">{children}</div>
-       
+
+            <div className="px-8 foldable:px-16 laptop:px-32">{children}</div>
           </main>
         </body>
       </html>
