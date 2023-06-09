@@ -2,12 +2,12 @@
 
 import React from 'react'
 import tw from 'twin.macro'
-import ContactButton from '@/components/atoms/buttons/contactButton'
-import { Heading3 } from '@/components/atoms/texts'
-import SocialNavigation from '@/components/molecules/navigations/socialNavigation'
-import TransitionEffect from '@/components/molecules/transitionEffect'
-import ImageSection from '@/components/organisms/imageSection'
-import TechStackSection from '@/components/organisms/techStackSection'
+import TechStackSection from '@/components/about/organisms/techStackSection'
+import ContactButton from '@/components/common/atoms/contactButton'
+import { Heading3 } from '@/components/common/atoms/texts'
+import TransitionEffect from '@/components/common/molecules/transitionEffect'
+import SocialNavigation from '@/components/home/molecules/socialNavigation'
+import ImageSection from '@/components/home/organisms/imageSection'
 import { ABOUT_ME } from '@/constants/about'
 
 const About = () => {

@@ -1,6 +1,6 @@
 'use client'
 
-import PageLayout from '@/components/molecules/pageLayout'
+import PageLayout from '@/components/common/molecules/pageLayout'
 
 export default function AboutLayout({
   children,
