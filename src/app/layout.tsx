@@ -1,6 +1,6 @@
 import { Montserrat } from '@next/font/google'
 
-import Header from '@/components/organisms/header'
+import Header from '@/components/common/organisms/header'
 import StyledComponentsRegistry from '@/lib/registry'
 import '@/styles/global.css'
 
@@ -26,7 +26,6 @@ export default function RootLayout({
         <body>
           <main className="h-screen w-full">
             <Header />
-
             <div className="px-8 foldable:px-16 laptop:px-32">{children}</div>
           </main>
         </body>
