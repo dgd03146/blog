@@ -1,8 +1,9 @@
 import React from 'react'
-import BlogTemplate from '@/components/blog/templates/blogTemplate'
+
+import PostsSection from '@/components/blog/organisms/postsSection'
 
 const Blog = () => {
-  return <BlogTemplate />
+  return <PostsSection />
 }
 
 export default Blog

@@ -1,13 +1,7 @@
 import React from 'react'
-import TransitionEffect from '@/components/common/molecules/transitionEffect'
 
 const Contact = () => {
-  return (
-    <>
-      <TransitionEffect />
-      Contact
-    </>
-  )
+  return <>Contact</>
 }
 
 export default Contact

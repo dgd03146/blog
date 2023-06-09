@@ -3,7 +3,7 @@ import tw from 'twin.macro'
 import { Heading2 } from '@/components/common/atoms/texts'
 import { TECH_STACK } from '@/constants/techStacks'
 
-const TechStackSection = () => {
+const TechStacks = () => {
   return (
     <div tw="tablet:flex items-center gap-x-8 justify-around">
       <Heading2 text="Tech Stack" />
@@ -23,4 +23,4 @@ const TechStackSection = () => {
   )
 }
 
-export default TechStackSection
+export default TechStacks
