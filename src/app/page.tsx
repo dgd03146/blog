@@ -1,11 +1,7 @@
-import HomeTemplate from '@/components/home/templates/homeTemplate'
+import HeroSection from '@/components/home/organisms/heroSection'
 
 export default function Page() {
   //  TODO: Metadata 추가
 
-  return (
-    <>
-      <HomeTemplate />
-    </>
-  )
+  return <HeroSection />
 }

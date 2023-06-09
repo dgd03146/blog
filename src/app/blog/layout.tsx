@@ -1,5 +1,3 @@
-'use client'
-
 import PageLayout from '@/components/common/molecules/pageLayout'
 
 export default function BlogLayout({
@@ -7,5 +5,9 @@ export default function BlogLayout({
 }: {
   children: React.ReactNode
 }) {
-  return <PageLayout text="Blog" children={children} />
+  return (
+    <>
+      <PageLayout text="Blog" children={children} />
+    </>
+  )
 }
