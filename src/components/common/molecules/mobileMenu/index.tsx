@@ -1,8 +1,8 @@
 import React from 'react'
 import { motion } from 'framer-motion'
 import tw from 'twin.macro'
-import LanguageMenu from '@/components/common/molecules/languageMenu'
 import Navigation from '@/components/common/molecules/headerNavigation'
+import LanguageMenu from '@/components/common/molecules/languageMenu'
 
 type TProps = {
   handleMenu: () => void
