@@ -21,8 +21,8 @@ const LanguageMenu = ({ ismobile }: TProps) => {
         !ismobile && tw`hidden laptop:flex `,
       ]}
     >
-      <Button text="KOR" cssStyle="text-normal" />
-      <Button text="ENG" cssStyle="text-normal" />
+      <Button className="text-normal">{'KOR'}</Button>
+      <Button className="text-normal">{'ENG'}</Button>
       <ThemeButton isDarkMode={isDarkMode} handleTheme={handleTheme} />
     </div>
   )

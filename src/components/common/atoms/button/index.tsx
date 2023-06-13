@@ -1,19 +1,9 @@
-import { ReactNode } from 'react'
+import { PropsWithChildren, ButtonHTMLAttributes } from 'react'
 
-type TProps = {
-  cssStyle?: string
-  text?: string
-  onClick?: () => void
-  children?: ReactNode
-}
+type Props = { size?: 'small' } & ButtonHTMLAttributes<HTMLButtonElement>
 
-const Button = ({ cssStyle, text, onClick, children }: TProps) => {
-  return (
-    <button className={`${cssStyle}`} onClick={onClick}>
-      {text}
-      {children}
-    </button>
-  )
+const Button = ({ size, children, ...props }: PropsWithChildren<Props>) => {
+  return <button {...props}>{children}</button>
 }
 
 export default Button

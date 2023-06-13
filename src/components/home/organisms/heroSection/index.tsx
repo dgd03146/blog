@@ -2,7 +2,6 @@
 
 import tw from 'twin.macro'
 import ImageSection from '@/components/common/molecules/imageSection'
-import TransitionEffect from '@/components/common/molecules/transitionEffect'
 import ContactSection from '@/components/home/molecules/contactSection'
 import ProfileHeading from '@/components/home/molecules/profileHeading'
 import SocialNavigation from '@/components/home/molecules/socialNavigation'

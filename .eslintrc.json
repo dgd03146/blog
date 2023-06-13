@@ -25,6 +25,9 @@
     "plugin:import/recommended"
   ],
   "rules": {
+    "@typescript-eslint/lines-between-class-members": "off",
+    "prefer-destructuring": "off",
+    "react/jsx-props-no-spreading": "off",
     "react/no-children-prop": "off",
     "@typescript-eslint/no-var-requires": "off",
     "import/no-unresolved": ["error", { "ignore": [".jpg$"] }],

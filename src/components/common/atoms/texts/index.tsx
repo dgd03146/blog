@@ -1,13 +1,16 @@
 import React, { ReactNode } from 'react'
 import tw from 'twin.macro'
 
+// FIXME: 없애기
+
 type TProps = {
+  key?: string
   text: string
   children?: ReactNode
   cssStyle?: string
 }
 
-export const BigText = ({ text, children, cssStyle }: TProps) => {
+export const BigText = ({ text, children, cssStyle, key }: TProps) => {
   return (
     <h1 className={`${cssStyle} text-big`}>
       {text}
@@ -16,7 +19,7 @@ export const BigText = ({ text, children, cssStyle }: TProps) => {
   )
 }
 
-export const Heading1 = ({ text, children, cssStyle }: TProps) => {
+export const Heading1 = ({ text, children, cssStyle, key }: TProps) => {
   return (
     <h1 className={`${cssStyle} break-words break-keep text-h1`}>
       {text}
@@ -25,7 +28,7 @@ export const Heading1 = ({ text, children, cssStyle }: TProps) => {
   )
 }
 
-export const Heading2 = ({ text, children, cssStyle }: TProps) => {
+export const Heading2 = ({ text, children, cssStyle, key }: TProps) => {
   return (
     <h2 className={`${cssStyle} break-words break-keep text-h2`}>
       {text}
@@ -34,7 +37,7 @@ export const Heading2 = ({ text, children, cssStyle }: TProps) => {
   )
 }
 
-export const Heading3 = ({ text, children, cssStyle }: TProps) => {
+export const Heading3 = ({ text, children, cssStyle, key }: TProps) => {
   return (
     <h3 className={`${cssStyle} break-words break-keep  text-h3 font-medium`}>
       {text}
@@ -43,7 +46,7 @@ export const Heading3 = ({ text, children, cssStyle }: TProps) => {
   )
 }
 
-export const Paragraph = ({ text, children, cssStyle }: TProps) => {
+export const Paragraph = ({ text, children, cssStyle, key }: TProps) => {
   return (
     <p className={`${cssStyle} break-words break-keep text-normal `}>
       {text}

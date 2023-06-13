@@ -2,18 +2,25 @@
 
 import React from 'react'
 import tw from 'twin.macro'
-
+import { TPost } from '@/types/post'
 import Post from '../../molecules/post'
 
-const PostsSection = () => {
+type TProps = {
+  posts: TPost[]
+}
+
+const PostsSection = ({ posts }: TProps) => {
   return (
     <>
-      <ul tw="grid grid-cols-1 gap-x-6 gap-y-6 desktop:grid-cols-2">
-        {/* TODO:배열 맵 돌려야함 */}
-        <Post />
+      <ul>
+        {posts.map((post) => (
+          <Post key={post.id} post={post} />
+        ))}
       </ul>
     </>
   )
 }
+
+// FIXME: 적용할지 고려해보기 grid grid-cols-1 gap-x-6 gap-y-6 desktop:grid-cols-2
 
 export default PostsSection

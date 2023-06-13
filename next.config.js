@@ -3,6 +3,9 @@ const withTwin = require('./withTwin')
 const nextConfig = withTwin({
   reactStrictMode: true,
   swcMinify: true,
+  images: {
+    domains: ['www.notion.so'],
+  },
 })
 
 module.exports = nextConfig
