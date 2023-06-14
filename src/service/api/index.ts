@@ -1,7 +1,8 @@
-import Axios, { AxiosError, AxiosResponse, HttpStatusCode } from 'axios'
+import Axios, { HttpStatusCode } from 'axios'
 
 import { getApiEndPoint } from '@/envs'
 
+// FIXME: Axios가 굳이 필요없음 왜냐면 노션 라이브러리 사용하니까
 export const createApi = () => {
   const NOTION_TOKEN = process.env.NOTION_TOKEN
 

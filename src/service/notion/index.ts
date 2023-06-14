@@ -1,64 +1,65 @@
+import { cache } from 'react'
 import { Client } from '@notionhq/client'
 import { NotionToMarkdown } from 'notion-to-md'
-import { TPost } from '@/types/blog'
+import { TPostPage } from '@/types/post'
+import { pageToPostTransformer } from '@/utils/pageToPostTransformer'
 
-// TODO: 지울지 생각해보자
-export class NotionService {
-  client: Client
-  n2m: NotionToMarkdown
+const BLOG_DATABASE_ID = process.env.NOTION_BLOG_DATABASE_ID ?? ''
 
-  constructor() {
-    this.client = new Client({ auth: process.env.NOTION_TOKEN })
-    this.n2m = new NotionToMarkdown({ notionClient: this.client })
-  }
+const notion = new Client({
+  auth: process.env.NOTION_TOKEN,
+})
+const n2m = new NotionToMarkdown({ notionClient: notion })
 
-  async getPublishedBlogPosts(): Promise<TPost[]> {
-    const database = process.env.NOTION_BLOG_DATABASE_ID ?? ''
+// 동일하게 호출한 인자에 대해 cache 값을 사용함
+export const getAllPosts = cache(async () => {
+  const response = await notion.databases.query({
+    database_id: BLOG_DATABASE_ID,
+    filter: {
+      property: 'Published',
+      checkbox: {
+        equals: true,
+      },
+    },
+    sorts: [
+      {
+        property: 'Created',
+        direction: 'descending',
+      },
+    ],
+  })
 
-    const response = await this.client.databases.query({
-      database_id: database,
-      filter: {
-        property: 'Published',
-        checkbox: {
-          equals: true,
+  return response.results.map((res) => {
+    return pageToPostTransformer(res)
+  })
+})
+
+export const getPost = async (slug: string): Promise<TPostPage> => {
+  const response = await notion.databases.query({
+    database_id: BLOG_DATABASE_ID,
+    filter: {
+      property: 'Slug',
+      formula: {
+        string: {
+          equals: slug,
         },
       },
-      sorts: [
-        {
-          property: 'Created',
-          direction: 'descending',
-        },
-      ],
-    })
+    },
+  })
 
-    return response.results.map((res) => {
-      return NotionService.pageToPostTransformer(res)
-      // transform this response to a blog post
-    })
+  if (!response.results[0]) {
+    throw new Error('No results available')
   }
 
-  private static pageToPostTransformer(page: any): TPost {
-    let cover = page.cover
-    switch (cover.type) {
-      case 'file':
-        cover = page.cover.file
-        break
-      case 'external':
-        cover = page.cover.external.url
-        break
-      default:
-        // add default cover image if you want..
-        cover = ''
-    }
+  const page = response.results[0]
 
-    return {
-      id: page.id,
-      cover,
-      title: page.properties.Name.title[0].plain_text,
-      tags: page.properties.Tags.multi_select,
-      description: page.properties.Description.rich_text.plain_text,
-      date: page.properties.Updated.last_edited_time,
-      slug: page.properties.Slug.formula.string,
-    }
+  const mdBlocks = await n2m.pageToMarkdown(page.id)
+  const mdString = n2m.toMarkdownString(mdBlocks)
+  const markdown = mdString.parent
+  const post = pageToPostTransformer(page)
+
+  return {
+    post,
+    markdown,
   }
 }

@@ -1,4 +1,4 @@
-import { TPost } from '@/types/blog'
+import { TPost } from '@/types/post'
 
 export const pageToPostTransformer = (page: any): TPost => {
   let cover = page.cover
@@ -19,7 +19,7 @@ export const pageToPostTransformer = (page: any): TPost => {
     cover,
     title: page.properties.Name.title[0].plain_text,
     tags: page.properties.Tags.multi_select,
-    description: page.properties.Description.rich_text.plain_text,
+    description: page.properties.Description.rich_text[0]?.plain_text,
     date: page.properties.Updated.last_edited_time,
     slug: page.properties.Slug.formula.string,
   }

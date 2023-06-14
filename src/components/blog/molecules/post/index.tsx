@@ -16,10 +16,12 @@ const localizedFormat = require('dayjs/plugin/localizedFormat')
 
 dayjs.extend(localizedFormat)
 
+// TODO: ATOMIC 디자인 나눠야함
+
 const Post = ({ post, key }: TProps) => {
   return (
-    <PostContainer tw="mb-6">
-      <Link href={`/post${post.slug}`}>
+    <PostContainer tw="mb-6" key={key}>
+      <Link href={`blog/${post.slug}`}>
         <div tw="flex justify-between items-center mb-4 gap-x-4">
           <div tw="max-w-4xl">
             <div tw="flex gap-x-2 mb-4">

@@ -1,21 +1,12 @@
 import PostsSection from '@/components/blog/organisms/postsSection'
-import { NotionService } from '@/service/notion'
-import { getPosts } from '@/service/posts'
+import { getAllPosts } from '@/service/notion'
 
-// const getPosts = async () => {
-//   const notionService = new NotionService()
-//   const data = await notionService.getPublishedBlogPosts()
-//   return data
-// }
+export const revalidate = 21600
 
 const Blog = async () => {
-  const posts = await getPosts()
+  const posts = await getAllPosts()
 
-  return (
-    <>
-      <PostsSection posts={posts} />
-    </>
-  )
+  return <PostsSection posts={posts} />
 }
 
 export default Blog

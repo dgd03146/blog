@@ -11,13 +11,11 @@ type TProps = {
 
 const PostsSection = ({ posts }: TProps) => {
   return (
-    <>
-      <ul>
-        {posts.map((post) => (
-          <Post key={post.id} post={post} />
-        ))}
-      </ul>
-    </>
+    <ul>
+      {posts.map((post) => (
+        <Post key={post.id} post={post} />
+      ))}
+    </ul>
   )
 }
 

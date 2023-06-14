@@ -13,3 +13,8 @@ export type TPost = {
   description: string
   date: string
 }
+
+export type TPostPage = {
+  post: TPost
+  markdown: string
+}
