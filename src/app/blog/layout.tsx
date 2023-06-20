@@ -7,7 +7,7 @@ export default function BlogLayout({
 }) {
   return (
     <>
-      <PageLayout text="Blog" children={children} />
+      <PageLayout children={children} />
     </>
   )
 }

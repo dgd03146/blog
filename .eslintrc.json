@@ -25,6 +25,7 @@
     "plugin:import/recommended"
   ],
   "rules": {
+    "no-nested-ternary": "off",
     "global-require": "off",
     "react/no-unstable-nested-components": "off",
     "@typescript-eslint/lines-between-class-members": "off",

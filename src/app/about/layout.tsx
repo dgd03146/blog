@@ -7,7 +7,7 @@ export default function AboutLayout({
 }) {
   return (
     <>
-      <PageLayout text="About" children={children} />
+      <PageLayout children={children} />
     </>
   )
 }
