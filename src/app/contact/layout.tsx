@@ -7,7 +7,7 @@ export default function ContactLayout({
 }) {
   return (
     <>
-      <PageLayout text="Contact" children={children} />
+      <PageLayout children={children} />
     </>
   )
 }

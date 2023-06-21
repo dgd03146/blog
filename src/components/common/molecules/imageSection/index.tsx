@@ -43,7 +43,7 @@ const ImageWrapper = styled.div`
   border-radius: 50%;
   width: 400px;
   height: 400px;
-  background: #000000;
+  background: #f5f5f5;
   overflow: hidden;
   cursor: pointer;
 
@@ -51,7 +51,7 @@ const ImageWrapper = styled.div`
     content: '';
     position: absolute;
     inset: -10px 140px;
-    background: linear-gradient(315deg, #7d7d7d, #f5f5f5);
+    background: linear-gradient(315deg, #1b1b1b, #f5f5f5);
     transition: 0.5s;
     animation: ${animate} 4s linear infinite;
   }

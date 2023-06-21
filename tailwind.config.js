@@ -9,6 +9,16 @@ module.exports = {
   darkMode: 'class',
   theme: {
     extend: {
+      typography: {
+        DEFAULT: {
+          css: {
+            color: '#333',
+            a: {
+              color: '#1d85fd',
+            },
+          },
+        },
+      },
       fontFamily: {
         sans: ['var(--font-montserrat)'],
       },
@@ -16,6 +26,7 @@ module.exports = {
         dark: '#1b1b1b',
         gray: '#7D7D7D',
         light: '#f5f5f5',
+        blue: '#1d85fd',
         primary: '#9d0208',
         primaryYellow: '#ffba08',
         primaryOrange: '#e85d04',
@@ -48,5 +59,5 @@ module.exports = {
       },
     },
   },
-  plugins: [],
+  plugins: [require('@tailwindcss/typography')],
 }

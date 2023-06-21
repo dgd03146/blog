@@ -29,7 +29,7 @@ const Navigation = ({ handleMenu, ismobile }: TProps) => {
           css={[tw`relative`, ismobile && tw`text-center my-4`]}
         >
           {ismobile ? (
-            <Button text={title} onClick={() => handleNavigate(path)} />
+            <Button onClick={() => handleNavigate(path)}>{title}</Button>
           ) : (
             <Link href={path}>{title}</Link>
           )}

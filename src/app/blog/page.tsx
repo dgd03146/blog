@@ -1,9 +1,12 @@
-import React from 'react'
-
 import PostsSection from '@/components/blog/organisms/postsSection'
+import { getAllPosts } from '@/service/notion'
 
-const Blog = () => {
-  return <PostsSection />
+export const revalidate = 21600
+
+const Blog = async () => {
+  const posts = await getAllPosts()
+
+  return <PostsSection posts={posts} />
 }
 
 export default Blog

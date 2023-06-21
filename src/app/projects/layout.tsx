@@ -7,7 +7,7 @@ export default function ProjectsLayout({
 }) {
   return (
     <>
-      <PageLayout text="Projects" children={children} />
+      <PageLayout children={children} />
     </>
   )
 }

@@ -26,7 +26,12 @@ export default function RootLayout({
         <body>
           <main className="h-screen w-full">
             <Header />
-            <div className="px-8 foldable:px-16 laptop:px-32">{children}</div>
+            {/* x-8 foldable:px-16 laptop:px-32 */}
+            <div className="mx-auto max-w-[1140px]">
+              <div className="mx-auto w-[92%] max-w-[calc(100%-48px)]">
+                {children}
+              </div>
+            </div>
           </main>
         </body>
       </html>

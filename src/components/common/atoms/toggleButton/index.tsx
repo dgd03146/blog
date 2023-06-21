@@ -10,7 +10,7 @@ type TProps = {
 const ToggleButton = ({ handleMenu, isOpen }: TProps) => {
   return (
     <Button
-      cssStyle="flex-col justify-center items-center flex laptop:hidden"
+      className="flex flex-col items-center justify-center laptop:hidden"
       onClick={handleMenu}
     >
       <span
