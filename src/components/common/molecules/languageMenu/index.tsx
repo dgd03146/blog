@@ -4,7 +4,7 @@ import Button from '@/components/common/atoms/button'
 import ThemeButton from '@/components/common/atoms/themeButton'
 
 type TProps = {
-  ismobile: boolean
+  ismobile: 'true' | 'false'
 }
 
 const LanguageMenu = ({ ismobile }: TProps) => {
@@ -18,7 +18,7 @@ const LanguageMenu = ({ ismobile }: TProps) => {
     <div
       css={[
         tw`flex items-center hover:text-gray gap-x-2`,
-        !ismobile && tw`hidden laptop:flex `,
+        ismobile === 'false' && tw`hidden laptop:flex `,
       ]}
     >
       <Button className="text-normal">{'KOR'}</Button>

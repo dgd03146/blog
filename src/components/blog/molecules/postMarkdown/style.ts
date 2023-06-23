@@ -1,4 +1,3 @@
-import { ReactMarkdown } from 'react-markdown/lib/react-markdown'
 import { styled } from 'twin.macro'
 
 export const MarkDownWrapper = styled.article`
@@ -39,9 +38,7 @@ export const MarkDownWrapper = styled.article`
 
     margin: 0.75rem 0 1rem !important;
   }
-`
 
-export const ReactMarkDownWrapper = styled(ReactMarkdown)`
   pre {
     div {
       background-color: transparent !important;

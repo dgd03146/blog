@@ -8,7 +8,7 @@ import Underline from './style'
 
 type TProps = {
   handleMenu: () => void
-  ismobile: boolean
+  ismobile: 'true' | 'false'
 }
 
 const Navigation = ({ handleMenu, ismobile }: TProps) => {
@@ -21,12 +21,14 @@ const Navigation = ({ handleMenu, ismobile }: TProps) => {
   }
 
   return (
-    <div css={[tw`gap-x-8 `, ismobile ? tw`` : tw`hidden laptop:flex`]}>
+    <div
+      css={[tw`gap-x-8 `, ismobile === 'true' ? tw`` : tw`hidden laptop:flex`]}
+    >
       {ROUTES.map(({ title, path }) => (
         <div
           key={path}
           className="group"
-          css={[tw`relative`, ismobile && tw`text-center my-4`]}
+          css={[tw`relative`, ismobile === 'true' && tw`text-center my-4`]}
         >
           {ismobile ? (
             <Button onClick={() => handleNavigate(path)}>{title}</Button>

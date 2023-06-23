@@ -1,5 +1,13 @@
-import PostPage from '@/components/blog/molecules/postPage'
+import { CSSProperties } from 'react'
+import { ReactMarkdown } from 'react-markdown/lib/react-markdown'
+import SyntaxHighlighter from 'react-syntax-highlighter/dist/esm/default-highlight'
+
+import { nord } from 'react-syntax-highlighter/dist/esm/styles/hljs'
+import remarkGfm from 'remark-gfm'
+import PostPage from '@/components/blog/organisms/postPage'
 import { getPost } from '@/service/notion'
+
+type CSSPropertiesMap = { [key: string]: CSSProperties }
 
 type TProps = {
   params: {
@@ -9,8 +17,36 @@ type TProps = {
 
 const BlogPost = async ({ params: { slug } }: TProps) => {
   const post = await getPost(slug)
+  const codeStyle: CSSPropertiesMap | undefined = nord
 
-  return <PostPage post={post} />
+  return (
+    <PostPage post={post}>
+      <ReactMarkdown
+        remarkPlugins={[remarkGfm]}
+        children={post.markdown}
+        components={{
+          code({ node, inline, className, children, ...props }) {
+            const match = /language-(\w+)/.exec(className || '')
+            return inline ? (
+              <code {...props}>{children}</code>
+            ) : match ? (
+              <SyntaxHighlighter
+                children={String(children).replace(/\n$/, '')}
+                language={match[1]}
+                PreTag="div"
+                {...props}
+                style={codeStyle}
+              />
+            ) : (
+              <code className={className} {...props}>
+                {children}
+              </code>
+            )
+          },
+        }}
+      />
+    </PostPage>
+  )
 }
 
 export default BlogPost
