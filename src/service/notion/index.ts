@@ -47,9 +47,11 @@ export const getPost = async (slug: string): Promise<TPostPage> => {
     },
   })
 
-  if (!response.results[0]) {
-    throw new Error('No results available')
-  }
+  // console.log(response.results)
+
+  // if (!response.results[0]) {
+  //   throw new Error('No results available')
+  // }
 
   const page = response.results[0]
 

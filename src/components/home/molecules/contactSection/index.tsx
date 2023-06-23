@@ -6,7 +6,7 @@ const ContactSection = () => {
   return (
     <div tw="flex gap-x-6 desktop:flex-col">
       <ContactButton text="Contact Me" href="/contact" />
-      <SocialNavigation ismobile={true} />
+      <SocialNavigation ismobile="true" />
     </div>
   )
 }

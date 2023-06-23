@@ -8,7 +8,9 @@ module.exports = function withTwin(nextConfig) {
     ...nextConfig,
     webpack(config, options) {
       const { dev, isServer } = options
+      // eslint-disable-next-line no-param-reassign
       config.module = config.module || {}
+      // eslint-disable-next-line no-param-reassign
       config.module.rules = config.module.rules || []
 
       const patchedDefaultLoaders = options.defaultLoaders.babel
@@ -41,6 +43,7 @@ module.exports = function withTwin(nextConfig) {
       })
 
       if (!isServer) {
+        // eslint-disable-next-line no-param-reassign
         config.resolve.fallback = {
           ...(config.resolve.fallback || {}),
           fs: false,

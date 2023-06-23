@@ -24,7 +24,7 @@ const AboutSection = () => {
           ))}
           <div tw="flex items-center gap-x-4">
             <ContactButton text="View Resume" href="/resume" />
-            <SocialNavigation ismobile={true} isabout={true} />
+            <SocialNavigation ismobile="true" isabout="true" />
           </div>
         </div>
       </div>

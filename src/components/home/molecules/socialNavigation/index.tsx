@@ -4,8 +4,8 @@ import tw from 'twin.macro'
 import { StyledLink } from './style'
 
 type TProps = {
-  ismobile: boolean
-  isabout?: boolean
+  ismobile: 'true' | 'false'
+  isabout?: 'true' | 'false'
 }
 
 // TODO: 실제 링크로 바꾸기
@@ -19,10 +19,10 @@ const SocialNavigation = ({ ismobile, isabout }: TProps) => {
   return (
     <div
       css={[
-        ismobile
+        ismobile === 'true'
           ? tw`flex items-center gap-x-4 desktop:hidden`
           : tw`basis-[20] hidden desktop:block`,
-        isabout && tw`desktop:flex my-8 gap-x-4 items-center`,
+        isabout === 'true' && tw`desktop:flex my-8 gap-x-4 items-center`,
       ]}
     >
       {SOCIAL_LINKS.map((link) => (

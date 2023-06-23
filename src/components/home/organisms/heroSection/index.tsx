@@ -10,7 +10,7 @@ const HeroSection = () => {
   return (
     <>
       <div tw="flex items-center justify-center text-dark w-full laptop:min-h-[calc(100vh - 180px)] py-8 gap-x-20 flex-col-reverse  desktop:flex-row desktop:justify-between">
-        <SocialNavigation ismobile={false} />
+        <SocialNavigation ismobile="false" />
         <div tw="basis-[40]">
           <ProfileHeading />
           <ContactSection />
