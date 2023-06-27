@@ -19,7 +19,7 @@ dayjs.extend(localizedFormat)
 
 const Post = ({ post, key }: TProps) => {
   return (
-    <PostContainer tw="mb-6" key={key}>
+    <PostContainer key={key}>
       <Link href={ROUTE_SLUG('blog', post.slug)}>
         <div tw="flex flex-col-reverse justify-between w-full items-center mb-4 gap-x-4 laptop:flex-row">
           <div tw="w-full max-w-[455px] laptop:max-w-4xl laptop:w-fit">
@@ -28,7 +28,7 @@ const Post = ({ post, key }: TProps) => {
             <h3 tw="font-medium">{post.description}</h3>
             <p tw="text-[14px] text-gray">{dayjs(post.date).format('LL')}</p>
           </div>
-          <ImageWrapper tw="mb-6 w-full ml-0 h-[250px] tablet:h-[300px] laptop:ml-[3rem] laptop:mb-0 laptop:w-[240px] laptop:h-[240px]">
+          <ImageWrapper tw="mb-6 w-full ml-0 h-[250px] tablet:h-[300px] laptop:ml-[3rem] laptop:mb-0 laptop:w-[300px] laptop:h-[250px]">
             <Image src={post.cover} alt="cover" fill />
           </ImageWrapper>
         </div>

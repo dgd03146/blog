@@ -1,10 +1,10 @@
 import React from 'react'
-import ProjectsSection from '@/components/projects/organism/projectsSection'
+import Projects from '@/components/projects/organism/projects'
 import { getAllPosts } from '@/service/notion'
 
-const Porfolio = async () => {
+const ProjectsPage = async () => {
   const posts = await getAllPosts()
-  return <ProjectsSection projects={posts} />
+  return <Projects projects={posts} />
 }
 
-export default Porfolio
+export default ProjectsPage
