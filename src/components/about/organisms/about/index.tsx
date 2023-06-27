@@ -1,15 +1,14 @@
 'use client'
 
 import React from 'react'
-import tw from 'twin.macro'
+import {} from 'twin.macro'
 import ContactButton from '@/components/common/atoms/contactButton'
-import { Heading3 } from '@/components/common/atoms/texts'
-import ImageSection from '@/components/common/molecules/imageSection'
 import SocialNavigation from '@/components/home/molecules/socialNavigation'
 import { ABOUT_ME } from '@/constants/about'
+import ImageSection from '../../molecules/imageSection'
 import TechStacks from '../../molecules/techStacks'
 
-const AboutSection = () => {
+const About = () => {
   return (
     <>
       <div tw="flex gap-x-10 flex-col items-center laptop:flex-row">
@@ -19,12 +18,12 @@ const AboutSection = () => {
         <div tw="flex-1 flex flex-col justify-center">
           {ABOUT_ME.map((it) => (
             <div key={it}>
-              <Heading3 text={it} />
+              <h3>{it}</h3>
             </div>
           ))}
           <div tw="flex items-center gap-x-4">
             <ContactButton text="View Resume" href="/resume" />
-            <SocialNavigation ismobile="true" isabout="true" />
+            <SocialNavigation />
           </div>
         </div>
       </div>
@@ -33,4 +32,4 @@ const AboutSection = () => {
   )
 }
 
-export default AboutSection
+export default About

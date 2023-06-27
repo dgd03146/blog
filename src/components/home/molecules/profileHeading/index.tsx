@@ -1,12 +1,11 @@
-import { Heading1, Heading2, Heading3 } from '@/components/common/atoms/texts'
-
 const ProfileHeading = () => {
+  // FIXME: 지울지 말지 고려할것
   return (
     <>
-      <Heading1 text="GeoJung Im" />
-      <Heading2 text="Frontend Developer" />
-      <Heading3 text="I'm a creative developer based in London." />
-      <Heading3 text="Passionate about continuous learning." />
+      <h1>GeoJung Im</h1>
+      <h2>Frontend Developer</h2>
+      <h3>I'm a creative developer based in London.</h3>
+      <h3>Passionate about continuous learning.</h3>
     </>
   )
 }

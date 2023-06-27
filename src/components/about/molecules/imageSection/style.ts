@@ -1,32 +1,5 @@
-import Image from 'next/image'
-import Link from 'next/link'
 import { keyframes } from 'styled-components'
-import tw, { styled } from 'twin.macro'
-import { Heading2 } from '@/components/common/atoms/texts'
-
-const ImageSection = () => {
-  return (
-    <div tw="basis-[40] hidden mobile:block mobile:mb-8">
-      <ImageWrapper>
-        <Content>
-          <Image
-            src={'/assets/images/myProfile.jpg'}
-            alt="Profile"
-            width={400}
-            height={400}
-            priority
-          />
-          <Heading2 text="Frontend Developer">
-            <br /> <span>Who value the service</span>
-          </Heading2>
-          <Link href={'/'}>Hire me</Link>
-        </Content>
-      </ImageWrapper>
-    </div>
-  )
-}
-
-export default ImageSection
+import { styled } from 'twin.macro'
 
 const animate = keyframes`
    0% {
@@ -38,12 +11,12 @@ const animate = keyframes`
    }
 `
 
-const ImageWrapper = styled.div`
+export const ImageWrapper = styled.div`
   position: relative;
   border-radius: 50%;
   width: 400px;
   height: 400px;
-  background: #f5f5f5;
+  /* background: #f5f5f5; */
   overflow: hidden;
   cursor: pointer;
 
@@ -51,7 +24,7 @@ const ImageWrapper = styled.div`
     content: '';
     position: absolute;
     inset: -10px 140px;
-    background: linear-gradient(315deg, #1b1b1b, #f5f5f5);
+    background: linear-gradient(315deg, #a4253b, #053a86);
     transition: 0.5s;
     animation: ${animate} 4s linear infinite;
   }
@@ -76,7 +49,7 @@ const ImageWrapper = styled.div`
   }
 `
 
-const Content = styled.div`
+export const Content = styled.div`
   position: absolute;
   inset: 30px;
   border: 6pxc solid white;

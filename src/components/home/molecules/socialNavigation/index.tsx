@@ -1,12 +1,7 @@
 import React from 'react'
 import { FaGithub, FaLinkedinIn, FaMediumM } from 'react-icons/fa'
-import tw from 'twin.macro'
+import {} from 'twin.macro'
 import { StyledLink } from './style'
-
-type TProps = {
-  ismobile: 'true' | 'false'
-  isabout?: 'true' | 'false'
-}
 
 // TODO: 실제 링크로 바꾸기
 const SOCIAL_LINKS = [
@@ -15,18 +10,11 @@ const SOCIAL_LINKS = [
   { href: '/medium', icon: <FaMediumM /> },
 ]
 
-const SocialNavigation = ({ ismobile, isabout }: TProps) => {
+const SocialNavigation = () => {
   return (
-    <div
-      css={[
-        ismobile === 'true'
-          ? tw`flex items-center gap-x-4 desktop:hidden`
-          : tw`basis-[20] hidden desktop:block`,
-        isabout === 'true' && tw`desktop:flex my-8 gap-x-4 items-center`,
-      ]}
-    >
+    <div tw="flex items-center gap-x-4">
       {SOCIAL_LINKS.map((link) => (
-        <StyledLink key={link.href} href={link.href} ismobile={ismobile}>
+        <StyledLink key={link.href} href={link.href}>
           {link.icon}
         </StyledLink>
       ))}

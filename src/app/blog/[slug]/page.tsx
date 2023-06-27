@@ -4,7 +4,7 @@ import SyntaxHighlighter from 'react-syntax-highlighter/dist/esm/default-highlig
 
 import { nord } from 'react-syntax-highlighter/dist/esm/styles/hljs'
 import remarkGfm from 'remark-gfm'
-import PostPage from '@/components/blog/organisms/postPage'
+import PostDetail from '@/components/blog/organisms/postDetail'
 import { getPost } from '@/service/notion'
 
 type CSSPropertiesMap = { [key: string]: CSSProperties }
@@ -20,7 +20,7 @@ const BlogPost = async ({ params: { slug } }: TProps) => {
   const codeStyle: CSSPropertiesMap | undefined = nord
 
   return (
-    <PostPage post={post}>
+    <PostDetail post={post}>
       <ReactMarkdown
         remarkPlugins={[remarkGfm]}
         children={post.markdown}
@@ -45,7 +45,7 @@ const BlogPost = async ({ params: { slug } }: TProps) => {
           },
         }}
       />
-    </PostPage>
+    </PostDetail>
   )
 }
 

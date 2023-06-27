@@ -1,15 +1,14 @@
 import Image from 'next/image'
-import tw from 'twin.macro'
-import { Heading2 } from '@/components/common/atoms/texts'
+import {} from 'twin.macro'
+
 import { TECH_STACK } from '@/constants/techStacks'
 
 const TechStacks = () => {
   return (
     <div tw="tablet:flex items-center gap-x-8 justify-around">
-      <Heading2 text="Tech Stack" />
+      <h2 tw="font-indie">Tech Stack</h2>
       <div tw="grid grid-cols-6 gap-4 mt-4 desktop:flex gap-x-8">
         {TECH_STACK.map((it) => (
-          // TODO: 스켈레톤 적용?
           <Image
             key={it.alt}
             src={it.src}
