@@ -1,6 +1,7 @@
 import { styled } from 'twin.macro'
 
 export const MarkDownWrapper = styled.article`
+  padding: 0;
   code {
     font-size: 0.875rem;
     line-height: 1.5rem;

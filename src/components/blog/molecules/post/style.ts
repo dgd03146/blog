@@ -1,7 +1,7 @@
 import tw, { styled } from 'twin.macro'
 
 export const PostContainer = styled.li`
-  padding: 1.5rem 2rem;
+  /* padding: 1.5rem 2rem; */
 
   h1 {
     font-size: 36px;

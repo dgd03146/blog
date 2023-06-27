@@ -5,16 +5,16 @@ import { TPost } from '@/types/post'
 import {} from 'twin.macro'
 import Project from '../../molecule/project'
 
-// FIXME: Projects로 바꿔야함
+// FIXME: TPost를 Projects로 바꿔야함
 
 type TProps = {
   projects: TPost[]
 }
 
-const ProjectsSection = ({ projects }: TProps) => {
+const Projects = ({ projects }: TProps) => {
   return (
     <section tw="flex justify-center max-w-[980px] mx-auto">
-      <ul tw="mx-auto min-w-fit laptop:min-w-[740px]">
+      <ul tw="flex flex-col mx-auto laptop:w-[92%] gap-y-[5rem]">
         {projects.map((project) => (
           <Project key={project.slug} project={project} />
         ))}
@@ -23,4 +23,4 @@ const ProjectsSection = ({ projects }: TProps) => {
   )
 }
 
-export default ProjectsSection
+export default Projects
