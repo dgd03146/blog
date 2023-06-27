@@ -1,5 +1,5 @@
 export const ABOUT_ME = [
-  'Hello! I am a skilled frontend developer who loves building websites.🚀',
-  'I am highly motivated and always on the lookout for new challenges and opportunities to improve my abilities.✨',
-  'I am passionate about continuous learning and growth as a developer.🌱',
+  'Hello! My name is GeoJung Im. I am a frontend developer based in London.',
+  'I am passionate about building websites and creating intuitive user experiences.',
+  'I am always motivated to find new challenges and ways to improve my abilities.',
 ]

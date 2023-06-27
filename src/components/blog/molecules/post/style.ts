@@ -21,7 +21,7 @@ export const PostContainer = styled.li`
   }
   &:hover {
     h1 {
-      ${tw`text-primary`}
+      ${tw`text-blue`}
     }
     img {
       /* transition: color 0.3s ease-in-out; */
@@ -45,8 +45,6 @@ export const PostContainer = styled.li`
 `
 
 export const ImageWrapper = styled.div`
-  border-radius: 14px;
-
   display: flex;
   align-items: center;
 

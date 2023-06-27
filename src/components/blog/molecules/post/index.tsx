@@ -2,7 +2,7 @@ import React from 'react'
 import dayjs from 'dayjs'
 import Image from 'next/image'
 import Link from 'next/link'
-import tw, { css } from 'twin.macro'
+import {} from 'twin.macro'
 import Tags from '@/components/common/molecules/tags'
 import { ROUTE_SLUG } from '@/constants/route'
 import { TPost } from '@/types/post'
@@ -28,7 +28,7 @@ const Post = ({ post, key }: TProps) => {
             <h3 tw="font-medium">{post.description}</h3>
             <p tw="text-[14px] text-gray">{dayjs(post.date).format('LL')}</p>
           </div>
-          <ImageWrapper tw="mb-6 w-full ml-0 h-[300px] laptop:ml-[3rem] laptop:mb-0 laptop:w-[240px] laptop:h-[240px]">
+          <ImageWrapper tw="mb-6 w-full ml-0 h-[250px] tablet:h-[300px] laptop:ml-[3rem] laptop:mb-0 laptop:w-[240px] laptop:h-[240px]">
             <Image src={post.cover} alt="cover" fill />
           </ImageWrapper>
         </div>

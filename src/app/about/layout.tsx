@@ -5,9 +5,5 @@ export default function AboutLayout({
 }: {
   children: React.ReactNode
 }) {
-  return (
-    <>
-      <PageLayout children={children} />
-    </>
-  )
+  return <PageLayout children={children} />
 }

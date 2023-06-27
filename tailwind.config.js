@@ -20,16 +20,21 @@ module.exports = {
         },
       },
       fontFamily: {
-        sans: ['var(--font-montserrat)'],
+        mont: ['var(--font-montserrat)'],
+        indie: ['var(--font-indie)'],
       },
       colors: {
         dark: '#1b1b1b',
         gray: '#7D7D7D',
         light: '#f5f5f5',
-        blue: '#1d85fd',
+        red: '#a4253b',
+        blue: '#053a86',
         primary: '#9d0208',
         primaryYellow: '#ffba08',
+        yellow: '#cab539',
+        green: '#11342d',
         primaryOrange: '#e85d04',
+        purple: '#61173c',
       },
       screens: {
         mobile: '360px', // @media (min-width: 360px)

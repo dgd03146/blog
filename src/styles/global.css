@@ -2,6 +2,14 @@
 @tailwind components;
 @tailwind utilities;
 
+@font-face {
+  font-family: 'Yasashii';
+  src: url('/assets/fonts/Yasashii.ttf') format('opentype');
+  font-weight: 400;
+  font-display: swap;
+  font-style: normal;
+}
+
 @layer base {
   * {
     margin: 0;
@@ -17,7 +25,7 @@
     /* FIXME: 바꿀지 생각해보기 */
     /* width: 70%;
     min-width: 1280px; */
-    /* max-width: 1280px; */
+    /* max-width: 980px; */
     /* max-width: 1440px; */
     margin-left: auto;
     margin-right: auto;

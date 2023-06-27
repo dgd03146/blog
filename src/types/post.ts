@@ -14,7 +14,7 @@ export type TPost = {
   date: string
 }
 
-export type TPostPage = {
+export type TPostDetail = {
   post: TPost
   markdown: string
 }

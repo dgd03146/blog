@@ -5,8 +5,8 @@ export const TECH_STACK = [
   { alt: 'javascript', src: '/assets/images/javascript.png' },
   { alt: 'redux', src: '/assets/images/redux.png' },
   { alt: 'reactQuery', src: '/assets/images/reactQuery.png' },
-  { alt: 'recoil', src: '/assets/images/recoil.png' },
+  // { alt: 'recoil', src: '/assets/images/recoil.png' },
   { alt: 'git', src: '/assets/images/git.png' },
   { alt: 'tailwind', src: '/assets/images/tailwind.png' },
-  { alt: 'emotion', src: '/assets/images/emotion.png' },
+  // { alt: 'emotion', src: '/assets/images/emotion.png' },
 ]

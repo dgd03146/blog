@@ -1,6 +1,6 @@
 import React from 'react'
 import { motion } from 'framer-motion'
-import tw from 'twin.macro'
+import {} from 'twin.macro'
 import Navigation from '@/components/common/molecules/headerNavigation'
 import LanguageMenu from '@/components/common/molecules/languageMenu'
 

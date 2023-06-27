@@ -22,7 +22,7 @@ const Navigation = ({ handleMenu, ismobile }: TProps) => {
 
   return (
     <div
-      css={[tw`gap-x-8 `, ismobile === 'true' ? tw`` : tw`hidden laptop:flex`]}
+      css={[tw`gap-x-8`, ismobile === 'true' ? tw`` : tw`hidden laptop:flex`]}
     >
       {ROUTES.map(({ title, path }) => (
         <div
@@ -31,7 +31,9 @@ const Navigation = ({ handleMenu, ismobile }: TProps) => {
           css={[tw`relative`, ismobile === 'true' && tw`text-center my-4`]}
         >
           {ismobile ? (
-            <Button onClick={() => handleNavigate(path)}>{title}</Button>
+            <Button tw="text-normal" onClick={() => handleNavigate(path)}>
+              {title}
+            </Button>
           ) : (
             <Link href={path}>{title}</Link>
           )}

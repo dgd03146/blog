@@ -1,7 +1,7 @@
 import { cache } from 'react'
 import { Client } from '@notionhq/client'
 import { NotionToMarkdown } from 'notion-to-md'
-import { TPostPage } from '@/types/post'
+import { TPostDetail } from '@/types/post'
 import { pageToPostTransformer } from '@/utils/pageToPostTransformer'
 
 const BLOG_DATABASE_ID = process.env.NOTION_BLOG_DATABASE_ID ?? ''
@@ -34,7 +34,7 @@ export const getAllPosts = cache(async () => {
   })
 })
 
-export const getPost = async (slug: string): Promise<TPostPage> => {
+export const getPost = async (slug: string): Promise<TPostDetail> => {
   const response = await notion.databases.query({
     database_id: BLOG_DATABASE_ID,
     filter: {
