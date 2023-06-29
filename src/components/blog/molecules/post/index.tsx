@@ -5,7 +5,7 @@ import Link from 'next/link'
 import {} from 'twin.macro'
 import Tags from '@/components/common/molecules/tags'
 import { ROUTE_SLUG } from '@/constants/route'
-import { TPost } from '@/types/post'
+import { TPost } from '@/components/blog/types/post'
 import { ImageWrapper, PostContainer } from './style'
 
 type TProps = {

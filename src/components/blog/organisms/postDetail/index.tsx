@@ -3,7 +3,7 @@
 import { PropsWithChildren } from 'react'
 
 import {} from 'twin.macro'
-import { TPostDetail } from '@/types/post'
+import { TPostDetail } from '@/components/blog/types/post'
 import PostDetailInfo from '../../molecules/postDetailInfo'
 import PostMarkdown from '../../molecules/postMarkdown'
 

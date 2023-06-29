@@ -2,7 +2,7 @@
 
 import React from 'react'
 import {} from 'twin.macro'
-import { TPost } from '@/types/post'
+import { TPost } from '@/components/blog/types/post'
 import Post from '../../molecules/post'
 
 type TProps = {

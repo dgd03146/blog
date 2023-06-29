@@ -3,7 +3,7 @@ import dayjs from 'dayjs'
 import Image from 'next/image'
 import { RiShareBoxFill, RiGithubFill } from 'react-icons/ri'
 import Tags from '@/components/common/molecules/tags'
-import { TPost } from '@/types/post'
+import { TPost } from '@/components/blog/types/post'
 import { ImageWrapper } from './style'
 import {} from 'twin.macro'
 
