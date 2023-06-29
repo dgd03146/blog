@@ -23,7 +23,7 @@ const PageLayout = ({ children }: { children?: React.ReactNode }) => {
             <Divider />
           </>
         )}
-        <div tw="py-10">{children}</div>
+        <div tw="py-10 w-[92%] max-w-[92%] mx-auto">{children}</div>
       </div>
     </>
   )

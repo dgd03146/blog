@@ -5,7 +5,7 @@ export const ImageWrapper = styled.div`
 
   display: flex;
   align-items: center;
-  width: full;
+  width: 100%;
   /* ${tw`w-[92%] tablet:w-[40%]`} */
 
   img {

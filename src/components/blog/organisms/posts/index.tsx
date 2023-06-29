@@ -11,8 +11,8 @@ type TProps = {
 
 const Posts = ({ posts }: TProps) => {
   return (
-    <section tw="flex justify-center max-w-[980px] mx-auto">
-      <ul tw="flex flex-col mx-auto min-w-fit laptop:w-[92%] gap-y-[3rem]">
+    <section tw="flex justify-center mx-auto">
+      <ul tw="flex flex-col w-full gap-y-[3rem]">
         {posts.map((post) => (
           <Post key={post.slug} post={post} />
         ))}

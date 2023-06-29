@@ -13,8 +13,8 @@ type TProps = {
 
 const Projects = ({ projects }: TProps) => {
   return (
-    <section tw="flex justify-center max-w-[980px] mx-auto">
-      <ul tw="flex flex-col mx-auto laptop:w-[92%] gap-y-[5rem]">
+    <section tw="flex justify-center mx-auto">
+      <ul tw="flex flex-col gap-y-[5rem]">
         {projects.map((project) => (
           <Project key={project.slug} project={project} />
         ))}
