@@ -1,6 +1,6 @@
 import {} from 'twin.macro'
 import ContactButton from '@/components/common/atoms/contactButton'
-import SocialNavigation from '@/components/home/molecules/socialNavigation'
+import SocialNavigation from '@/components/common/molecules/socialNavigation'
 
 const ContactSection = () => {
   return (

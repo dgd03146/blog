@@ -9,10 +9,13 @@ const Logo = () => {
   return (
     <MotionLink
       href="/"
-      tw="font-bold text-h2 hidden laptop:flex font-indie"
+      tw="font-bold text-[1.8rem] hidden laptop:flex font-indie"
       whileHover={LogoColor}
     >
-      JungLog
+      jungLog
+      {/* <span tw="text-red">geo</span>
+      <span tw="text-blue">jung</span>
+      <span tw="text-yellow">im</span> */}
     </MotionLink>
   )
 }

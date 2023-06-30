@@ -78,4 +78,14 @@
     max-width: 100%;
     height: auto;
   }
+
+  input {
+    border: none;
+    outline: none;
+  }
+  textarea {
+    outline: none;
+    border: none;
+    resize: none;
+  }
 }

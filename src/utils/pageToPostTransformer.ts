@@ -1,4 +1,4 @@
-import { TPost } from '@/types/post'
+import { TPost } from '@/components/blog/types/post'
 
 export const pageToPostTransformer = (page: any): TPost => {
   let cover = page.cover

@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion'
 import { BsToggleOff, BsToggleOn } from 'react-icons/bs'
-import tw from 'twin.macro'
+import {} from 'twin.macro'
 
 type TProps = {
   isDarkMode: boolean

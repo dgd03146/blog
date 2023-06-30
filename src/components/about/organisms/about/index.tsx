@@ -3,14 +3,14 @@
 import React from 'react'
 import {} from 'twin.macro'
 import ContactButton from '@/components/common/atoms/contactButton'
-import SocialNavigation from '@/components/home/molecules/socialNavigation'
+import SocialNavigation from '@/components/common/molecules/socialNavigation'
 import { ABOUT_ME } from '@/constants/about'
 import ImageSection from '../../molecules/imageSection'
 import TechStacks from '../../molecules/techStacks'
 
 const About = () => {
   return (
-    <>
+    <section tw="max-w-[980px]">
       <div tw="flex gap-x-10 flex-col items-center laptop:flex-row">
         <div tw="flex items-center flex-col w-[50%]">
           <ImageSection />
@@ -28,7 +28,7 @@ const About = () => {
         </div>
       </div>
       <TechStacks />
-    </>
+    </section>
   )
 }
 

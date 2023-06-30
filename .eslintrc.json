@@ -25,6 +25,14 @@
     "plugin:import/recommended"
   ],
   "rules": {
+    "jsx-a11y/label-has-associated-control": [
+      2,
+      {
+        "assert": "either" // either check for `htmlFor` or `nesting`
+      }
+    ],
+    "jsx-a11y/no-static-element-interactions": "off",
+    "jsx-a11y/click-events-have-key-events": "off",
     "no-nested-ternary": "off",
     "global-require": "off",
     "react/no-unstable-nested-components": "off",

@@ -1,13 +1,14 @@
 import { cache } from 'react'
 import { Client } from '@notionhq/client'
 import { NotionToMarkdown } from 'notion-to-md'
-import { TPostDetail } from '@/types/post'
+import { TPostDetail } from '@/components/blog/types/post'
+import { getBlogDatabaseId, getNotionToken } from '@/envs'
 import { pageToPostTransformer } from '@/utils/pageToPostTransformer'
 
-const BLOG_DATABASE_ID = process.env.NOTION_BLOG_DATABASE_ID ?? ''
+const BLOG_DATABASE_ID = getBlogDatabaseId()
 
 const notion = new Client({
-  auth: process.env.NOTION_TOKEN,
+  auth: getNotionToken(),
 })
 const n2m = new NotionToMarkdown({ notionClient: notion })
 
