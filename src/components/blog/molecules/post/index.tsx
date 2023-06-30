@@ -3,9 +3,9 @@ import dayjs from 'dayjs'
 import Image from 'next/image'
 import Link from 'next/link'
 import {} from 'twin.macro'
+import { TPost } from '@/components/blog/types/post'
 import Tags from '@/components/common/molecules/tags'
 import { ROUTE_SLUG } from '@/constants/route'
-import { TPost } from '@/components/blog/types/post'
 import { ImageWrapper, PostContainer } from './style'
 
 type TProps = {

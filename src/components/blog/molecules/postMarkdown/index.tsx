@@ -1,7 +1,7 @@
 'use client'
 
 import { ReactNode } from 'react'
-import tw from 'twin.macro'
+import {} from 'twin.macro'
 import { MarkDownWrapper } from './style'
 
 const PostMarkdown = ({ children }: { children: ReactNode }) => {

@@ -1,4 +1,4 @@
-import tw, { styled } from 'twin.macro'
+import { styled } from 'twin.macro'
 
 export const ImageWrapper = styled.div`
   border-radius: 14px;
@@ -6,7 +6,6 @@ export const ImageWrapper = styled.div`
   display: flex;
   align-items: center;
   width: 100%;
-  /* ${tw`w-[92%] tablet:w-[40%]`} */
 
   img {
     width: 100%;

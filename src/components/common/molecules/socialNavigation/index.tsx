@@ -3,12 +3,12 @@ import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import { FaGithub, FaLinkedinIn, FaMediumM } from 'react-icons/fa'
 import tw from 'twin.macro'
+import { GITHUB_URL, LINKEDIN_URL, MIDEUM_URL } from '@/constants/socialLink'
 
-// TODO: 실제 링크로 바꾸기
 const SOCIAL_LINKS = [
-  { href: '/github', icon: <FaGithub /> },
-  { href: '/linkedin', icon: <FaLinkedinIn /> },
-  { href: '/medium', icon: <FaMediumM /> },
+  { href: GITHUB_URL, icon: <FaGithub /> },
+  { href: LINKEDIN_URL, icon: <FaLinkedinIn /> },
+  { href: MIDEUM_URL, icon: <FaMediumM /> },
 ]
 
 const SocialNavigation = () => {

@@ -1,9 +1,7 @@
 import {} from 'twin.macro'
-import Image from 'next/image'
-import Tags from '@/components/common/molecules/tags'
 import { TPost } from '@/components/blog/types/post'
+import Tags from '@/components/common/molecules/tags'
 import { formatDate } from '@/utils/formatDate'
-import { ImageWrapper } from './style'
 
 type TProps = {
   post: TPost
