@@ -9,6 +9,7 @@ const bodySchema = yup.object().shape({
 
 export async function POST(req: Request) {
   const body = await req.json()
+
   if (!bodySchema.isValidSync(body)) {
     return new Response(JSON.stringify({ message: 'Email transfer failed' }), {
       status: 400,

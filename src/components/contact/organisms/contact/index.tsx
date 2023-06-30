@@ -24,6 +24,7 @@ const Contact = () => {
         setForm(DEFAULT_EMAIL_DATA)
       })
       .catch(() => {
+        console.log('여기서 에러가 뜨겟지?')
         showToast({
           type: TToastType.error,
           message: 'Email transfer failed',
@@ -61,7 +62,7 @@ const Contact = () => {
             onSubmit={handleSubmit}
           >
             <label htmlFor="from" tw="text-light">
-              Email
+              Your Email
             </label>
             <input
               type="text"
