@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { Dispatch, SetStateAction } from 'react'
 import Link from 'next/link'
 import { usePathname, useRouter } from 'next/navigation'
 import tw from 'twin.macro'
@@ -7,17 +7,17 @@ import { ROUTES } from '@/constants/route'
 import Underline from './style'
 
 type TProps = {
-  handleMenu: () => void
+  setIsOpen: Dispatch<SetStateAction<boolean>>
   ismobile: 'true' | 'false'
 }
 
-const Navigation = ({ handleMenu, ismobile }: TProps) => {
+const Navigation = ({ ismobile, setIsOpen }: TProps) => {
   const router = useRouter()
   const pathname = usePathname()
 
   const handleNavigate = (path: string) => {
-    handleMenu()
     router.push(path)
+    setIsOpen(false)
   }
 
   return (

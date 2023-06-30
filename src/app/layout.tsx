@@ -5,8 +5,14 @@ import StyledComponentsRegistry from '@/lib/registry'
 import '@/styles/global.css'
 
 export const metadata = {
-  title: 'JungLog',
-  description: `Jung's DevLog`,
+  title: {
+    default: 'JungLog',
+    template: 'JungLog | %s',
+  },
+  description: `Frontend Developer Jung's DevLog`,
+  icons: {
+    icon: '/favicon.ico',
+  },
 }
 
 const indie = Indie_Flower({

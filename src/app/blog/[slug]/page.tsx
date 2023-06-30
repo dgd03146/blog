@@ -1,4 +1,5 @@
 import { CSSProperties } from 'react'
+import { Metadata } from 'next'
 import { ReactMarkdown } from 'react-markdown/lib/react-markdown'
 import SyntaxHighlighter from 'react-syntax-highlighter/dist/esm/default-highlight'
 
@@ -12,6 +13,18 @@ type CSSPropertiesMap = { [key: string]: CSSProperties }
 type TProps = {
   params: {
     slug: string
+  }
+}
+
+export async function generateMetadata({
+  params: { slug },
+}: TProps): Promise<Metadata> {
+  const {
+    post: { title, description },
+  } = await getPost(slug)
+  return {
+    title,
+    description,
   }
 }
 

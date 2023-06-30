@@ -1,17 +1,21 @@
-import React from 'react'
+import React, { Dispatch, SetStateAction } from 'react'
 import tw from 'twin.macro'
 import Button from '../button'
 
 type TProps = {
-  handleMenu: () => void
+  setIsOpen: Dispatch<SetStateAction<boolean>>
   isOpen: boolean
 }
 
-const ToggleButton = ({ handleMenu, isOpen }: TProps) => {
+const ToggleButton = ({ setIsOpen, isOpen }: TProps) => {
+  const handleToggle = () => {
+    setIsOpen((prev) => !prev)
+  }
+
   return (
     <Button
       className="flex flex-col items-center justify-center laptop:hidden"
-      onClick={handleMenu}
+      onClick={handleToggle}
     >
       <span
         css={[
