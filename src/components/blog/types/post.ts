@@ -8,7 +8,7 @@ export type TPost = {
   id: string
   slug: string
   cover: string
-  title: string
+  title?: string
   tags: TTag[]
   description: string
   date: string

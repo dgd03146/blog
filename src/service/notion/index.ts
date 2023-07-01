@@ -17,14 +17,14 @@ export const getAllPosts = cache(async () => {
   const response = await notion.databases.query({
     database_id: BLOG_DATABASE_ID,
     filter: {
-      property: 'Published',
+      property: 'published',
       checkbox: {
         equals: true,
       },
     },
     sorts: [
       {
-        property: 'Created',
+        property: 'created',
         direction: 'descending',
       },
     ],
