@@ -21,14 +21,16 @@ const Post = ({ post, key }: TProps) => {
   return (
     <PostContainer key={key}>
       <Link href={ROUTE_SLUG('blog', post.slug)}>
-        <div tw="flex flex-col-reverse justify-between w-full items-center mb-4 gap-x-4 laptop:flex-row">
-          <div tw="w-full max-w-[455px] laptop:max-w-4xl laptop:w-fit">
+        <div tw="flex flex-col-reverse justify-between w-full laptop:flex-row">
+          <div tw="flex flex-col w-full max-w-[455px] laptop:max-w-4xl laptop:w-fit gap-y-4">
             <Tags post={post} />
             <h1>{post.title}</h1>
-            <h3 tw="font-medium">{post.description}</h3>
-            <p tw="text-[14px] text-gray">{dayjs(post.date).format('LL')}</p>
+            <h2 tw="font-medium text-green">{post.description}</h2>
+            <p tw="text-[1rem] text-gray flex-1 flex items-end">
+              {dayjs(post.date).format('LL')}
+            </p>
           </div>
-          <ImageWrapper tw="mb-6 w-full ml-0 h-[250px] tablet:h-[300px] laptop:ml-[3rem] laptop:mb-0 laptop:w-[300px] laptop:min-w-[300px] laptop:h-[250px]">
+          <ImageWrapper tw="mb-6 w-full h-[250px] tablet:h-[300px] laptop:mb-0 laptop:w-[300px] laptop:min-w-[300px] laptop:h-[250px]">
             <Image src={post.cover} alt="cover" fill />
           </ImageWrapper>
         </div>

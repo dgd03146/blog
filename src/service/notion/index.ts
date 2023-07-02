@@ -48,16 +48,15 @@ export const getPost = async (slug: string): Promise<TPostDetail> => {
     },
   })
 
-  // if (!response.results[0]) {
-  //   throw new Error('No results available')
-  // }
-
   const page = response.results[0]
-
-  const mdBlocks = await n2m.pageToMarkdown(page.id)
-  const mdString = n2m.toMarkdownString(mdBlocks)
-  const markdown = mdString.parent
   const post = pageToPostTransformer(page)
+  let markdown = ''
+
+  if (page.id) {
+    const mdBlocks = await n2m.pageToMarkdown(page.id)
+    const mdString = n2m.toMarkdownString(mdBlocks)
+    markdown = mdString.parent
+  }
 
   return {
     post,

@@ -4,14 +4,13 @@ export const PostContainer = styled.li`
   /* padding: 1.5rem 2rem; */
 
   h1 {
-    font-size: 36px;
+    font-size: 42px;
     display: inline-block;
-    margin-top: 0;
-    margin-bottom: 14px;
+
     overflow: hidden;
     font-weight: 700;
     line-height: 1.4;
-    color: #333d4b;
+
     text-overflow: ellipsis;
     word-break: keep-all;
     overflow-wrap: break-word;
@@ -46,6 +45,8 @@ export const PostContainer = styled.li`
 
 export const ImageWrapper = styled.div`
   display: flex;
+  border-radius: 14px;
+
   align-items: center;
 
   img {
