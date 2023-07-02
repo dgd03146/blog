@@ -2,7 +2,6 @@ import { styled } from 'twin.macro'
 
 export const ImageWrapper = styled.div`
   border-radius: 14px;
-  flex-basis: 50%;
 
   display: flex;
   align-items: center;
