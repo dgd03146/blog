@@ -4,7 +4,7 @@ import {
 } from '@notionhq/client/build/src/api-endpoints'
 import { TPost, TTag } from '@/components/blog/types/post'
 
-type TPostKey = TPost & { [key: string]: string | string[] | TTag[] }
+type TPostKey = TPost & { [key: string]: string | string[] | TTag[] | null }
 
 export const pageToPostTransformer = (
   page: PageObjectResponse | PartialPageObjectResponse,
@@ -15,7 +15,7 @@ export const pageToPostTransformer = (
 
   Object.keys(properties).forEach((key) => {
     const propertyVal = properties[key]
-    let value: string | string[] | TTag[] = ''
+    let value: string | string[] | TTag[] | null = ''
 
     switch (propertyVal.type) {
       case 'title':
@@ -25,7 +25,8 @@ export const pageToPostTransformer = (
         value = propertyVal.rich_text.map((text) => text.plain_text).join(' ')
         break
       case 'formula':
-        value = propertyVal.formula.type
+        if (propertyVal.formula.type === 'string')
+          value = propertyVal.formula.string
         break
       case 'multi_select':
         value = propertyVal.multi_select.map((select) => select)
@@ -59,7 +60,7 @@ export const pageToPostTransformer = (
     title: res.title || '',
     tags: res.tags || [],
     description: res.description || '',
-    date: last_edited_time,
+    date: res.date || last_edited_time,
     slug: res.slug || '',
   }
 }

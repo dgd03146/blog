@@ -39,7 +39,7 @@ export const getPost = async (slug: string): Promise<TPostDetail> => {
   const response = await notion.databases.query({
     database_id: BLOG_DATABASE_ID,
     filter: {
-      property: 'Slug',
+      property: 'slug',
       formula: {
         string: {
           equals: slug,
@@ -47,8 +47,6 @@ export const getPost = async (slug: string): Promise<TPostDetail> => {
       },
     },
   })
-
-  // console.log(response.results)
 
   // if (!response.results[0]) {
   //   throw new Error('No results available')
