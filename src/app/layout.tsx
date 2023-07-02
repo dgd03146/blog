@@ -43,7 +43,7 @@ export default function RootLayout({
           <Toast />
           <main className="h-screen w-full">
             <Header />
-            <div className="mx-auto max-w-[980px]">
+            <div className="mx-auto max-w-[980px] pt-[90px]">
               <div className="mx-auto w-[92%]">{children}</div>
             </div>
           </main>

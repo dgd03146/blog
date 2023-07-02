@@ -35,13 +35,19 @@ const Project = ({ project, key }: TProps) => {
         {/* <p tw="text-[14px] text-gray">{dayjs(project.date).format('LL')}</p> */}
         <Tags project={project} />
         <div tw="flex flex-1 items-center gap-x-8">
-          <button tw="flex items-center text-h3 font-medium">
-            <span>code</span>
-            <RiGithubFill />
+          <button
+            tw="flex items-center text-h3 font-medium gap-x-1"
+            className="group"
+          >
+            <span tw="group-hover:text-blue">Code</span>
+            <RiGithubFill tw="group-hover:text-blue" />
           </button>
-          <button tw="flex items-center text-h3 font-medium">
-            <span>Live Demo</span>
-            <RiShareBoxFill />
+          <button
+            tw="flex items-center text-h3 font-medium gap-x-1"
+            className="group"
+          >
+            <span tw="group-hover:text-blue">Live Demo</span>
+            <RiShareBoxFill tw="group-hover:text-blue" />
           </button>
         </div>
       </div>
