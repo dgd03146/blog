@@ -7,7 +7,7 @@ import HeroName from '../../molecules/heroName'
 
 const Hero = () => {
   return (
-    <section tw="flex flex-col justify-center items-center w-full laptop:min-h-[calc(100vh - 180px)] tracking-tighter mx-auto">
+    <section tw="flex flex-col justify-center items-center w-full tracking-tighter mx-auto">
       <HeroName />
       <Image
         tw="absolute"
@@ -17,7 +17,9 @@ const Hero = () => {
         alt="lalaland"
         priority={true}
       />
-      <p tw="text-h1 font-semibold text-green">Frontend Developer</p>
+      <p tw="text-h1 font-semibold text-green text-center">
+        Frontend Developer
+      </p>
     </section>
   )
 }

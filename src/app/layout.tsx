@@ -1,5 +1,6 @@
 import { Indie_Flower, Montserrat } from '@next/font/google'
 import Toast from '@/components/common/molecules/toast'
+import Footer from '@/components/common/organisms/footer'
 import Header from '@/components/common/organisms/header'
 import StyledComponentsRegistry from '@/lib/registry'
 import '@/styles/global.css'
@@ -41,11 +42,12 @@ export default function RootLayout({
       >
         <body>
           <Toast />
-          <main className="h-screen w-full">
+          <main className="h-screen w-full min-h-screen flex flex-col">
             <Header />
-            <div className="mx-auto max-w-[980px] pt-[90px]">
+            <div className="mx-auto max-w-[980px] pt-[90px] flex-[1]">
               <div className="mx-auto w-[92%]">{children}</div>
             </div>
+            <Footer />
           </main>
         </body>
       </html>
