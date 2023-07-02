@@ -28,7 +28,7 @@ const Post = ({ post, key }: TProps) => {
             <h3 tw="font-medium">{post.description}</h3>
             <p tw="text-[14px] text-gray">{dayjs(post.date).format('LL')}</p>
           </div>
-          <ImageWrapper tw="mb-6 w-full ml-0 h-[250px] tablet:h-[300px] laptop:ml-[3rem] laptop:mb-0 laptop:w-[300px] laptop:h-[250px]">
+          <ImageWrapper tw="mb-6 w-full ml-0 h-[250px] tablet:h-[300px] laptop:ml-[3rem] laptop:mb-0 laptop:w-[300px] laptop:min-w-[300px] laptop:h-[250px]">
             <Image src={post.cover} alt="cover" fill />
           </ImageWrapper>
         </div>
