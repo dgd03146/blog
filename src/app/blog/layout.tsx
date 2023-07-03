@@ -1,11 +1,15 @@
-'use client'
+import { Metadata } from 'next'
+import PageLayout from '@/components/common/molecules/pageLayout'
 
-import PageLayout from '@/components/molecules/pageLayout'
+export const metadata: Metadata = {
+  title: 'All Posts',
+  description: 'About frontend blog posts',
+}
 
 export default function BlogLayout({
   children,
 }: {
   children: React.ReactNode
 }) {
-  return <PageLayout text="Blog" children={children} />
+  return <PageLayout children={children} />
 }

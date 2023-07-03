@@ -1,14 +1,17 @@
 const LogoColor = {
   color: [
-    '#121212',
-    '#F60000',
-    '#FF8C00',
-    '#FFEE00',
-    '#4DE94C',
+    '#9d0208',
+    '#e85d04',
+    '#ffba08',
+    '#116668',
     '#3783FF',
-    '#4815AA',
+    '#030329',
+    '#2C107D',
+
+    // '#3783FF',
+    // '#4815AA',
   ],
-  transition: { duration: 3, repeat: Infinity },
+  transition: { duration: 3 },
 }
 
 export default LogoColor

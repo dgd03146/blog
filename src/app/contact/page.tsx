@@ -1,13 +1,14 @@
 import React from 'react'
-import TransitionEffect from '@/components/molecules/transitionEffect'
+import { Metadata } from 'next'
+import Contact from '@/components/contact/organisms/contact'
 
-const Contact = () => {
-  return (
-    <>
-      <TransitionEffect />
-      Contact
-    </>
-  )
+export const metadata: Metadata = {
+  title: 'Contact Me',
+  description: 'Send mail to Jung',
 }
 
-export default Contact
+const ContactPage = () => {
+  return <Contact />
+}
+
+export default ContactPage

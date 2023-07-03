@@ -1,11 +1,15 @@
-'use client'
+import { Metadata } from 'next'
+import PageLayout from '@/components/common/molecules/pageLayout'
 
-import PageLayout from '@/components/molecules/pageLayout'
+export const metadata: Metadata = {
+  title: 'About Me',
+  description: 'Introduction about Jung',
+}
 
 export default function AboutLayout({
   children,
 }: {
   children: React.ReactNode
 }) {
-  return <PageLayout text="About" children={children} />
+  return <PageLayout children={children} />
 }

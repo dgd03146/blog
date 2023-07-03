@@ -2,6 +2,14 @@
 @tailwind components;
 @tailwind utilities;
 
+@font-face {
+  font-family: 'Yasashii';
+  src: url('/assets/fonts/Yasashii.ttf') format('opentype');
+  font-weight: 400;
+  font-display: swap;
+  font-style: normal;
+}
+
 @layer base {
   * {
     margin: 0;
@@ -14,9 +22,14 @@
   }
 
   body {
-    max-width: 1440px;
+    /* FIXME: 바꿀지 생각해보기 */
+    /* width: 70%;
+    min-width: 1280px; */
+    /* max-width: 980px; */
+    /* max-width: 1440px; */
     margin-left: auto;
     margin-right: auto;
+    @apply bg-light dark:bg-dark;
   }
 
   body,
@@ -29,7 +42,20 @@
   h1,
   h2,
   h3 {
-    @apply font-bold;
+    @apply break-words
+    break-keep;
+  }
+
+  h1 {
+    @apply text-h1 font-bold;
+  }
+
+  h2 {
+    @apply text-h2 font-bold;
+  }
+
+  h3 {
+    @apply text-h3 font-medium;
   }
 
   ul {
@@ -52,5 +78,17 @@
   img {
     max-width: 100%;
     height: auto;
+  }
+
+  input {
+    border: none;
+    outline: none;
+    @apply bg-light;
+  }
+  textarea {
+    outline: none;
+    border: none;
+    resize: none;
+    @apply bg-light;
   }
 }

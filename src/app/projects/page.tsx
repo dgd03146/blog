@@ -1,13 +1,10 @@
 import React from 'react'
-import TransitionEffect from '@/components/molecules/transitionEffect'
+import Projects from '@/components/projects/organism/projects'
+import { getAllPosts } from '@/service/notion'
 
-const Porfolio = () => {
-  return (
-    <>
-      <TransitionEffect />
-      Porfolio
-    </>
-  )
+const ProjectsPage = async () => {
+  const posts = await getAllPosts()
+  return <Projects projects={posts} />
 }
 
-export default Porfolio
+export default ProjectsPage
