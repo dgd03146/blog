@@ -4,17 +4,7 @@ import Footer from '@/components/common/organisms/footer'
 import Header from '@/components/common/organisms/header'
 import StyledComponentsRegistry from '@/lib/registry'
 import '@/styles/global.css'
-
-export const metadata = {
-  title: {
-    default: 'JungLog',
-    template: 'JungLog | %s',
-  },
-  description: `Frontend Developer Jung's DevLog`,
-  icons: {
-    icon: '/favicon.ico',
-  },
-}
+import { Providers } from './providers'
 
 const indie = Indie_Flower({
   weight: '400',
@@ -38,17 +28,20 @@ export default function RootLayout({
     <StyledComponentsRegistry>
       <html
         lang="en"
+        suppressHydrationWarning
         className={`${montserrat.className} ${indie.variable} ${montserrat.variable}`}
       >
         <body>
-          <Toast />
-          <main className="h-screen w-full min-h-screen flex flex-col">
-            <Header />
-            <div className="mx-auto max-w-[980px] pt-[90px] flex-[1]">
-              <div className="mx-auto w-[92%]">{children}</div>
-            </div>
-            <Footer />
-          </main>
+          <Providers>
+            <Toast />
+            <main className="h-screen w-full min-h-screen flex flex-col">
+              <Header />
+              <div className="mx-auto w-[92%] laptop:min-w-[980px] max-w-[980px] pt-[90px] flex-[1]">
+                <div className="mx-auto w-[92%]">{children}</div>
+              </div>
+              <Footer />
+            </main>
+          </Providers>
         </body>
       </html>
     </StyledComponentsRegistry>

@@ -49,10 +49,10 @@ export const getPost = async (slug: string): Promise<TPostDetail> => {
   })
 
   const page = response.results[0]
-  const post = pageToPostTransformer(page)
+  const post = page && pageToPostTransformer(page)
   let markdown = ''
 
-  if (page.id) {
+  if (page && page.id) {
     const mdBlocks = await n2m.pageToMarkdown(page.id)
     const mdString = n2m.toMarkdownString(mdBlocks)
     markdown = mdString.parent

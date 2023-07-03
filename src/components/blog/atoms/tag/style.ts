@@ -5,6 +5,7 @@ export const Container = styled.p`
   padding: 0.25rem 0.75rem;
   border: 1px solid;
   box-shadow: red 0 0 3px;
+
   border-radius: 1.5rem;
   cursor: pointer;
   font-size: 0.75rem;
@@ -14,5 +15,5 @@ export const Container = styled.p`
   word-break: keep-all;
   overflow-wrap: break-word;
 
-  ${tw`text-primary border-primary text-[14px] font-medium`}
+  ${tw`text-red border-red text-[14px] font-medium dark:text-emerald dark:border-emerald shadow-[0_0_3px_red] dark:shadow-[0_0_3px_green]`}
 `

@@ -1,6 +1,5 @@
 import React, { Dispatch, SetStateAction } from 'react'
 import tw from 'twin.macro'
-import Button from '../button'
 
 type TProps = {
   setIsOpen: Dispatch<SetStateAction<boolean>>
@@ -13,8 +12,8 @@ const ToggleButton = ({ setIsOpen, isOpen }: TProps) => {
   }
 
   return (
-    <Button
-      className="flex flex-col items-center justify-center laptop:hidden"
+    <button
+      tw="flex flex-col items-center justify-center laptop:hidden"
       onClick={handleToggle}
     >
       <span
@@ -35,7 +34,7 @@ const ToggleButton = ({ setIsOpen, isOpen }: TProps) => {
           isOpen ? tw`-rotate-45 -translate-y-1` : tw`translate-y-0.5`,
         ]}
       ></span>
-    </Button>
+    </button>
   )
 }
 

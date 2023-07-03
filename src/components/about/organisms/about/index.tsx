@@ -19,9 +19,10 @@ const About = () => {
           {ABOUT_ME.map((it) => (
             <div key={it}>
               <h3>{it}</h3>
+              <br />
             </div>
           ))}
-          <div tw="flex items-center gap-x-4">
+          <div tw="flex items-center gap-x-[1.5rem]">
             <ContactButton text="View Resume" href="/resume" />
             <SocialNavigation />
           </div>

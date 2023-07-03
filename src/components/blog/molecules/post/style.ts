@@ -4,9 +4,7 @@ export const PostContainer = styled.li`
   /* padding: 1.5rem 2rem; */
 
   h1 {
-    font-size: 42px;
     display: inline-block;
-
     overflow: hidden;
     font-weight: 700;
     line-height: 1.4;
@@ -19,9 +17,6 @@ export const PostContainer = styled.li`
     -webkit-line-clamp: 2;
   }
   &:hover {
-    h1 {
-      ${tw`text-blue`}
-    }
     img {
       /* transition: color 0.3s ease-in-out; */
       transform: translateY(-0.5rem);

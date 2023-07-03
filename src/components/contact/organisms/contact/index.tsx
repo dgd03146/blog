@@ -24,7 +24,6 @@ const Contact = () => {
         setForm(DEFAULT_EMAIL_DATA)
       })
       .catch(() => {
-        console.log('여기서 에러가 뜨겟지?')
         showToast({
           type: TToastType.error,
           message: 'Email transfer failed',

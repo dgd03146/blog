@@ -1,7 +1,7 @@
 import { keyframes } from 'styled-components'
-import { styled } from 'twin.macro'
+import tw, { styled } from 'twin.macro'
 
-const animate = keyframes`
+const Animate = keyframes`
    0% {
      transform: rotate(0deg)
    }
@@ -11,22 +11,27 @@ const animate = keyframes`
    }
 `
 
-export const ImageWrapper = styled.div`
+export const ImageWrapper = styled.div<{ current_theme?: string }>`
   position: relative;
   border-radius: 50%;
   width: 400px;
   height: 400px;
-  /* background: #f5f5f5; */
+  background: inherit;
   overflow: hidden;
   cursor: pointer;
 
   &::before {
     content: '';
     position: absolute;
-    inset: -10px 140px;
-    background: linear-gradient(315deg, #a4253b, #053a86);
+    inset: -10px 150px;
+
+    background: ${({ current_theme }) =>
+      current_theme === 'light'
+        ? 'linear-gradient(315deg, #a4253b, #053a86)'
+        : 'linear-gradient(315deg, #cab539, #116668)'};
+
     transition: 0.5s;
-    animation: ${animate} 4s linear infinite;
+    animation: ${Animate} 4s linear infinite;
   }
 
   &:hover::before {
@@ -43,7 +48,9 @@ export const ImageWrapper = styled.div`
     content: '';
     position: absolute;
     inset: 6px;
-    background: white;
+    ${({ current_theme }) =>
+      current_theme === 'light' ? tw`bg-light` : tw`bg-dark`}
+
     border-radius: 50%;
     z-index: 1;
   }
@@ -91,7 +98,7 @@ export const Content = styled.div`
     position: relative;
     margin-top: 10px;
     padding: 10px 20px;
-    background: #1b1b1b;
+
     color: white;
     border-radius: 25px;
     font-weight: 500;

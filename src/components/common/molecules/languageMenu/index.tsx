@@ -1,6 +1,4 @@
-import { useState } from 'react'
 import tw from 'twin.macro'
-import Button from '@/components/common/atoms/button'
 import ThemeButton from '@/components/common/atoms/themeButton'
 
 type TProps = {
@@ -8,12 +6,6 @@ type TProps = {
 }
 
 const LanguageMenu = ({ ismobile }: TProps) => {
-  const [isDarkMode, setIsDarkMode] = useState(false)
-
-  const handleTheme = () => {
-    setIsDarkMode(!isDarkMode)
-  }
-
   return (
     <div
       css={[
@@ -21,9 +13,10 @@ const LanguageMenu = ({ ismobile }: TProps) => {
         ismobile === 'false' && tw`hidden laptop:flex `,
       ]}
     >
-      <Button className="text-normal">{'KOR'}</Button>
-      <Button className="text-normal">{'ENG'}</Button>
-      <ThemeButton isDarkMode={isDarkMode} handleTheme={handleTheme} />
+      {/* TODO: For now English Version */}
+      {/* <Button className="text-normal">{'KOR'}</Button>
+      <Button className="text-normal">{'ENG'}</Button> */}
+      <ThemeButton />
     </div>
   )
 }

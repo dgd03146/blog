@@ -19,9 +19,10 @@ type TProps = {
 export async function generateMetadata({
   params: { slug },
 }: TProps): Promise<Metadata> {
-  const {
-    post: { title, description },
-  } = await getPost(slug)
+  const { post } = await getPost(slug)
+  const title = post?.title || 'Title'
+  const description = post?.description || 'Descrition'
+
   return {
     title,
     description,
