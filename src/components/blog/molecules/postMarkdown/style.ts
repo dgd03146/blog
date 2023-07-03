@@ -1,4 +1,4 @@
-import { styled } from 'twin.macro'
+import tw, { styled } from 'twin.macro'
 
 export const MarkDownWrapper = styled.article`
   padding: 0;
@@ -10,8 +10,9 @@ export const MarkDownWrapper = styled.article`
     word-break: keep-all;
     overflow-wrap: break-word;
     border-radius: 4px;
-    color: #eb5757;
-    background-color: rgba(135, 131, 120, 0.15);
+    ${tw`text-[#eb5757] dark:text-emerald`}
+    ${tw`bg-[rgba(135, 131, 120, 0.15)] dark:bg-slate`}
+    /* background-color: rgba(135, 131, 120, 0.15); */
     padding: 0.125rem 0.25rem;
     margin-right: 0.125rem;
   }
@@ -38,6 +39,9 @@ export const MarkDownWrapper = styled.article`
     overflow-wrap: break-word;
 
     margin: 0.75rem 0 1rem !important;
+    strong {
+      ${tw`dark:text-light`}
+    }
   }
 
   pre {
@@ -45,8 +49,8 @@ export const MarkDownWrapper = styled.article`
       background-color: transparent !important;
     }
     code {
-      color: inherit;
-      background-color: inherit;
+      ${tw`text-inherit dark:text-inherit`}
+      ${tw`bg-inherit dark:bg-inherit`}
     }
   }
 `

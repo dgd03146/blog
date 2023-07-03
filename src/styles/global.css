@@ -29,6 +29,7 @@
     /* max-width: 1440px; */
     margin-left: auto;
     margin-right: auto;
+    @apply bg-light dark:bg-dark;
   }
 
   body,
@@ -82,10 +83,12 @@
   input {
     border: none;
     outline: none;
+    @apply bg-light;
   }
   textarea {
     outline: none;
     border: none;
     resize: none;
+    @apply bg-light;
   }
 }

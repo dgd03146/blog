@@ -1,7 +1,8 @@
 import React from 'react'
 import Link from 'next/link'
 import { RiSendPlaneFill } from 'react-icons/ri'
-import Button from '../button'
+
+import {} from 'twin.macro'
 
 type TProps = {
   text: 'Contact Me' | 'View Resume'
@@ -10,10 +11,18 @@ type TProps = {
 
 const ContactButton = ({ text, href }: TProps) => {
   return (
-    <Button className="my-4 flex w-fit items-center justify-center gap-x-2 rounded-lg bg-dark p-4 text-light hover:text-gray">
-      <Link href={href}>{text}</Link>
-      <RiSendPlaneFill />
-    </Button>
+    <button
+      tw="my-4 flex w-fit items-center justify-center gap-x-2 rounded-lg bg-blue dark:bg-green p-4 text-primaryYellow dark:text-yellow"
+      className="group"
+    >
+      <Link
+        className="group-hover:text-yellow dark:group-hover:text-emerald"
+        href={href}
+      >
+        {text}
+      </Link>
+      <RiSendPlaneFill tw="group-hover:text-yellow dark:group-hover:text-emerald" />
+    </button>
   )
 }
 

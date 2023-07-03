@@ -32,6 +32,7 @@ export const CardContainer = styled.div`
   .cardFront {
     border-radius: 12px;
     position: relative;
+
     background-image: linear-gradient(#030329, #4017b3);
     overflow: hidden;
     transform-origin: left;

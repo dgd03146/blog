@@ -19,7 +19,7 @@ const MobileMenu = ({ setIsOpen }: TProps) => {
         transitionDuration: '300',
       }}
       animate={{ scale: 1, opacity: 1 }}
-      tw="min-w-[70vw] flex flex-col justify-between items-center fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-dark/90 dark:bg-light/75 rounded-lg backdrop-blur-md py-32 text-light dark:text-black z-10 laptop:hidden"
+      tw="min-w-[70vw] flex flex-col justify-between items-center fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-dark/90 dark:bg-light/75 rounded-lg backdrop-blur-md py-32 text-light dark:text-black laptop:hidden"
     >
       <Navigation ismobile="true" setIsOpen={setIsOpen} />
       <LanguageMenu ismobile="true" />

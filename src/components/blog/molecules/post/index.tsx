@@ -20,12 +20,16 @@ dayjs.extend(localizedFormat)
 const Post = ({ post, key }: TProps) => {
   return (
     <PostContainer key={key}>
-      <Link href={ROUTE_SLUG('blog', post.slug)}>
+      <Link href={ROUTE_SLUG('blog', post.slug)} className="group">
         <div tw="flex flex-col-reverse justify-between w-full laptop:flex-row">
           <div tw="flex flex-col w-full max-w-[455px] laptop:max-w-4xl laptop:w-fit gap-y-4">
             <Tags post={post} />
-            <h1>{post.title}</h1>
-            <h2 tw="font-medium text-green">{post.description}</h2>
+            <h1 tw="text-[2rem] group-hover:text-blue dark:group-hover:text-yellow">
+              {post.title}
+            </h1>
+            <h2 tw="font-medium text-[1.3rem] text-green dark:text-slate">
+              {post.description}
+            </h2>
             <p tw="text-[1rem] text-gray flex-1 flex items-end">
               {dayjs(post.date).format('LL')}
             </p>

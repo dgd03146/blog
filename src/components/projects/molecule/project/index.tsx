@@ -39,15 +39,19 @@ const Project = ({ project, key }: TProps) => {
             tw="flex items-center text-h3 font-medium gap-x-1"
             className="group"
           >
-            <span tw="group-hover:text-blue">Code</span>
-            <RiGithubFill tw="group-hover:text-blue" />
+            <span tw="group-hover:text-blue dark:group-hover:text-yellow">
+              Code
+            </span>
+            <RiGithubFill tw="group-hover:text-blue dark:group-hover:text-yellow" />
           </button>
           <button
             tw="flex items-center text-h3 font-medium gap-x-1"
             className="group"
           >
-            <span tw="group-hover:text-blue">Live Demo</span>
-            <RiShareBoxFill tw="group-hover:text-blue" />
+            <span tw="group-hover:text-blue dark:group-hover:text-yellow">
+              Live Demo
+            </span>
+            <RiShareBoxFill tw="group-hover:text-blue dark:group-hover:text-yellow" />
           </button>
         </div>
       </div>

@@ -17,15 +17,15 @@ const SocialNavigation = () => {
   const isabout = pathname === '/about' ? 'true' : 'false'
 
   return (
-    <div tw="flex justify-center items-center gap-x-8 ">
+    <div tw="flex justify-center items-center gap-x-6 ">
       {SOCIAL_LINKS.map((link) => (
         <Link key={link.href} href={link.href}>
           <span
             css={[
               tw`mb-0 text-[2rem]`,
               isabout === 'true'
-                ? tw`hover:text-gray text-dark`
-                : tw`hover:text-yellow text-light`,
+                ? tw`hover:text-gray text-dark dark:text-light`
+                : tw`hover:text-primaryYellow text-light`,
             ]}
           >
             {link.icon}
