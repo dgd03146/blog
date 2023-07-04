@@ -2,6 +2,7 @@ import tw, { styled } from 'twin.macro'
 
 export const MarkDownWrapper = styled.article`
   padding: 0;
+
   code {
     font-size: 0.875rem;
     line-height: 1.5rem;
@@ -39,8 +40,13 @@ export const MarkDownWrapper = styled.article`
     overflow-wrap: break-word;
 
     margin: 0.75rem 0 1rem !important;
+
+    img {
+      width: 100%;
+    }
+
     strong {
-      ${tw`dark:text-light`}
+      ${tw`text-dark dark:text-slate`}
     }
   }
 
@@ -51,6 +57,18 @@ export const MarkDownWrapper = styled.article`
     code {
       ${tw`text-inherit dark:text-inherit`}
       ${tw`bg-inherit dark:bg-inherit`}
+    }
+  }
+
+  ol {
+    ::marker {
+      ${tw`dark:text-slate`}
+    }
+  }
+
+  li {
+    ::marker {
+      ${tw`dark:text-slate`}
     }
   }
 `

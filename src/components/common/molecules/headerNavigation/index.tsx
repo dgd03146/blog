@@ -2,9 +2,7 @@ import React, { Dispatch, SetStateAction } from 'react'
 import Link from 'next/link'
 import { usePathname, useRouter } from 'next/navigation'
 import tw from 'twin.macro'
-
 import { ROUTES } from '@/constants/route'
-import Underline from './style'
 
 type TProps = {
   setIsOpen: Dispatch<SetStateAction<boolean>>
@@ -38,13 +36,12 @@ const Navigation = ({ ismobile, setIsOpen }: TProps) => {
           ) : (
             <Link href={path}>{title}</Link>
           )}
-          <Underline
-            key={path}
-            isactive={
-              pathname === path || (path.startsWith('/blog') && isBlogPage)
-                ? 'true'
-                : 'false'
-            }
+          <div
+            css={[
+              tw`absolute w-full h-0.5 bg-light dark:bg-light laptop:bg-dark scale-x-0 group-hover:scale-x-100 transition-transform duration-500`,
+              pathname === path && tw`scale-x-100`,
+              isBlogPage && path.startsWith('/blog') && tw`scale-x-100`,
+            ]}
           />
         </div>
       ))}
