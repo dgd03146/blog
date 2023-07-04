@@ -20,6 +20,8 @@ export const ImageWrapper = styled.div<{ current_theme?: string }>`
   overflow: hidden;
   cursor: pointer;
 
+  z-index: 0;
+
   &::before {
     content: '';
     position: absolute;
@@ -52,7 +54,7 @@ export const ImageWrapper = styled.div<{ current_theme?: string }>`
       current_theme === 'light' ? tw`bg-light` : tw`bg-dark`}
 
     border-radius: 50%;
-    z-index: 1;
+    z-index: 0;
   }
 `
 
@@ -77,7 +79,7 @@ export const Content = styled.div`
     object-fit: cover;
     transition: 0.5s;
     pointer-events: none;
-    z-index: 3;
+    z-index: 1;
   }
 
   h2 {
