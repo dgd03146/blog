@@ -1,19 +1,28 @@
 const withBundleAnalyzer = require('@next/bundle-analyzer')({
   enabled: process.env.ANALYZE === 'true',
   openAnalyzer: false,
-});
+})
 const withTwin = require('./withTwin')
 
 /** @type {import('next').NextConfig} */
 
 const nextConfig = withTwin(
-  withBundleAnalyzer({ 
+  withBundleAnalyzer({
     reactStrictMode: false,
     swcMinify: true,
     images: {
-          domains: ['www.notion.so'],
-        },
-  })
-);
+      domains: [
+        'www.notion.so',
+        'notion.so',
+        'images.unsplash.com',
+        'pbs.twimg.com',
+        'abs.twimg.com',
+        's3.us-west-2.amazonaws.com',
+        'transitivebullsh.it',
+      ],
+    },
+    formats: ['image/avif', 'image/webp'],
+  }),
+)
 
 module.exports = nextConfig

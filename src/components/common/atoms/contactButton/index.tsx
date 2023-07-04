@@ -6,7 +6,7 @@ import {} from 'twin.macro'
 
 type TProps = {
   text: 'Contact Me' | 'View Resume'
-  href: '/contact' | '/resume'
+  href: string
 }
 
 const ContactButton = ({ text, href }: TProps) => {

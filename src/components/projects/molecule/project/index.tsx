@@ -4,6 +4,7 @@ import Image from 'next/image'
 import { RiShareBoxFill, RiGithubFill } from 'react-icons/ri'
 import { TPost } from '@/components/blog/types/post'
 import Tags from '@/components/common/molecules/tags'
+import { rgbDataURL } from '@/utils/getPlaceHolder'
 import { ImageWrapper } from './style'
 import {} from 'twin.macro'
 
@@ -23,7 +24,13 @@ const Project = ({ project, key }: TProps) => {
       tw="flex flex-col gap-x-[5rem] justify-between w-full laptop:flex-row"
     >
       <ImageWrapper tw="w-full mb-6 h-[300px] tablet:h-[400px] laptop:mb-0 laptop:h-[250px] laptop:w-[350px]">
-        <Image src={project.cover} alt="cover" fill />
+        <Image
+          src={project.cover}
+          alt="cover"
+          fill
+          placeholder="blur"
+          blurDataURL={rgbDataURL(237, 181, 6)}
+        />
       </ImageWrapper>
       <div tw="basis-[0] flex flex-col gap-y-4 tablet:basis-[50%]">
         <h2>{project.title}</h2>
