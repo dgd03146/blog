@@ -41,6 +41,7 @@
     "yup": "^1.2.0"
   },
   "devDependencies": {
+    "@babel/core": "^7.22.6",
     "@babel/plugin-syntax-typescript": "^7.21.4",
     "@next/bundle-analyzer": "^13.4.7",
     "@tailwindcss/typography": "^0.5.9",
