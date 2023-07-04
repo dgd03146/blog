@@ -2,6 +2,7 @@ import Image from 'next/image'
 import {} from 'twin.macro'
 
 import { TECH_STACK } from '@/constants/techStacks'
+import { rgbDataURL } from '@/utils/getPlaceHolder'
 
 const TechStacks = () => {
   return (
@@ -15,6 +16,8 @@ const TechStacks = () => {
             width={50}
             height={50}
             alt={it.alt}
+            placeholder="blur"
+            blurDataURL={rgbDataURL(220, 220, 220)}
           />
         ))}
       </div>

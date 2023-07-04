@@ -6,6 +6,7 @@ import SocialNavigation from '@/components/common/molecules/socialNavigation'
 import { showToast, TToastType } from '@/components/common/molecules/toast'
 import { DEFAULT_EMAIL_DATA } from '@/constants/email'
 import { sendContactEmail } from '@/service/email'
+import { rgbDataURL } from '@/utils/getPlaceHolder'
 import { TForm } from '../../types'
 import { CardContainer } from './style'
 import {} from 'twin.macro'
@@ -52,6 +53,8 @@ const Contact = () => {
               alt="lalaland"
               width={310}
               height={310}
+              placeholder="blur"
+              blurDataURL={rgbDataURL(0, 0, 139)}
             />
           </div>
         </div>

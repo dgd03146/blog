@@ -3,6 +3,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { useTheme } from 'next-themes'
 import {} from 'twin.macro'
+import { rgbDataURL } from '@/utils/getPlaceHolder'
 import { Content, ImageWrapper } from './style'
 
 const ImageSection = () => {
@@ -28,6 +29,8 @@ const ImageSection = () => {
             width={400}
             height={400}
             priority={true}
+            placeholder="blur"
+            blurDataURL={rgbDataURL(220, 220, 220)}
           />
           <h2>
             Frontend Developer

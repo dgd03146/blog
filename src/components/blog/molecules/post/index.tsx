@@ -6,6 +6,7 @@ import {} from 'twin.macro'
 import { TPost } from '@/components/blog/types/post'
 import Tags from '@/components/common/molecules/tags'
 import { ROUTE_SLUG } from '@/constants/route'
+import { rgbDataURL } from '@/utils/getPlaceHolder'
 import { ImageWrapper, PostContainer } from './style'
 
 type TProps = {
@@ -35,7 +36,13 @@ const Post = ({ post, key }: TProps) => {
             </p>
           </div>
           <ImageWrapper tw="mb-6 w-full h-[250px] tablet:h-[300px] laptop:mb-0 laptop:w-[300px] laptop:min-w-[300px] laptop:h-[250px]">
-            <Image src={post.cover} alt="cover" fill />
+            <Image
+              src={post.cover}
+              alt="cover"
+              fill
+              placeholder="blur"
+              blurDataURL={rgbDataURL(220, 220, 220)}
+            />
           </ImageWrapper>
         </div>
       </Link>
