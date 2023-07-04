@@ -5,6 +5,7 @@ import {} from 'twin.macro'
 import ContactButton from '@/components/common/atoms/contactButton'
 import SocialNavigation from '@/components/common/molecules/socialNavigation'
 import { ABOUT_ME } from '@/constants/about'
+import { RESUME_URL } from '@/constants/socialLink'
 import ImageSection from '../../molecules/imageSection'
 import TechStacks from '../../molecules/techStacks'
 
@@ -23,7 +24,7 @@ const About = () => {
             </div>
           ))}
           <div tw="flex items-center gap-x-[1.5rem]">
-            <ContactButton text="View Resume" href="/resume" />
+            <ContactButton text="View Resume" href={RESUME_URL} />
             <SocialNavigation />
           </div>
         </div>
