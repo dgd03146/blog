@@ -1,6 +1,6 @@
 import {} from 'twin.macro'
 import { TPost } from '@/components/blog/types/post'
-import Tag from '../../../blog/atoms/tag'
+import Tag from '../../atoms/tag'
 
 type TProps = {
   post?: TPost

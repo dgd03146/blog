@@ -1,10 +1,7 @@
-import React from 'react'
-
-import About from '@/components/about/organisms/about'
+import AboutOrganism from '@/components/about/organisms/aboutOrganism'
 
 const AboutPage = () => {
-  // TODO: 아토믹 디자인으로 컴포넌트 나누기
-  return <About />
+  return <AboutOrganism />
 }
 
 export default AboutPage
