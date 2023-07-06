@@ -1,7 +1,7 @@
-import AboutOrganism from '@/components/about/organisms/aboutOrganism'
+import About from '@/components/about/organisms/aboutOrganism'
 
 const AboutPage = () => {
-  return <AboutOrganism />
+  return <About />
 }
 
 export default AboutPage

@@ -8,7 +8,7 @@ import Introduction from '../../molecules/introduction'
 import ResumeSection from '../../molecules/resumeSection'
 import TechStacks from '../../molecules/techStacks'
 
-const AboutOrganism = () => {
+const About = () => {
   return (
     <section tw="max-w-[980px]">
       <div tw="flex gap-x-10 flex-col items-center laptop:flex-row">
@@ -25,4 +25,4 @@ const AboutOrganism = () => {
   )
 }
 
-export default AboutOrganism
+export default About
