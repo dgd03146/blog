@@ -1,5 +1,5 @@
 import * as yup from 'yup'
-import { TToastType, showToast } from '@/components/common/molecules/toast'
+import { TToastType, showToast } from '@/components/common/toast'
 import { sendEmail } from '@/service/email/nodeMailer'
 
 const bodySchema = yup.object().shape({

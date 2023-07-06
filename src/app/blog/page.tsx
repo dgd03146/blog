@@ -1,4 +1,4 @@
-import Posts from '@/components/blog/organisms/posts'
+import Posts from '@/components/blog/posts'
 import { getAllPosts } from '@/service/notion'
 
 export const revalidate = 21600
