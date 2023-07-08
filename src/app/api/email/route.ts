@@ -1,4 +1,5 @@
 import * as yup from 'yup'
+import { TToastType, showToast } from '@/components/common/toast'
 import { sendEmail } from '@/service/email/nodeMailer'
 
 const bodySchema = yup.object().shape({
@@ -27,7 +28,9 @@ export async function POST(req: Request) {
         ),
     )
     .catch((error) => {
-      console.error(error)
+      if (error instanceof Error) {
+        showToast({ type: TToastType.error, message: error.message })
+      }
       return new Response(
         JSON.stringify({ message: 'Email transfer failed' }),
         { status: 500 }, // Internal Error

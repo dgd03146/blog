@@ -1,5 +1,5 @@
 import { Metadata } from 'next'
-import PageLayout from '@/components/common/molecules/pageLayout'
+import PageLayout from '@/components/common/layout/pageLayout'
 
 export const metadata: Metadata = {
   title: 'All Projects',

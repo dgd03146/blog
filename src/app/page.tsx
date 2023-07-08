@@ -1,4 +1,4 @@
-import Hero from '@/components/home/organisms/hero'
+import Hero from '@/components/home/hero'
 
 export const metadata = {
   title: {

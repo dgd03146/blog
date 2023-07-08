@@ -1,6 +1,6 @@
 import React from 'react'
 import { Metadata } from 'next'
-import Contact from '@/components/contact/organisms/contact'
+import Contact from '@/components/contact'
 
 export const metadata: Metadata = {
   title: 'Contact Me',

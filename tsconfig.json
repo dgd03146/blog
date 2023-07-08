@@ -23,9 +23,10 @@
     "baseUrl": "./",
     "paths": {
       "@/*": ["./src/*"]
-      // "@atoms/*": ["components/atoms/*"],
-      // "@molecules/*": ["components/molecules/*"],
-      // "@organisms/*": ["components/organisms/*"]
+      // "@atoms/*": ["./src/components/about/atoms*"],
+      // "@molecules/*": ["./src/components/about/molecules*"]
+      // "@molecules/*": [".src/components/molecules/*"],
+      // "@organisms/*": [".src/components/organisms/*"]
     }
   },
   "include": [

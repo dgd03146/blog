@@ -1,10 +1,10 @@
 import { Indie_Flower, Montserrat } from '@next/font/google'
-import Toast from '@/components/common/molecules/toast'
-import Footer from '@/components/common/organisms/footer'
-import Header from '@/components/common/organisms/header'
+import Footer from '@/components/common/layout/footer'
+import Header from '@/components/common/layout/header'
+import Toast from '@/components/common/toast'
 import StyledComponentsRegistry from '@/lib/registry'
-import '@/styles/global.css'
 import { Providers } from './providers'
+import '@/styles/global.css'
 
 const indie = Indie_Flower({
   weight: '400',

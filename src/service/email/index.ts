@@ -1,4 +1,4 @@
-import { TToastType, showToast } from '@/components/common/molecules/toast'
+import { TToastType, showToast } from '@/components/common/toast'
 import { TEmail } from './types'
 
 export const sendContactEmail = async (email: TEmail) => {
