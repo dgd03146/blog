@@ -3,8 +3,8 @@ import Projects from '@/components/projects'
 import { getAllProjects } from '@/service/notion'
 
 const ProjectsPage = async () => {
-  const posts = await getAllProjects()
-  return <Projects projects={posts} />
+  const projects = await getAllProjects()
+  return <Projects projects={projects} />
 }
 
 export default ProjectsPage
