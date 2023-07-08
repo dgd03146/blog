@@ -1,45 +1,15 @@
 'use client'
 
-import React, { ChangeEvent, FormEvent, useState } from 'react'
+import React from 'react'
 import Image from 'next/image'
 import SocialNavigation from '@/components/common/socialNavigation'
-import { showToast, TToastType } from '@/components/common/toast'
-import { DEFAULT_EMAIL_DATA } from '@/constants/email'
-import { sendContactEmail } from '@/service/email'
 import { rgbDataURL } from '@/utils/getPlaceHolder'
-import { CardContainer } from './style'
-import { TForm } from './types'
+import useContactForm from './hooks/useContactForm'
 import {} from 'twin.macro'
+import { CardContainer } from './style'
 
 const Contact = () => {
-  const [form, setForm] = useState<TForm>(DEFAULT_EMAIL_DATA)
-
-  const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
-    e.preventDefault()
-    sendContactEmail(form)
-      .then(() => {
-        showToast({
-          type: TToastType.success,
-          message: 'Email sent successfully!',
-        })
-        setForm(DEFAULT_EMAIL_DATA)
-      })
-      .catch(() => {
-        showToast({
-          type: TToastType.error,
-          message: 'Email transfer failed',
-        })
-      })
-  }
-
-  const handleChange = (
-    e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
-  ) => {
-    const { name, value } = e.target
-    setForm((prev) => ({ ...prev, [name]: value }))
-  }
-
-  // TODO: 아토믹 변경
+  const { form, handleSubmit, handleChange } = useContactForm()
 
   return (
     <CardContainer>

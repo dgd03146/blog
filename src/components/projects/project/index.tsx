@@ -21,9 +21,9 @@ const Project = ({ project, key }: TProps) => {
   return (
     <li
       key={key}
-      tw="flex flex-col gap-x-[5rem] justify-between w-full laptop:flex-row"
+      tw="flex flex-col gap-x-[5rem] justify-between w-full laptop:flex-row max-h-[350px]"
     >
-      <ImageWrapper tw="w-full mb-6 h-[300px] tablet:h-[400px] laptop:mb-0 laptop:h-[250px] laptop:w-[350px]">
+      <ImageWrapper tw="w-full mb-6 min-h-[300px] tablet:h-[400px] laptop:mb-0 laptop:h-[350px] laptop:w-[350px]">
         <Image
           src={project.cover}
           alt="cover"
@@ -32,16 +32,12 @@ const Project = ({ project, key }: TProps) => {
           blurDataURL={rgbDataURL(237, 181, 6)}
         />
       </ImageWrapper>
-      <div tw="basis-[0] flex flex-col gap-y-4 tablet:basis-[50%]">
-        <h2>{project.title}</h2>
-        <p tw="font-medium">
-          {project.description}a car rental website is an online platform that
-          allows users to rend cars for personal or business use. The website
-          provides an interface for searching.
-        </p>
+      <div tw="basis-[0] flex flex-col gap-y-6 tablet:basis-[50%]">
+        <h1>{project.title}</h1>
+        <p tw="font-medium">{project.description}</p>
         {/* <p tw="text-[14px] text-gray">{dayjs(project.date).format('LL')}</p> */}
         <Tags project={project} />
-        <div tw="flex flex-1 items-center gap-x-8">
+        <div tw="flex items-end flex-1  gap-x-8">
           <button
             tw="flex items-center text-h3 font-medium gap-x-1"
             className="group"

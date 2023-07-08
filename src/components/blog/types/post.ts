@@ -14,6 +14,8 @@ export type TPost = {
   date: string
 }
 
+export type TProject = TPost
+
 export type TPostDetail = {
   post: TPost
   markdown: string

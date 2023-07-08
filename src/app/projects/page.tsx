@@ -1,9 +1,9 @@
 import React from 'react'
 import Projects from '@/components/projects'
-import { getAllPosts } from '@/service/notion'
+import { getAllProjects } from '@/service/notion'
 
 const ProjectsPage = async () => {
-  const posts = await getAllPosts()
+  const posts = await getAllProjects()
   return <Projects projects={posts} />
 }
 
