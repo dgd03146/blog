@@ -1,5 +1,11 @@
-import { useEffect, useState } from 'react'
+import { useEffect, useState, CSSProperties } from 'react'
 import { useTheme } from 'next-themes'
+import {
+  atomOneLight,
+  atomOneDark,
+} from 'react-syntax-highlighter/dist/esm/styles/hljs'
+
+type CSSPropertiesMap = { [key: string]: CSSProperties }
 
 const useCurrentTheme = () => {
   const [mounted, setMounted] = useState(false)
@@ -18,7 +24,10 @@ const useCurrentTheme = () => {
     setTheme('light')
   }
 
-  return { mounted, handleTheme, current_theme }
+  const codeStyle: CSSPropertiesMap | undefined =
+    current_theme === 'light' ? atomOneLight : atomOneDark
+
+  return { mounted, handleTheme, current_theme, codeStyle }
 }
 
 export default useCurrentTheme

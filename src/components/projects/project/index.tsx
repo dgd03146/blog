@@ -33,11 +33,11 @@ const Project = ({ project, key }: TProps) => {
         />
       </ImageWrapper>
       <div tw="basis-[0] flex flex-col gap-y-6 tablet:basis-[50%]">
-        <h1>{project.title}</h1>
+        <h1 tw="text-[1.8rem] text-blue dark:text-yellow">{project.title}</h1>
         <p tw="font-medium">{project.description}</p>
         {/* <p tw="text-[14px] text-gray">{dayjs(project.date).format('LL')}</p> */}
         <Tags project={project} />
-        <div tw="flex items-end flex-1  gap-x-8">
+        <div tw="flex  gap-x-8">
           <button
             tw="flex items-center text-h3 font-medium gap-x-1"
             className="group"

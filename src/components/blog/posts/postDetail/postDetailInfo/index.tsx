@@ -9,7 +9,7 @@ type TProps = {
 
 const PostDetailInfo = ({ post }: TProps) => {
   return (
-    <div tw="flex flex-col items-center gap-y-2 text-center">
+    <div tw="flex flex-col items-center gap-y-4 text-center">
       {/* TODO: 넣을지 말지 고민하기 */}
       {/* <ImageWrapper>
         <Image width={500} height={500} src={post.cover} alt="thumbnamil"    placeholder="blur"

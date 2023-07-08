@@ -2,8 +2,10 @@ import { CSSProperties } from 'react'
 import { Metadata } from 'next'
 import { ReactMarkdown } from 'react-markdown/lib/react-markdown'
 import SyntaxHighlighter from 'react-syntax-highlighter/dist/esm/default-highlight'
-
-import { nord } from 'react-syntax-highlighter/dist/esm/styles/hljs'
+import {
+  atomOneLight,
+  atomOneDark,
+} from 'react-syntax-highlighter/dist/esm/styles/hljs'
 import remarkGfm from 'remark-gfm'
 import PostDetail from '@/components/blog/posts/postDetail'
 import { getPost } from '@/service/notion'
@@ -31,7 +33,7 @@ export async function generateMetadata({
 
 const BlogPost = async ({ params: { slug } }: TProps) => {
   const post = await getPost(slug)
-  const codeStyle: CSSPropertiesMap | undefined = nord
+  const codeStyle: CSSPropertiesMap | undefined = atomOneLight
 
   return (
     <PostDetail post={post}>
