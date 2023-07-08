@@ -1,10 +1,10 @@
 import React from 'react'
 import Projects from '@/components/projects'
-import { getAllPosts } from '@/service/notion'
+import { getAllProjects } from '@/service/notion'
 
 const ProjectsPage = async () => {
-  const posts = await getAllPosts()
-  return <Projects projects={posts} />
+  const projects = await getAllProjects()
+  return <Projects projects={projects} />
 }
 
 export default ProjectsPage

@@ -10,8 +10,6 @@ interface ToastProps {
   action?: string
 }
 
-// FIXME: 타입 폴더 분리하기
-
 export enum TToastType {
   success,
   error,
@@ -29,8 +27,6 @@ const toastOptions: ToastOptions = {
   pauseOnFocusLoss: true,
   closeButton: false,
 }
-
-// FIXME: toast는 atom인가 molecule인가
 
 export function showToast({ type, message }: ToastProps) {
   switch (type) {

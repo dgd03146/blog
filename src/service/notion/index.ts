@@ -2,20 +2,24 @@ import { cache } from 'react'
 import { Client } from '@notionhq/client'
 import { NotionToMarkdown } from 'notion-to-md'
 import { TPostDetail } from '@/components/blog/types/post'
-import { getBlogDatabaseId, getNotionToken } from '@/envs'
+import {
+  getBlogDatabaseId,
+  getNotionToken,
+  getPortfolioDatabaseId,
+} from '@/envs'
 import { pageToPostTransformer } from '@/utils/pageToPostTransformer'
 
 const BLOG_DATABASE_ID = getBlogDatabaseId()
+const PORTFOLIO_DATABASE_ID = getPortfolioDatabaseId()
 
 const notion = new Client({
   auth: getNotionToken(),
 })
 const n2m = new NotionToMarkdown({ notionClient: notion })
 
-// 동일하게 호출한 인자에 대해 cache 값을 사용함
-export const getAllPosts = cache(async () => {
+const getAllData = cache(async (databaseId: string) => {
   const response = await notion.databases.query({
-    database_id: BLOG_DATABASE_ID,
+    database_id: databaseId,
     filter: {
       property: 'published',
       checkbox: {
@@ -34,6 +38,15 @@ export const getAllPosts = cache(async () => {
     return pageToPostTransformer(res)
   })
 })
+
+// 동일하게 호출한 인자에 대해 cache 값을 사용함
+export const getAllPosts = async () => {
+  return getAllData(BLOG_DATABASE_ID)
+}
+
+export const getAllProjects = async () => {
+  return getAllData(PORTFOLIO_DATABASE_ID)
+}
 
 export const getPost = async (slug: string): Promise<TPostDetail> => {
   const response = await notion.databases.query({

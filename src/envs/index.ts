@@ -7,7 +7,7 @@ export const getBlogDatabaseId = () => {
 }
 
 export const getPortfolioDatabaseId = () => {
-  return process.env.NOTION_PORTFOLIO_DATABASE_ID
+  return process.env.NOTION_PORTFOLIO_DATABASE_ID || ''
 }
 
 export const getNotionToken = () => {
