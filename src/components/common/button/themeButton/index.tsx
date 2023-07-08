@@ -1,6 +1,5 @@
-import { useEffect, useState } from 'react'
 import { motion } from 'framer-motion'
-import { useTheme } from 'next-themes'
+
 import { BsToggleOff, BsToggleOn } from 'react-icons/bs'
 import {} from 'twin.macro'
 import useCurrentTheme from '@/components/about/hooks/useCurrentTheme'
