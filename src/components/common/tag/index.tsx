@@ -1,4 +1,4 @@
-import { TTag } from '@/components/blog/types/post'
+import { TTag } from '@/types/notion'
 import { Container } from './style'
 
 const Tag = ({ key, tag }: { key: string; tag: TTag }) => {

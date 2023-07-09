@@ -6,7 +6,7 @@ import {} from 'twin.macro'
 import Divider from '@/components/common/layout/divider'
 
 import { getPageName } from '@/utils/getPageName'
-import TransitionEffect from '../../transitionEffect'
+import TransitionEffect from '../transitionEffect'
 
 const PageLayout = ({ children }: { children?: React.ReactNode }) => {
   const pathname = getPageName(usePathname())

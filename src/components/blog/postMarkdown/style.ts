@@ -11,8 +11,10 @@ export const MarkDownWrapper = styled.article`
     word-break: keep-all;
     overflow-wrap: break-word;
     border-radius: 4px;
-    ${tw`text-[#eb5757] dark:text-emerald`}
-    ${tw`bg-[rgba(135, 131, 120, 0.15)] dark:bg-slate`}
+    ${tw`text-red border-red text-[14px] font-medium dark:text-emerald dark:border-emerald shadow-[0_0_3px_red] dark:shadow-[0_0_3px_green] rounded-sm`}
+
+    /* ${tw`text-[#eb5757] dark:text-emerald`}
+    ${tw`bg-[rgba(135, 131, 120, 0.15)] dark:bg-[#b8d8b8ee]`} */
     /* background-color: rgba(135, 131, 120, 0.15); */
     padding: 0.125rem 0.25rem;
     margin-right: 0.125rem;
@@ -46,7 +48,7 @@ export const MarkDownWrapper = styled.article`
     }
 
     strong {
-      ${tw`text-dark dark:text-slate`}
+      ${tw`text-dark dark:text-white`}
     }
   }
 
@@ -56,7 +58,7 @@ export const MarkDownWrapper = styled.article`
     }
     code {
       ${tw`text-inherit dark:text-inherit`}
-      ${tw`bg-inherit dark:bg-inherit`}
+      ${tw`shadow-transparent dark:shadow-transparent`}
     }
   }
 
@@ -69,6 +71,14 @@ export const MarkDownWrapper = styled.article`
   li {
     ::marker {
       ${tw`dark:text-slate`}
+    }
+  }
+
+  ul,
+  ol,
+  li {
+    strong {
+      ${tw`text-dark dark:text-light`}
     }
   }
 `

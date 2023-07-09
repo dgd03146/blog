@@ -2,9 +2,9 @@ import Image from 'next/image'
 import Link from 'next/link'
 
 import {} from 'twin.macro'
-import { LINKEDIN_URL } from '@/constants/socialLink'
+import { LINKEDIN_URL } from '@/constants/url'
 import { rgbDataURL } from '@/utils/getPlaceHolder'
-import useCurrentTheme from '../hooks/useCurrentTheme'
+import useCurrentTheme from '../../../hooks/useCurrentTheme'
 import { Content, ImageWrapper } from './style'
 
 const ImageSection = () => {
