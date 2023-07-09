@@ -1,12 +1,13 @@
 import { cache } from 'react'
 import { Client } from '@notionhq/client'
 import { NotionToMarkdown } from 'notion-to-md'
-import { TPostDetail } from '@/components/blog/types/post'
 import {
   getBlogDatabaseId,
   getNotionToken,
   getPortfolioDatabaseId,
 } from '@/envs'
+import { TPostDetail } from '@/types/notion'
+
 import { pageToPostTransformer } from '@/utils/pageToPostTransformer'
 
 const BLOG_DATABASE_ID = getBlogDatabaseId()

@@ -18,7 +18,7 @@ const useCurrentTheme = () => {
     setTheme('light')
   }
 
-  return { mounted, handleTheme, current_theme, codeStyle }
+  return { mounted, handleTheme, current_theme }
 }
 
 export default useCurrentTheme

@@ -3,9 +3,9 @@
 import { PropsWithChildren } from 'react'
 
 import {} from 'twin.macro'
-import { TPostDetail } from '@/components/blog/types/post'
+import { TPostDetail } from '@/types/notion'
+import PostDetailInfo from '../postDetailInfo'
 import PostMarkdown from '../postMarkdown'
-import PostDetailInfo from './postDetailInfo'
 
 type TProps = {
   post: TPostDetail

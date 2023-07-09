@@ -2,7 +2,7 @@ import { motion } from 'framer-motion'
 
 import { BsToggleOff, BsToggleOn } from 'react-icons/bs'
 import {} from 'twin.macro'
-import useCurrentTheme from '@/components/about/hooks/useCurrentTheme'
+import useCurrentTheme from '@/hooks/useCurrentTheme'
 
 const ThemeButton = () => {
   const { mounted, current_theme, handleTheme } = useCurrentTheme()

@@ -4,7 +4,7 @@ export type TTag = {
   name: string
 }
 
-export type TPost = {
+export type TNotionData = {
   id: string
   slug: string
   cover: string
@@ -12,11 +12,11 @@ export type TPost = {
   tags: TTag[]
   description: string
   date: string
+  githubUrl?: string
+  demoUrl?: string
 }
 
-export type TProject = TPost
-
 export type TPostDetail = {
-  post: TPost
+  post: TNotionData
   markdown: string
 }
