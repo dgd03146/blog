@@ -2,19 +2,31 @@ import {
   PageObjectResponse,
   PartialPageObjectResponse,
 } from '@notionhq/client/build/src/api-endpoints'
-import { TPost, TTag } from '@/components/blog/types/post'
+import { TNotionData, TTag } from '@/types/notion'
 
-type TPostKey = TPost & { [key: string]: string | string[] | TTag[] | null }
+type TNotionKey = TNotionData & {
+  [key: string]: string | string[] | TTag[] | null
+}
+
+export interface TNotionDatabase extends PageObjectResponse {
+  github_url: { id: string; type: string; url: string }
+  demo_url: { id: string; type: string; url: string }
+}
 
 export const pageToPostTransformer = (
-  page: PageObjectResponse | PartialPageObjectResponse,
-): TPost => {
+  page: PartialPageObjectResponse | PageObjectResponse,
+): TNotionData => {
   const { id, properties, cover, last_edited_time } = page as PageObjectResponse
+  const { github_url, demo_url } = properties
 
-  const res: Partial<TPostKey> = {}
+  const githubUrl = github_url?.type === 'url' ? github_url.url : ''
+  const demoUrl = demo_url?.type === 'url' ? demo_url.url : ''
+
+  const res: Partial<TNotionKey> = {}
 
   Object.keys(properties).forEach((key) => {
     const propertyVal = properties[key]
+
     let value: string | string[] | TTag[] | null = ''
 
     switch (propertyVal.type) {
@@ -33,6 +45,9 @@ export const pageToPostTransformer = (
         break
       case 'last_edited_time':
         value = propertyVal.last_edited_time
+        break
+      case 'url':
+        value = propertyVal.url
         break
       default:
         break
@@ -62,5 +77,7 @@ export const pageToPostTransformer = (
     description: res.description || '',
     date: res.date || last_edited_time,
     slug: res.slug || '',
+    githubUrl: githubUrl || '',
+    demoUrl: demoUrl || '',
   }
 }

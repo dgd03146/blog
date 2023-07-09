@@ -3,14 +3,14 @@ import dayjs from 'dayjs'
 import Image from 'next/image'
 import Link from 'next/link'
 import {} from 'twin.macro'
-import { TPost } from '@/components/blog/types/post'
 import Tags from '@/components/common/tags'
 import { ROUTE_SLUG } from '@/constants/route'
+import { TNotionData } from '@/types/notion'
 import { rgbDataURL } from '@/utils/getPlaceHolder'
 import { ImageWrapper, PostContainer } from './style'
 
 type TProps = {
-  post: TPost
+  post: TNotionData
   key: string
 }
 
@@ -28,7 +28,7 @@ const Post = ({ post, key }: TProps) => {
             <h1 tw="text-[2rem] group-hover:text-blue dark:group-hover:text-yellow">
               {post.title}
             </h1>
-            <h2 tw="font-medium text-[1.3rem] text-green dark:text-slate">
+            <h2 tw="font-medium text-[1.3rem] text-green dark:text-light">
               {post.description}
             </h2>
             <p tw="text-[1rem] text-gray flex-1 flex items-end">

@@ -3,7 +3,7 @@ import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import { FaGithub, FaLinkedinIn, FaMediumM } from 'react-icons/fa'
 import tw from 'twin.macro'
-import { GITHUB_URL, LINKEDIN_URL, MIDEUM_URL } from '@/constants/socialLink'
+import { GITHUB_URL, LINKEDIN_URL, MIDEUM_URL } from '@/constants/url'
 
 const SOCIAL_LINKS = [
   { href: GITHUB_URL, icon: <FaGithub /> },

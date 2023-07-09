@@ -2,7 +2,7 @@ import React from 'react'
 import {} from 'twin.macro'
 import ContactButton from '@/components/common/button/contactButton'
 import SocialNavigation from '@/components/common/socialNavigation'
-import { RESUME_URL } from '@/constants/socialLink'
+import { RESUME_URL } from '@/constants/url'
 
 const ResumeSection = () => {
   return (

@@ -2,11 +2,11 @@
 
 import React from 'react'
 import {} from 'twin.macro'
-import { TPost } from '@/components/blog/types/post'
-import Post from './post'
+import { TNotionData } from '@/types/notion'
+import Post from '../post'
 
 type TProps = {
-  posts: TPost[]
+  posts: TNotionData[]
 }
 
 const Posts = ({ posts }: TProps) => {
