@@ -23,7 +23,7 @@ const ButtonLink = ({
         <RiGithubFill tw="group-hover:text-blue dark:group-hover:text-yellow" />
       </button>
     </Link>
-    <Link href={demoUrl || GITHUB_URL}>
+    {/* <Link href={demoUrl || GITHUB_URL}>
       <button
         tw="flex items-center text-h3 font-medium gap-x-1"
         className="group"
@@ -33,7 +33,7 @@ const ButtonLink = ({
         </span>
         <RiShareBoxFill tw="group-hover:text-blue dark:group-hover:text-yellow" />
       </button>
-    </Link>
+    </Link> */}
   </div>
 )
 
