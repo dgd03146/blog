@@ -5,7 +5,7 @@ I have built an engaging personal portfolio and blog website using the newest ve
 
 # Built With
 
-I created this app Next.js 13 version with React. As a CSS library, I used twin.macro so that use tailwind and styled-components.
+Built an application using Next.js and React, leveraging the latest version, Next.js 13. Implemented CSS styling using twin.macro, which enabled the use of both Tailwind CSS and styled-components.
 
 # Getting Started
 
@@ -40,33 +40,32 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/deploy
 
 # Pages
 
-![Untitled](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/6371f1bc-b790-4430-9732-212742719b87/Untitled.png)
-
-![Untitled](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/5a811344-3ddd-40b4-823b-3c885fac80f7/Untitled.png)
-
-![Untitled](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/df0d53d4-3a25-4fa0-bfc1-82ead7a3508d/Untitled.png)
-
-![Untitled](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/2df297e3-f08d-40da-8b97-3fd55d0fc26a/Untitled.png)
-
-- About
+### About
+![about](https://github.com/dgd03146/blog/assets/84106842/43cb1e37-b2de-43aa-86f1-b6a63dd958dd)
 
 This page showcases my interests and the tech stacks I am proficient in. Discover what fascinates me and explore the range of technologies I can handle.
 
-- Blog
+### Blog
+![blog](https://github.com/dgd03146/blog/assets/84106842/30188bb0-3953-4da0-8c5d-ac0aa113d6bf)
 
 This page shows articles that I studied and wrote about tech stacks or thoughts in front-end development. I delve into my studies and provide insights into the world of software development.
 
-- Projects
+### Projects
+![projects_page](https://github.com/dgd03146/blog/assets/84106842/2f797d4b-af18-4bd3-8573-510467202fac)
 
 This page features the front-end projects I have undertaken during my studies. Explore a collection of my completed projects, each demonstrating my proficiency in front-end development
 
-- Contact
+### Contact
+![contact](https://github.com/dgd03146/blog/assets/84106842/85251c5c-1aac-4c78-a875-2b88fb36ebad)
 
 This page allows you to get in touch with me by sending an email. Feel free to reach out with any inquiries, collaborations, or questions.
 
 # What I have considered
+## Design
 
-## **Atomic Design**
+Implemented a design inspired by the movie "La La Land" to showcase my personal interests. Incorporated the distinct color palette from the movie, which infuses each scene with its own personality. Applied these colors to enhance the visual appeal of my blog project.
+
+## **Atomic Design Pattern**
 
 At first, I organized my code using Atomic Design. However, using Atomic Design for the sake of convenience made it difficult to distinguish between molecules and organisms.
 
@@ -83,3 +82,11 @@ Feeling a bit uncomfortable with implementing code solely using Tailwind CSS, I 
 When using Next.js 13 router, I considered using Server Components for the first time. Through bundle analysis, I discovered that Markdown libraries require a significant bundle size.
 
 To reduce bundle size and achieve faster JavaScript loading speed, I implemented the usage of Markdown libraries as server components.
+
+## Dark Mode
+
+Applied Dark mode functionality to the application, enhancing the overall user experience
+
+## Development Setting
+
+Ensured code quality and adherence to coding conventions by implementing ESLint, Prettier, and Husky. Utilized the issue tracking system to enable gradual progress and consistent development of the project.
