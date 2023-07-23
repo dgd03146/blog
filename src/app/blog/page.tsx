@@ -1,7 +1,7 @@
 import Posts from '@/components/blog/posts'
 import { getAllPosts } from '@/service/notion'
 
-export const revalidate = 21600
+export const revalidate = 3600
 
 const BlogPage = async () => {
   const posts = await getAllPosts()
