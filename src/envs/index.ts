@@ -21,3 +21,7 @@ export const getNodeMailerUser = () => {
 export const getNodeMailerPass = () => {
   return process.env.AUTH_PASS
 }
+
+export const getGoogleVerificationCode = () => {
+  return process.env.GOOGLE_VERIFICATION
+}
