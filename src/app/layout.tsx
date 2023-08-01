@@ -1,10 +1,26 @@
 import { Indie_Flower, Montserrat } from '@next/font/google'
+import { Metadata } from 'next'
 import Footer from '@/components/common/layout/footer'
 import Header from '@/components/common/layout/header'
 import Toast from '@/components/common/toast'
+import { getGoogleVerificationCode } from '@/envs'
 import StyledComponentsRegistry from '@/lib/registry'
 import { Providers } from './providers'
 import '@/styles/global.css'
+
+export const metadata: Metadata = {
+  title: {
+    default: 'JungLog',
+    template: 'JungLog | %s',
+  },
+  description: `Frontend Developer Jung's DevLog`,
+  icons: {
+    icon: '/favicon.ico',
+  },
+  verification: {
+    google: getGoogleVerificationCode(),
+  },
+}
 
 const indie = Indie_Flower({
   weight: '400',
