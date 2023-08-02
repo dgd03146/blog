@@ -55,7 +55,7 @@ export const pageToPostTransformer = (
     res[key] = value
   })
 
-  let defaultCover = '/assets/images/default-cover.png'
+  let defaultCover = ''
   if (cover !== null) {
     switch (cover.type) {
       case 'file':
@@ -71,7 +71,7 @@ export const pageToPostTransformer = (
 
   return {
     id,
-    cover: defaultCover,
+    cover: defaultCover || '/assets/images/default-cover.png',
     title: res.title || '',
     tags: res.tags || [],
     description: res.description || '',

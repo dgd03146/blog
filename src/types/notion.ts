@@ -12,8 +12,8 @@ export type TNotionData = {
   tags: TTag[]
   description: string
   date: string
-  githubUrl?: string
-  demoUrl?: string
+  githubUrl: string
+  demoUrl: string
 }
 
 export type TPostDetail = {
