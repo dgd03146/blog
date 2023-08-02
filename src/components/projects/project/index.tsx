@@ -36,7 +36,7 @@ const Project = ({ project, key }: TProps) => {
         <h1 tw="text-[1.8rem] text-blue dark:text-yellow">{project.title}</h1>
         <p tw="font-medium">{project.description}</p>
         <Tags project={project} />
-        <ButtonLink githubUrl={project.githubUrl} demoUrl={project.githubUrl} />
+        <ButtonLink githubUrl={project.githubUrl} demoUrl={project.demoUrl} />
       </div>
     </li>
   )
