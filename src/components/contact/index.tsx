@@ -24,6 +24,7 @@ const Contact = () => {
               width={310}
               height={310}
               placeholder="blur"
+              priority
               blurDataURL={rgbDataURL(0, 0, 139)}
             />
           </div>

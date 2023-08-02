@@ -29,7 +29,7 @@ const getAllData = cache(async (databaseId: string) => {
     },
     sorts: [
       {
-        property: 'created',
+        property: 'last_edited_time',
         direction: 'descending',
       },
     ],

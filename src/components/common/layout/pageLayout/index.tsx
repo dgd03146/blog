@@ -16,14 +16,14 @@ const PageLayout = ({ children }: { children?: React.ReactNode }) => {
   return (
     <>
       <TransitionEffect />
-      <div tw="py-6">
+      <div tw="py-8">
         {!isNested && (
           <>
-            <h1 tw="font-indie">{pathname}</h1>
+            <h1 tw="font-indie text-[2.8rem]">{pathname}</h1>
             <Divider />
           </>
         )}
-        <div tw="py-10 w-[92%] max-w-[92%] mx-auto">{children}</div>
+        <div tw="py-10  mx-auto">{children}</div>
       </div>
     </>
   )
