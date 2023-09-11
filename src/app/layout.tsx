@@ -47,9 +47,9 @@ export default function RootLayout({
         <body>
           <Providers>
             <Toast />
-            <main className="h-screen w-full min-h-screen flex flex-col">
+            <main className="h-screen w-full min-h-screen flex flex-col max-w-[980px] mx-auto">
               <Header />
-              <div className="mx-auto  laptop:min-w-[980px] max-w-[980px] pt-[90px] flex-[1]">
+              <div className="mx-auto pt-[90px] flex-[1] w-[92%] laptop:w-full">
                 <div className="mx-auto ">{children}</div>
               </div>
               <Footer />

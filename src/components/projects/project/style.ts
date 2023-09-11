@@ -12,5 +12,7 @@ export const ImageWrapper = styled.div`
     position: relative !important;
     object-fit: cover;
     border-radius: 12px;
+    -webkit-transition: 0.2s ease-in-out;
+    transition: 0.2s ease-in-out;
   }
 `
