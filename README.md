@@ -1,3 +1,6 @@
+# Deployed URL
+https://junglog.vercel.app/
+
 # Introduction
 ![Untitled](https://github.com/dgd03146/blog/assets/84106842/c6abf355-b934-423d-900f-cfa363cc97b4)
 
@@ -11,11 +14,7 @@ Built an application using Next.js and React, leveraging the latest version, Nex
 
 First, run the development server:
 
-`npm run dev
-# or
-yarn dev
-# or
-pnpm dev`
+`npm run dev`
 
 Open [http://localhost:3000](http://localhost:3000/) with your browser to see the result.
 
