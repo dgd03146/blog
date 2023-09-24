@@ -34,10 +34,10 @@ export const MarkDownWrapper = styled.article`
   }
 
   p {
-    font-size: 1rem;
+    font-size: 17px;
     line-height: 1.6875rem;
     letter-spacing: 0;
-    font-weight: 400;
+    font-weight: normal;
     word-break: keep-all;
     overflow-wrap: break-word;
 
