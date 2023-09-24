@@ -23,7 +23,7 @@ const Post = ({ post, key }: TProps) => {
     <PostContainer key={key}>
       <Link href={ROUTE_SLUG('blog', post.slug)} className="group">
         <div tw="flex flex-col-reverse justify-between w-full laptop:flex-row">
-          <div tw="flex flex-col w-full max-w-[455px] laptop:max-w-4xl laptop:w-fit gap-y-4">
+          <div tw="flex flex-col w-full laptop:max-w-4xl laptop:w-fit gap-y-4">
             <Tags post={post} />
             <h1 tw="text-[2rem] group-hover:text-blue dark:group-hover:text-yellow">
               {post.title}

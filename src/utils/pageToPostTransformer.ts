@@ -16,7 +16,8 @@ export interface TNotionDatabase extends PageObjectResponse {
 export const pageToPostTransformer = (
   page: PartialPageObjectResponse | PageObjectResponse,
 ): TNotionData => {
-  const { id, properties, cover, last_edited_time } = page as PageObjectResponse
+  const { id, properties, cover, last_edited_time, created_time } =
+    page as PageObjectResponse
   const { github_url, demo_url } = properties
 
   const githubUrl = github_url?.type === 'url' ? github_url.url : ''
@@ -45,6 +46,9 @@ export const pageToPostTransformer = (
         break
       case 'last_edited_time':
         value = propertyVal.last_edited_time
+        break
+      case 'created_time':
+        value = propertyVal.created_time
         break
       case 'url':
         value = propertyVal.url
@@ -75,7 +79,7 @@ export const pageToPostTransformer = (
     title: res.title || '',
     tags: res.tags || [],
     description: res.description || '',
-    date: res.date || last_edited_time,
+    date: res.date || created_time,
     slug: res.slug || '',
     githubUrl: githubUrl || '',
     demoUrl: demoUrl || '',
