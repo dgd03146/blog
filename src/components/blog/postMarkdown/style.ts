@@ -4,17 +4,17 @@ export const MarkDownWrapper = styled.article`
   padding: 0;
 
   code {
-    font-size: 0.875rem;
-    line-height: 1.5rem;
-    letter-spacing: 0;
-    font-weight: 500;
+    ${tw`font-inter`}
+    font-size: 85%;
+    line-height: normal;
     word-break: keep-all;
     overflow-wrap: break-word;
     border-radius: 4px;
-    ${tw`text-red border-red text-[14px] font-medium dark:text-emerald dark:border-emerald shadow-[0_0_3px_red] dark:shadow-[0_0_3px_green] rounded-sm`}
 
-    /* ${tw`text-[#eb5757] dark:text-emerald`}
-    ${tw`bg-[rgba(135, 131, 120, 0.15)] dark:bg-[#b8d8b8ee]`} */
+    /* ${tw`text-red border-red text-[14px] font-medium p-0 dark:text-emerald dark:border-emerald shadow-[0_0_3px_red] dark:shadow-[0_0_3px_green] rounded-sm`} */
+
+    ${tw`text-[#eb5757] dark:text-emerald`}
+    ${tw`bg-[rgba(135, 131, 120, 0.15)] dark:bg-[#b8d8b8ee]`}
     /* background-color: rgba(135, 131, 120, 0.15); */
     padding: 0.125rem 0.25rem;
     margin-right: 0.125rem;
@@ -34,10 +34,10 @@ export const MarkDownWrapper = styled.article`
   }
 
   p {
-    font-size: 1rem;
+    font-size: 17px;
     line-height: 1.6875rem;
     letter-spacing: 0;
-    font-weight: 400;
+    font-weight: normal;
     word-break: keep-all;
     overflow-wrap: break-word;
 
@@ -57,7 +57,8 @@ export const MarkDownWrapper = styled.article`
       background-color: transparent !important;
     }
     code {
-      ${tw`text-inherit dark:text-inherit`}
+      font-size: 0.9rem;
+      ${tw`text-inherit dark:text-inherit bg-transparent dark:bg-transparent`}
       ${tw`shadow-transparent dark:shadow-transparent`}
     }
   }

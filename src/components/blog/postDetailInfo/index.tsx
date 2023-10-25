@@ -1,7 +1,10 @@
 import {} from 'twin.macro'
+import Image from 'next/image'
 import Tags from '@/components/common/tags'
 import { TNotionData } from '@/types/notion'
 import { formatDate } from '@/utils/formatDate'
+import { rgbDataURL } from '@/utils/getPlaceHolder'
+import { ImageWrapper } from './style'
 
 type TProps = {
   post: TNotionData
@@ -9,17 +12,23 @@ type TProps = {
 
 const PostDetailInfo = ({ post }: TProps) => {
   return (
-    <div tw="flex flex-col items-center gap-y-4 text-center">
-      {/* <ImageWrapper>
-        <Image width={500} height={500} src={post.cover} alt="thumbnamil"    placeholder="blur"
-         blurDataURL={rgbDataURL(220, 220, 220)}/>
-      </ImageWrapper> */}
-      <h1 tw="text-[32px] tablet:text-[3rem]">{post.title}</h1>
-      <h2 tw="text-[20px] tablet:text-[2rem] font-medium ">
-        {post.description}
-      </h2>
-      <p>{formatDate(post.date)}</p>
-      <Tags post={post} />
+    <div tw="flex flex-col gap-y-4">
+      <ImageWrapper>
+        <Image
+          width={500}
+          height={500}
+          src={post.cover}
+          alt="thumbnamil"
+          placeholder="blur"
+          blurDataURL={rgbDataURL(220, 220, 220)}
+        />
+      </ImageWrapper>
+      <h1 tw="text-[40px] tablet:text-[48px] font-[700]">{post.title}</h1>
+      <div tw="flex gap-x-4 items-center">
+        <p>{formatDate(post.date)}</p>
+        <Tags post={post} />
+      </div>
+      <p tw="mt-12 text-[17px] font-normal">{post.description}</p>
     </div>
   )
 }

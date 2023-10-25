@@ -22,11 +22,15 @@ module.exports = {
       fontFamily: {
         mont: ['var(--font-montserrat)'],
         indie: ['var(--font-indie)'],
+        inter: ['var(--font-inter)'],
       },
       colors: {
         dark: '#1b1b1b',
         gray: '#7D7D7D',
         light: '#f5f5f5',
+        lightGray: '#ececec',
+        codeBgLight: '#EAE9E5',
+        codeBgDark: '#252525',
         red: '#a4253b',
         blue: '#053a86',
         darkBlue: '#030329',

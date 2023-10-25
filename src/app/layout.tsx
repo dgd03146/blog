@@ -1,10 +1,23 @@
-import { Indie_Flower, Montserrat } from '@next/font/google'
+import { Indie_Flower, Montserrat, Inter } from '@next/font/google'
+import { Metadata } from 'next'
 import Footer from '@/components/common/layout/footer'
 import Header from '@/components/common/layout/header'
 import Toast from '@/components/common/toast'
+
 import StyledComponentsRegistry from '@/lib/registry'
 import { Providers } from './providers'
 import '@/styles/global.css'
+
+export const metadata: Metadata = {
+  title: {
+    default: 'JungLog',
+    template: 'JungLog | %s',
+  },
+  description: `Frontend Developer Jung's DevLog`,
+  icons: {
+    icon: '/favicon.ico',
+  },
+}
 
 const indie = Indie_Flower({
   weight: '400',
@@ -19,6 +32,11 @@ const montserrat = Montserrat({
   variable: '--font-montserrat',
 })
 
+const inter = Inter({
+  subsets: ['latin'],
+  display: 'swap',
+  variable: '--font-inter',
+})
 export default function RootLayout({
   children,
 }: {
@@ -29,15 +47,15 @@ export default function RootLayout({
       <html
         lang="en"
         suppressHydrationWarning
-        className={`${montserrat.className} ${indie.variable} ${montserrat.variable}`}
+        className={`${montserrat.className} ${indie.variable} ${montserrat.variable} ${inter.variable}`}
       >
         <body>
           <Providers>
             <Toast />
-            <main className="h-screen w-full min-h-screen flex flex-col">
+            <main className="h-screen w-full min-h-screen flex flex-col max-w-[980px] mx-auto">
               <Header />
-              <div className="mx-auto w-[92%] laptop:min-w-[980px] max-w-[980px] pt-[90px] flex-[1]">
-                <div className="mx-auto w-[92%]">{children}</div>
+              <div className="mx-auto flex-[1] my-[60px] w-[92%] laptop:w-full">
+                <div className="mx-auto ">{children}</div>
               </div>
               <Footer />
             </main>

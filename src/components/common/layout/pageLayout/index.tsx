@@ -1,29 +1,23 @@
 'use client'
 
 import React from 'react'
-import { useParams, usePathname } from 'next/navigation'
+import { usePathname } from 'next/navigation'
 import {} from 'twin.macro'
-import Divider from '@/components/common/layout/divider'
 
 import { getPageName } from '@/utils/getPageName'
 import TransitionEffect from '../transitionEffect'
 
 const PageLayout = ({ children }: { children?: React.ReactNode }) => {
   const pathname = getPageName(usePathname())
-  const params = useParams()
-  const isNested = !!params.slug
+  // const params = useParams()
+  // const isNested = !!params.slug
 
   return (
     <>
       <TransitionEffect />
-      <div tw="py-6">
-        {!isNested && (
-          <>
-            <h1 tw="font-indie">{pathname}</h1>
-            <Divider />
-          </>
-        )}
-        <div tw="py-10 w-[92%] max-w-[92%] mx-auto">{children}</div>
+      <div>
+        <h1 tw="text-[2rem] mt-[52px] mb-[32px]">{pathname || 'Blog'}</h1>
+        <div tw="py-4  mx-auto">{children}</div>
       </div>
     </>
   )

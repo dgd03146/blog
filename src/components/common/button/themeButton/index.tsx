@@ -1,11 +1,12 @@
+import { useTransition } from 'react'
 import { motion } from 'framer-motion'
-
 import { BsToggleOff, BsToggleOn } from 'react-icons/bs'
 import {} from 'twin.macro'
 import useCurrentTheme from '@/hooks/useCurrentTheme'
 
 const ThemeButton = () => {
   const { mounted, current_theme, handleTheme } = useCurrentTheme()
+  const [isPending, startTransition] = useTransition()
 
   if (!mounted) {
     return <BsToggleOff tw="text-[2rem]" />
@@ -15,7 +16,11 @@ const ThemeButton = () => {
     <motion.button
       whileHover={{ scale: 1.1 }}
       whileTap={{ scale: 0.8 }}
-      onClick={handleTheme}
+      onClick={() => {
+        startTransition(() => {
+          handleTheme()
+        })
+      }}
     >
       {current_theme === 'light' ? (
         <BsToggleOff tw="text-[2rem]" />

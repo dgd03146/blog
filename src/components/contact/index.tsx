@@ -23,8 +23,9 @@ const Contact = () => {
               alt="lalaland"
               width={310}
               height={310}
-              placeholder="blur"
-              blurDataURL={rgbDataURL(0, 0, 139)}
+              // placeholder="blur"
+              // blurDataURL={rgbDataURL(0, 0, 139)}
+              priority
             />
           </div>
         </div>
