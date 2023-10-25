@@ -4,10 +4,10 @@ import Posts from '@/components/blog/posts'
 import PageLayout from '@/components/common/layout/pageLayout'
 import { getAllPosts } from '@/service/notion'
 
+export const revalidate = 3000
+
 export default async function Page() {
   const posts = await getAllPosts()
-
-  // className="font-indie"
 
   return (
     <PageLayout>

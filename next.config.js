@@ -22,6 +22,9 @@ const nextConfig = withTwin(
         'prod-files-secure.s3.us-west-2.amazonaws.com',
       ],
     },
+    experimental: {
+      serverActions: true,
+    },
     formats: ['image/avif', 'image/webp'],
   }),
 )

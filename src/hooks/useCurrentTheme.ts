@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react'
 import { useTheme } from 'next-themes'
+import { setServerTheme } from '@/app/actions.server'
 
 const useCurrentTheme = () => {
   const [mounted, setMounted] = useState(false)
@@ -11,11 +12,9 @@ const useCurrentTheme = () => {
   }, [])
 
   const handleTheme = () => {
-    if (theme === 'light') {
-      setTheme('dark')
-      return
-    }
-    setTheme('light')
+    const newTheme = theme === 'light' ? 'dark' : 'light'
+    setTheme(newTheme)
+    setServerTheme(newTheme)
   }
 
   return { mounted, handleTheme, current_theme }
