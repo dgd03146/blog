@@ -11,6 +11,6 @@ export const ROUTES = Object.keys(ROUTE).map((key) => ({
   path: ROUTE[key],
 }))
 
-export const ROUTE_SLUG = (route: 'blog' | 'projects', slug: string) => {
+export const ROUTE_SLUG = (slug: string, route: '' | 'projects' = '') => {
   return `${route}/${slug}`
 }

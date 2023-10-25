@@ -20,7 +20,7 @@ export async function generateMetadata({
 }: TProps): Promise<Metadata> {
   const { post } = await getPost(slug)
   const title = post?.title || 'Title'
-  const description = post?.description || 'Descrition'
+  const description = post?.description || 'Description'
 
   return {
     title,

@@ -1,10 +1,18 @@
 import Script from 'next/script'
-import Hero from '@/components/home/hero'
+import Posts from '@/components/blog/posts'
+// import Hero from '@/components/home/hero'
+import PageLayout from '@/components/common/layout/pageLayout'
+import { getAllPosts } from '@/service/notion'
 
-export default function Page() {
+export default async function Page() {
+  const posts = await getAllPosts()
+
+  // className="font-indie"
+
   return (
-    <div className="font-indie">
-      <Hero />
+    <PageLayout>
+      <Posts posts={posts} />
+      {/* <Hero /> */}
       <Script src="https://www.googletagmanager.com/gtag/js?id=G-CBQMSPCGYV" />
       <Script id="google-analytics">
         {`
@@ -15,6 +23,6 @@ export default function Page() {
           gtag('config', 'G-CBQMSPCGYV');
         `}
       </Script>
-    </div>
+    </PageLayout>
   )
 }

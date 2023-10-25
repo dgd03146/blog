@@ -1,4 +1,4 @@
-import { Indie_Flower, Montserrat } from '@next/font/google'
+import { Indie_Flower, Montserrat, Inter } from '@next/font/google'
 import { Metadata } from 'next'
 import Footer from '@/components/common/layout/footer'
 import Header from '@/components/common/layout/header'
@@ -32,6 +32,11 @@ const montserrat = Montserrat({
   variable: '--font-montserrat',
 })
 
+const inter = Inter({
+  subsets: ['latin'],
+  display: 'swap',
+  variable: '--font-inter',
+})
 export default function RootLayout({
   children,
 }: {
@@ -42,14 +47,14 @@ export default function RootLayout({
       <html
         lang="en"
         suppressHydrationWarning
-        className={`${montserrat.className} ${indie.variable} ${montserrat.variable}`}
+        className={`${montserrat.className} ${indie.variable} ${montserrat.variable} ${inter.variable}`}
       >
         <body>
           <Providers>
             <Toast />
             <main className="h-screen w-full min-h-screen flex flex-col max-w-[980px] mx-auto">
               <Header />
-              <div className="mx-auto pt-[90px] flex-[1] w-[92%] laptop:w-full">
+              <div className="mx-auto flex-[1] mt-[60px] w-[92%] laptop:w-full">
                 <div className="mx-auto ">{children}</div>
               </div>
               <Footer />

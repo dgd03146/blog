@@ -9,7 +9,6 @@ const Hero = () => {
   return (
     <section tw="flex flex-col justify-center items-center w-full tracking-tighter mx-auto">
       <HeroName />
-
       <Image
         tw="absolute -z-1"
         src="/assets/images/lalaland-color.png"

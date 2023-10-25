@@ -12,7 +12,7 @@ type TProps = {
 
 const PostDetailInfo = ({ post }: TProps) => {
   return (
-    <div tw="flex flex-col items-center gap-y-4 text-center">
+    <div tw="flex flex-col gap-y-4">
       <ImageWrapper>
         <Image
           width={500}
@@ -23,12 +23,12 @@ const PostDetailInfo = ({ post }: TProps) => {
           blurDataURL={rgbDataURL(220, 220, 220)}
         />
       </ImageWrapper>
-      <h1 tw="text-[32px] tablet:text-[2.3rem]">{post.title}</h1>
-      <h2 tw="text-[20px] tablet:text-[1.8rem] font-medium ">
-        {post.description}
-      </h2>
-      <p>{formatDate(post.date)}</p>
-      <Tags post={post} />
+      <h1 tw="text-[40px] tablet:text-[48px] font-[700]">{post.title}</h1>
+      <div tw="flex gap-x-4 items-center">
+        <p>{formatDate(post.date)}</p>
+        <Tags post={post} />
+      </div>
+      <p tw="mt-12 text-[17px] font-normal">{post.description}</p>
     </div>
   )
 }

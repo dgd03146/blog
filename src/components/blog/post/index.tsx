@@ -21,7 +21,7 @@ dayjs.extend(localizedFormat)
 const Post = ({ post, key }: TProps) => {
   return (
     <PostContainer key={key}>
-      <Link href={ROUTE_SLUG('blog', post.slug)} className="group">
+      <Link href={ROUTE_SLUG(post.slug)} className="group">
         <div tw="flex flex-col-reverse justify-between w-full laptop:flex-row">
           <div tw="flex flex-col w-full laptop:max-w-4xl laptop:w-fit gap-y-4">
             <Tags post={post} />
