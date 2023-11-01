@@ -2,29 +2,35 @@
 
 import React from 'react'
 import Image from 'next/image'
-import SocialNavigation from '@/components/common/socialNavigation'
+
 import { rgbDataURL } from '@/utils/getPlaceHolder'
+import SocialNavigation from '../common/socialNavigation'
 import useContactForm from './hooks/useContactForm'
 import {} from 'twin.macro'
 import { CardContainer } from './style'
 
+// import { useTransition } from 'react';
+
 const Contact = () => {
   const { form, handleSubmit, handleChange } = useContactForm()
+  // const useTransition
 
   return (
     <CardContainer>
+      <div tw="mb-8">
+        <SocialNavigation />
+      </div>
       <div className="card" tw="mx-auto text-light">
         <div className="cardFront">
           <h2 className="title">CONTACT ME</h2>
-          <SocialNavigation />
           <div className="imageWrapper" tw="mx-auto">
             <Image
               src="/assets/images/lalaland-color.png"
               alt="lalaland"
               width={310}
               height={310}
-              // placeholder="blur"
-              // blurDataURL={rgbDataURL(0, 0, 139)}
+              placeholder="blur"
+              blurDataURL={rgbDataURL(0, 0, 139)}
               priority
             />
           </div>
@@ -68,7 +74,7 @@ const Contact = () => {
               onChange={handleChange}
               placeholder="Contact me!"
             ></textarea>
-            <button>SEND MESSAGE</button>
+            <button>SEND EMAIL</button>
           </form>
         </div>
       </div>

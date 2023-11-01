@@ -1,24 +1,25 @@
-import { cache } from 'react'
 import { Client } from '@notionhq/client'
+
+import { revalidatePath } from 'next/cache'
 import { NotionToMarkdown } from 'notion-to-md'
+
+import uploadNotionImagesToCloudinary from 'upload-notion-images-to-cloudinary'
 import {
   getBlogDatabaseId,
+  getCloudinaryURL,
+  getCloudinaryUploadFolder,
   getNotionToken,
-  getPortfolioDatabaseId,
+  getProjectDatabaseId,
 } from '@/envs'
 import { TPostDetail } from '@/types/notion'
-
 import { pageToPostTransformer } from '@/utils/pageToPostTransformer'
-
-const BLOG_DATABASE_ID = getBlogDatabaseId()
-const PORTFOLIO_DATABASE_ID = getPortfolioDatabaseId()
 
 const notion = new Client({
   auth: getNotionToken(),
 })
 const n2m = new NotionToMarkdown({ notionClient: notion })
 
-const getAllData = cache(async (databaseId: string) => {
+const getAllData = async (databaseId: string) => {
   const response = await notion.databases.query({
     database_id: databaseId,
     filter: {
@@ -35,23 +36,34 @@ const getAllData = cache(async (databaseId: string) => {
     ],
   })
 
-  return response.results.map((res) => {
-    return pageToPostTransformer(res)
+  await uploadNotionImagesToCloudinary({
+    notionToken: getNotionToken(),
+    notionDatabaseId: databaseId,
+    cloudinaryUrl: getCloudinaryURL(),
+    cloudinaryUploadFolder: getCloudinaryUploadFolder(),
+    logLevel: 'debug',
   })
-})
+
+  return response.results.map((res) => {
+    const transformedPost = pageToPostTransformer(res)
+    return transformedPost
+  })
+}
 
 // 동일하게 호출한 인자에 대해 cache 값을 사용함
 export const getAllPosts = async () => {
-  return getAllData(BLOG_DATABASE_ID)
+  revalidatePath(`/`, 'page')
+  return getAllData(getBlogDatabaseId())
 }
 
 export const getAllProjects = async () => {
-  return getAllData(PORTFOLIO_DATABASE_ID)
+  revalidatePath(`/projects`, 'page')
+  return getAllData(getProjectDatabaseId())
 }
 
 export const getPost = async (slug: string): Promise<TPostDetail> => {
   const response = await notion.databases.query({
-    database_id: BLOG_DATABASE_ID,
+    database_id: getBlogDatabaseId(),
     filter: {
       property: 'slug',
       formula: {

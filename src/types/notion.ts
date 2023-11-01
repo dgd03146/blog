@@ -1,5 +1,5 @@
 export type TTag = {
-  color: string
+  color?: string
   id: string
   name: string
 }

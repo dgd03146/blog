@@ -1,15 +1,15 @@
 import tw, { styled } from 'twin.macro'
 
 export const CardContainer = styled.div`
-  margin-top: 1rem;
+  margin-top: 2rem;
   .card {
     margin: 0 auto;
     position: relative;
 
     cursor: pointer;
-    transform-style: preserve-3d;
+    /* transform-style: preserve-3d;
     transform: perspective(2500px);
-    transition: 1s;
+    transition: 1s; */
 
     width: 300px;
     height: 400px;
@@ -81,6 +81,7 @@ export const CardContainer = styled.div`
     box-shadow: inset 100px 20px 100px rgba(0, 0, 0, 0.2);
 
     form {
+      font-size: 0.9rem;
       margin: 0 auto;
       max-width: 300px;
       padding: 1rem 0;
@@ -94,6 +95,7 @@ export const CardContainer = styled.div`
     }
 
     input {
+      font-size: 0.85rem;
       width: 200px;
       ${tw`desktop:w-[300px]`}
 
@@ -104,6 +106,7 @@ export const CardContainer = styled.div`
     }
 
     textarea {
+      font-size: 0.85rem;
       width: 200px;
       ${tw`desktop:w-[300px]`}
 
