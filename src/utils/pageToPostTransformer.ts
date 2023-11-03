@@ -3,6 +3,7 @@ import {
   PartialPageObjectResponse,
 } from '@notionhq/client/build/src/api-endpoints'
 import { TNotionData, TTag } from '@/types/notion'
+import { pageToImageUrl } from './pageToImageUrl'
 
 type TNotionKey = TNotionData & {
   [key: string]: string | string[] | TTag[] | null
@@ -16,7 +17,7 @@ export interface TNotionDatabase extends PageObjectResponse {
 export const pageToPostTransformer = (
   page: PartialPageObjectResponse | PageObjectResponse,
 ): TNotionData => {
-  const { id, properties, cover, last_edited_time, created_time } =
+  const { id, properties, last_edited_time, created_time } =
     page as PageObjectResponse
   const { github_url, demo_url } = properties
 
@@ -59,19 +60,7 @@ export const pageToPostTransformer = (
     res[key] = value
   })
 
-  let defaultCover = ''
-  if (cover !== null) {
-    switch (cover.type) {
-      case 'file':
-        defaultCover = cover.file.url
-        break
-      case 'external':
-        defaultCover = cover.external.url
-        break
-      default:
-        break
-    }
-  }
+  const defaultCover = pageToImageUrl(page)
 
   return {
     id,

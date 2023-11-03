@@ -1,10 +1,13 @@
-import React from 'react'
+'use client'
+
 import dayjs from 'dayjs'
 import Image from 'next/image'
 import Link from 'next/link'
 import {} from 'twin.macro'
+
 import Tags from '@/components/common/tags'
 import { getRouteSlug } from '@/constants/route'
+
 import { TNotionData } from '@/types/notion'
 import { rgbDataURL } from '@/utils/getPlaceHolder'
 import { ImageWrapper, PostContainer } from './style'

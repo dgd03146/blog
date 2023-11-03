@@ -2,7 +2,7 @@ export const getApiEndPoint = () => {
   return 'https://api.notion.com/v1/databases'
 }
 
-export const getBlogDatabaseId = () => {
+export const getArticleDatabaseId = () => {
   return process.env.NOTION_BLOG_DATABASE_ID as string
 }
 

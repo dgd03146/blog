@@ -1,10 +1,12 @@
 import Script from 'next/script'
 import Posts from '@/components/blog/posts'
 import PageLayout from '@/components/common/layout/pageLayout'
-import { getAllPosts } from '@/service/notion'
+import { getArticles } from '@/service/notion'
+
+export const revalidate = 21600
 
 export default async function HomePage() {
-  const posts = await getAllPosts()
+  const posts = await getArticles()
 
   return (
     <PageLayout>
