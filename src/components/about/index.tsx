@@ -3,8 +3,6 @@
 import React from 'react'
 import {} from 'twin.macro'
 
-import Hero from './hero'
-import ImageSection from './imageSection'
 import Introduction from './introduction'
 import ResumeSection from './resumeSection'
 import TechStacks from './techStacks'

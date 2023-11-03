@@ -1,9 +1,7 @@
-import Image from 'next/image'
 import {} from 'twin.macro'
 
 import Tag from '@/components/common/tag'
 import { TECH_STACK } from '@/constants/techStacks'
-import { rgbDataURL } from '@/utils/getPlaceHolder'
 
 const TechStacks = () => {
   return (
