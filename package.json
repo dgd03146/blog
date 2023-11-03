@@ -10,8 +10,7 @@
     "format": "prettier --check ./src",
     "format:fix": "prettier --write ./src",
     "analyze": "cross-env ANALYZE=true npm run build",
-    "postinstall": "husky install",
-    "postbuild": "upload-notion-images-to-cloudinary"
+    "postinstall": "husky install"
   },
   "dependencies": {
     "@next/font": "^13.4.8",

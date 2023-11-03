@@ -1,6 +1,6 @@
 import React from 'react'
 import Link from 'next/link'
-import { usePathname } from 'next/navigation'
+
 import { FaGithub, FaLinkedinIn, FaMediumM } from 'react-icons/fa'
 import tw from 'twin.macro'
 import { GITHUB_URL, LINKEDIN_URL, MIDEUM_URL } from '@/constants/url'
