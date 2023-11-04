@@ -13,7 +13,7 @@ const ImageSection = () => {
   return (
     <div tw="flex items-center flex-col w-[50%]">
       {mounted && (
-        <div tw="basis-[40] hidden mobile:block mobile:mb-8">
+        <div tw="hidden mobile:block mobile:mb-8">
           <ImageWrapper current_theme={current_theme}>
             <Content>
               <Image

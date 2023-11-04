@@ -2,12 +2,12 @@ export const getApiEndPoint = () => {
   return 'https://api.notion.com/v1/databases'
 }
 
-export const getBlogDatabaseId = () => {
+export const getArticleDatabaseId = () => {
   return process.env.NOTION_BLOG_DATABASE_ID as string
 }
 
-export const getPortfolioDatabaseId = () => {
-  return process.env.NOTION_PORTFOLIO_DATABASE_ID as string
+export const getProjectDatabaseId = () => {
+  return process.env.NOTION_PROJECT_DATABASE_ID as string
 }
 
 export const getNotionToken = () => {
@@ -24,4 +24,12 @@ export const getNodeMailerPass = () => {
 
 export const getGoogleVerificationCode = () => {
   return process.env.GOOGLE_VERIFICATION as string
+}
+
+export const getCloudinaryURL = () => {
+  return process.env.CLOUDINARY_URL as string
+}
+
+export const getCloudinaryUploadFolder = () => {
+  return process.env.CLOUDINARY_UPLOAD_FOLDER as string
 }

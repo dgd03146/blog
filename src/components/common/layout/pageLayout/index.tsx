@@ -16,8 +16,8 @@ const PageLayout = ({ children }: { children?: React.ReactNode }) => {
     <>
       <TransitionEffect />
       <div>
-        <h1 tw="text-[2rem] mt-[52px] mb-[32px]">{pathname || 'Blog'}</h1>
-        <div tw="py-4  mx-auto">{children}</div>
+        <h1 tw="text-[2rem] mt-[52px] mb-[32px]">{pathname || 'Articles'}</h1>
+        <div tw="mx-auto">{children}</div>
       </div>
     </>
   )

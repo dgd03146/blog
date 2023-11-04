@@ -10,3 +10,7 @@ export const setServerTheme = async (theme: string) => {
     expires: new Date(2147483647 * 1000),
   })
 }
+
+export const getServerTheme = () => {
+  return cookies().get('theme')?.value ?? 'light'
+}

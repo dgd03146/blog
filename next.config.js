@@ -12,6 +12,7 @@ const nextConfig = withTwin(
     swcMinify: true,
     images: {
       domains: [
+        'res.cloudinary.com',
         'www.notion.so',
         'notion.so',
         'images.unsplash.com',
