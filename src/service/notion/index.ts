@@ -1,25 +1,24 @@
-import { cache } from 'react'
 import { Client } from '@notionhq/client'
+
 import { NotionToMarkdown } from 'notion-to-md'
+
 import {
-  getBlogDatabaseId,
+  getArticleDatabaseId,
   getNotionToken,
-  getPortfolioDatabaseId,
+  getProjectDatabaseId,
 } from '@/envs'
 import { TPostDetail } from '@/types/notion'
-
+import { pageToImageUrl } from '@/utils/pageToImageUrl'
 import { pageToPostTransformer } from '@/utils/pageToPostTransformer'
+import { uploadImageToCloudinary } from '../cloudinary'
 
-const BLOG_DATABASE_ID = getBlogDatabaseId()
-const PORTFOLIO_DATABASE_ID = getPortfolioDatabaseId()
-
-const notion = new Client({
+const notionClient = new Client({
   auth: getNotionToken(),
 })
-const n2m = new NotionToMarkdown({ notionClient: notion })
+const n2m = new NotionToMarkdown({ notionClient })
 
-const getAllData = cache(async (databaseId: string) => {
-  const response = await notion.databases.query({
+export const getNotionPages = (databaseId: string) => {
+  return notionClient.databases.query({
     database_id: databaseId,
     filter: {
       property: 'published',
@@ -34,24 +33,11 @@ const getAllData = cache(async (databaseId: string) => {
       },
     ],
   })
-
-  return response.results.map((res) => {
-    return pageToPostTransformer(res)
-  })
-})
-
-// 동일하게 호출한 인자에 대해 cache 값을 사용함
-export const getAllPosts = async () => {
-  return getAllData(BLOG_DATABASE_ID)
 }
 
-export const getAllProjects = async () => {
-  return getAllData(PORTFOLIO_DATABASE_ID)
-}
-
-export const getPost = async (slug: string): Promise<TPostDetail> => {
-  const response = await notion.databases.query({
-    database_id: BLOG_DATABASE_ID,
+export const getNotionPage = (slug: string) => {
+  return notionClient.databases.query({
+    database_id: getArticleDatabaseId(),
     filter: {
       property: 'slug',
       formula: {
@@ -61,6 +47,39 @@ export const getPost = async (slug: string): Promise<TPostDetail> => {
       },
     },
   })
+}
+
+export const getNotionImageUrl = async (pageId: string) => {
+  const response = await notionClient.pages.retrieve({ page_id: pageId })
+  return pageToImageUrl(response)
+}
+
+export const getAllData = async (databaseId: string) => {
+  const response = await getNotionPages(databaseId)
+
+  const data = await Promise.all(
+    response.results.map(async (page) => {
+      const imageUrl = await getNotionImageUrl(page.id)
+      const cover = await uploadImageToCloudinary(imageUrl)
+
+      const transformedPost = pageToPostTransformer(page)
+      return { ...transformedPost, cover }
+    }),
+  )
+
+  return data // 이제 data는 프로미스가 아닌 결과값의 배열입니다.
+}
+
+export const getArticles = () => {
+  return getAllData(getArticleDatabaseId())
+}
+
+export const getProjects = () => {
+  return getAllData(getProjectDatabaseId())
+}
+
+export const getPost = async (slug: string): Promise<TPostDetail> => {
+  const response = await getNotionPage(slug)
 
   const page = response.results[0]
   const post = page && pageToPostTransformer(page)

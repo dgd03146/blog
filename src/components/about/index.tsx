@@ -3,7 +3,6 @@
 import React from 'react'
 import {} from 'twin.macro'
 
-import ImageSection from './imageSection'
 import Introduction from './introduction'
 import ResumeSection from './resumeSection'
 import TechStacks from './techStacks'
@@ -11,12 +10,13 @@ import TechStacks from './techStacks'
 const About = () => {
   return (
     <section tw="max-w-[980px]">
-      <div tw="flex gap-x-10 flex-col items-center laptop:flex-row">
+      <Introduction />
+      {/* <div tw="flex gap-x-10 flex-col items-center laptop:flex-row">
         <ImageSection />
-        <div tw="flex-1 flex flex-col justify-center">
-          <Introduction />
-          <ResumeSection />
-        </div>
+        <Hero />
+      </div> */}
+      <div tw=" flex flex-col gap-y-2 mb-8 laptop:flex-row items-center justify-center gap-x-12">
+        <ResumeSection />
       </div>
       <TechStacks />
     </section>

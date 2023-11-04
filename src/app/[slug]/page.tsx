@@ -1,11 +1,15 @@
-import { CSSProperties } from 'react'
+import { CSSProperties, cache } from 'react'
 import { Metadata } from 'next'
 import { ReactMarkdown } from 'react-markdown/lib/react-markdown'
 import SyntaxHighlighter from 'react-syntax-highlighter/dist/esm/default-highlight'
-import { atomOneLight } from 'react-syntax-highlighter/dist/esm/styles/hljs'
+import {
+  atomOneLight,
+  atomOneDark,
+} from 'react-syntax-highlighter/dist/esm/styles/hljs'
 import remarkGfm from 'remark-gfm'
 import PostDetail from '@/components/blog/postDetail'
 import { getPost } from '@/service/notion'
+import { getServerTheme } from '../actions.server'
 
 type CSSPropertiesMap = { [key: string]: CSSProperties }
 
@@ -15,12 +19,14 @@ type TProps = {
   }
 }
 
+const getCachePost = cache((slug: string) => getPost(slug))
+
 export async function generateMetadata({
   params: { slug },
 }: TProps): Promise<Metadata> {
-  const { post } = await getPost(slug)
+  const { post } = await getCachePost(slug)
   const title = post?.title || 'Title'
-  const description = post?.description || 'Descrition'
+  const description = post?.description || 'Description'
 
   return {
     title,
@@ -29,8 +35,11 @@ export async function generateMetadata({
 }
 
 const BlogPost = async ({ params: { slug } }: TProps) => {
-  const post = await getPost(slug)
-  const codeStyle: CSSPropertiesMap | undefined = atomOneLight
+  const post = await getCachePost(slug)
+
+  const theme = getServerTheme()
+  const codeStyle: CSSPropertiesMap | undefined =
+    theme === 'light' ? atomOneLight : atomOneDark
 
   return (
     <PostDetail post={post}>

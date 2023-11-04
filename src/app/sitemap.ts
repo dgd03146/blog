@@ -10,10 +10,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
       url: 'https://junglog.vercel.app/about',
       lastModified: new Date(),
     },
-    {
-      url: 'https://junglog.vercel.app/blog',
-      lastModified: new Date(),
-    },
+
     {
       url: 'https://junglog.vercel.app/projects',
       lastModified: new Date(),

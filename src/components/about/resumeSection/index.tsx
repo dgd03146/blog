@@ -7,7 +7,7 @@ import { RESUME_URL } from '@/constants/url'
 const ResumeSection = () => {
   return (
     <div tw="flex items-center gap-x-[1.5rem]">
-      <ContactButton text="Resume" href={RESUME_URL} />
+      <ContactButton text="Get my CV" href={RESUME_URL} />
       <SocialNavigation />
     </div>
   )

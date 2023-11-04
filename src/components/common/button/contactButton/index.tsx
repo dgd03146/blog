@@ -5,7 +5,7 @@ import { RiSendPlaneFill } from 'react-icons/ri'
 import {} from 'twin.macro'
 
 type TProps = {
-  text: 'Contact Me' | 'Resume'
+  text: 'Contact Me' | 'Get my CV'
   href: string
 }
 

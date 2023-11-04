@@ -1,8 +1,8 @@
 export const ROUTE: { [key: string]: string } = {
-  Home: '/',
-  About: '/about',
-  Blog: '/blog',
+  Articles: '/',
   Projects: '/projects',
+  About: '/about',
+  // Blog: '/blog',
   Contact: '/contact',
 }
 
@@ -11,6 +11,6 @@ export const ROUTES = Object.keys(ROUTE).map((key) => ({
   path: ROUTE[key],
 }))
 
-export const ROUTE_SLUG = (route: 'blog' | 'projects', slug: string) => {
+export const getRouteSlug = (slug: string, route: '' | 'projects' = '') => {
   return `${route}/${slug}`
 }

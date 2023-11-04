@@ -12,6 +12,7 @@ const nextConfig = withTwin(
     swcMinify: true,
     images: {
       domains: [
+        'res.cloudinary.com',
         'www.notion.so',
         'notion.so',
         'images.unsplash.com',
@@ -21,6 +22,9 @@ const nextConfig = withTwin(
         'transitivebullsh.it',
         'prod-files-secure.s3.us-west-2.amazonaws.com',
       ],
+    },
+    experimental: {
+      serverActions: true,
     },
     formats: ['image/avif', 'image/webp'],
   }),

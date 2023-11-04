@@ -1,6 +1,6 @@
 import { styled } from 'twin.macro'
 
-export const PostContainer = styled.li`
+export const PostContainer = styled.div`
   /* padding: 1.5rem 2rem; */
 
   h1 {

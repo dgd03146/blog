@@ -14,7 +14,9 @@ const Projects = ({ projects }: TProps) => {
     <section tw="flex justify-center mx-auto">
       <ul tw="flex flex-col w-full gap-y-[5rem]">
         {projects.map((project) => (
-          <Project key={project.slug} project={project} />
+          <li key={project.id}>
+            <Project project={project} />
+          </li>
         ))}
       </ul>
     </section>

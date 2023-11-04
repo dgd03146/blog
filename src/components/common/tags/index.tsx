@@ -8,15 +8,17 @@ type TProps = {
 }
 
 const Tags = ({ post, project }: TProps) => {
+  const activeItem = post || project
+
   return (
-    <div tw="flex gap-x-2 flex-wrap">
-      {post
-        ? post.tags.map((tag) => <Tag key={tag.id} tag={tag} />)
-        : project && project.tags.map((tag) => <Tag key={tag.id} tag={tag} />)}
-    </div>
+    <ul tw="flex gap-x-2 flex-wrap">
+      {activeItem?.tags.map((tag) => (
+        <li key={tag.id}>
+          <Tag tag={tag} />
+        </li>
+      ))}
+    </ul>
   )
 }
 
 export default Tags
-
-//  mb-4
