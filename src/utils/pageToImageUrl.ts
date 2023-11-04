@@ -1,10 +1,16 @@
 import {
   PageObjectResponse,
   PartialPageObjectResponse,
+  PartialDatabaseObjectResponse,
+  DatabaseObjectResponse,
 } from '@notionhq/client/build/src/api-endpoints'
 
 export const pageToImageUrl = (
-  page: PartialPageObjectResponse | PageObjectResponse,
+  page:
+    | PartialPageObjectResponse
+    | PageObjectResponse
+    | PartialDatabaseObjectResponse
+    | DatabaseObjectResponse,
 ): string => {
   const { cover } = page as PageObjectResponse
   let defaultCover = ''
