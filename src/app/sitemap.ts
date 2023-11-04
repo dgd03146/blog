@@ -1,23 +1,41 @@
 import { MetadataRoute } from 'next'
+import { getArticles } from '@/service/notion'
+import { getProjects } from '@/service/notion'
 
-export default function sitemap(): MetadataRoute.Sitemap {
+const URL = 'https://junglog.vercel.app'
+
+export default async function sitemap() {
+  const articles = await getArticles()
+  const projects = await getProjects()
+
+  const articleUrls = articles.map((article) => ({
+    url: `${URL}/${article.slug}`,
+    lastModified: article.date,
+  }))
+  const projectUrls = (await projects).map((project) => ({
+    url: `${URL}/projects/${project.slug}`,
+    lastModified: project.date,
+  }))
+
   return [
     {
-      url: 'https://junglog.vercel.app/',
+      url: URL,
       lastModified: new Date(),
     },
     {
-      url: 'https://junglog.vercel.app/about',
+      url: `${URL}/about`,
       lastModified: new Date(),
     },
 
     {
-      url: 'https://junglog.vercel.app/projects',
+      url: `${URL}/projects`,
       lastModified: new Date(),
     },
     {
-      url: 'https://junglog.vercel.app/contact',
+      url: `${URL}/contact`,
       lastModified: new Date(),
     },
+    ...articleUrls,
+    ...projectUrls,
   ]
 }

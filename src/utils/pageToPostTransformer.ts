@@ -1,6 +1,8 @@
 import {
   PageObjectResponse,
   PartialPageObjectResponse,
+  PartialDatabaseObjectResponse,
+  DatabaseObjectResponse,
 } from '@notionhq/client/build/src/api-endpoints'
 import { TNotionData, TTag } from '@/types/notion'
 import { pageToImageUrl } from './pageToImageUrl'
@@ -15,7 +17,11 @@ export interface TNotionDatabase extends PageObjectResponse {
 }
 
 export const pageToPostTransformer = (
-  page: PartialPageObjectResponse | PageObjectResponse,
+  page:
+    | PartialPageObjectResponse
+    | PageObjectResponse
+    | PartialDatabaseObjectResponse
+    | DatabaseObjectResponse,
 ): TNotionData => {
   const { id, properties, last_edited_time, created_time } =
     page as PageObjectResponse
